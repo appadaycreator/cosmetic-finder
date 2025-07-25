@@ -52,6 +52,55 @@ const diagnosisQuestions = [
             { value: 'rural', label: '田舎' },
             { value: 'coastal', label: '海沿い' }
         ]
+    },
+    {
+        id: 'routine-time',
+        question: 'スキンケアにかけられる時間は？',
+        options: [
+            { value: 'minimal', label: '最小限（5分以内）' },
+            { value: 'moderate', label: '適度（5-10分）' },
+            { value: 'extensive', label: 'しっかり（10分以上）' }
+        ]
+    },
+    {
+        id: 'budget',
+        question: '化粧品の予算は？（月額）',
+        options: [
+            { value: 'low', label: '〜3,000円' },
+            { value: 'medium', label: '3,000円〜10,000円' },
+            { value: 'high', label: '10,000円〜20,000円' },
+            { value: 'premium', label: '20,000円以上' }
+        ]
+    },
+    {
+        id: 'ingredient-preference',
+        question: '成分へのこだわりは？',
+        options: [
+            { value: 'natural', label: '天然・オーガニック重視' },
+            { value: 'scientific', label: '科学的効果重視' },
+            { value: 'hypoallergenic', label: '低刺激性重視' },
+            { value: 'no-preference', label: '特にこだわりなし' }
+        ]
+    },
+    {
+        id: 'texture-preference',
+        question: '好みのテクスチャーは？',
+        options: [
+            { value: 'light', label: 'さっぱり・軽い' },
+            { value: 'rich', label: 'しっとり・濃厚' },
+            { value: 'gel', label: 'ジェル状' },
+            { value: 'no-preference', label: '特にこだわりなし' }
+        ]
+    },
+    {
+        id: 'fragrance',
+        question: '香りの好みは？',
+        options: [
+            { value: 'fragrance-free', label: '無香料' },
+            { value: 'natural', label: '天然の香り' },
+            { value: 'light', label: '軽い香り' },
+            { value: 'no-preference', label: 'こだわらない' }
+        ]
     }
 ];
 
@@ -318,9 +367,18 @@ function getRecommendedCategories(skinType, concerns, age) {
     return categories;
 }
 
-function viewRecommendedProducts() {
-    // 製品推奨ページへの遷移（実装により異なる）
-    alert('おすすめ製品の表示機能は準備中です');
+async function viewRecommendedProducts() {
+    // 製品推奨ページへの遷移
+    const diagnosisData = {
+        answers: answers,
+        result: calculateDiagnosisResult(answers)
+    };
+    
+    // 診断結果をローカルストレージに保存
+    localStorage.setItem('currentDiagnosis', JSON.stringify(diagnosisData));
+    
+    // 製品一覧ページへ遷移（診断結果でフィルタリング）
+    window.location.href = '/products.html?diagnosis=true';
 }
 
 function restartDiagnosis() {

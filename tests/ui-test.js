@@ -33,7 +33,7 @@ async function runUITests() {
         const navLinks = await page.$$eval('nav a', links => 
             links.map(link => ({ text: link.textContent, href: link.href }))
         );
-        const expectedLinks = ['ホーム', '使い方', 'お問い合わせ'];
+        const expectedLinks = ['ホーム', '製品一覧', '使い方', 'お問い合わせ'];
         const hasAllLinks = expectedLinks.every(expected => 
             navLinks.some(link => link.text.includes(expected))
         );
@@ -152,7 +152,69 @@ async function runUITests() {
         });
     }
 
-    // Test 7: Service Workerの確認
+    // Test 7: 製品一覧ページの動作確認
+    try {
+        await page.goto(`${BASE_URL}/products.html`, { waitUntil: 'networkidle2' });
+        
+        // 製品が表示されているか確認
+        const productCards = await page.$$('.product-card');
+        const hasProducts = productCards.length > 0;
+        
+        // 検索機能のテスト
+        await page.type('#productSearch', 'クリーム');
+        await page.click('#searchButton');
+        await page.waitForTimeout(500);
+        
+        const searchResults = await page.$$('.product-card');
+        
+        results.push({
+            test: '製品一覧ページの動作',
+            status: hasProducts ? 'PASS' : 'FAIL',
+            message: `製品数: ${productCards.length}, 検索結果: ${searchResults.length}`
+        });
+    } catch (error) {
+        results.push({
+            test: '製品一覧ページの動作',
+            status: 'FAIL',
+            message: error.message
+        });
+    }
+
+    // Test 8: 診断質問数の確認（10問）
+    try {
+        await page.goto(`${BASE_URL}/lp.html`, { waitUntil: 'networkidle2' });
+        await page.click('#startDiagnosis');
+        await page.waitForSelector('.question', { visible: true });
+        
+        // 全質問をカウント
+        let questionCount = 0;
+        for (let i = 0; i < 10; i++) {
+            const questionText = await page.$eval('.question h4', el => el.textContent);
+            if (questionText.includes(`質問 ${i + 1}`)) {
+                questionCount++;
+                // 次の質問へ
+                const options = await page.$$('.option');
+                if (options.length > 0) {
+                    await options[0].click();
+                    await page.waitForTimeout(400);
+                }
+            }
+        }
+        
+        results.push({
+            test: '診断質問数の確認',
+            status: questionCount === 10 ? 'PASS' : 'FAIL',
+            message: `確認された質問数: ${questionCount}/10`
+        });
+    } catch (error) {
+        results.push({
+            test: '診断質問数の確認',
+            status: 'FAIL',
+            message: error.message
+        });
+    }
+
+    // Test 9: Service Workerの確認
     try {
         const swRegistered = await page.evaluate(async () => {
             if ('serviceWorker' in navigator) {

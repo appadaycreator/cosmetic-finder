@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製品一覧 - コスメファインダー</title>
+    <meta name="description" content="100種類以上の化粧品から、あなたに最適な製品を見つけましょう">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/assets/icons/favicon.ico">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1><a href="/">コスメファインダー</a></h1>
+                <ul>
+                    <li><a href="/">ホーム</a></li>
+                    <li><a href="/products.html" class="active">製品一覧</a></li>
+                    <li><a href="/how-to-use.html">使い方</a></li>
+                    <li><a href="/contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>製品一覧</h2>
+                <p>100種類以上の製品から、あなたに最適なものを見つけましょう</p>
+            </div>
+        </section>
+
+        <section class="product-search">
+            <div class="container">
+                <div class="search-filters">
+                    <div class="search-bar">
+                        <input type="text" id="productSearch" placeholder="製品名・ブランド名で検索...">
+                        <button id="searchButton">検索</button>
+                    </div>
+                    
+                    <div class="filters">
+                        <div class="filter-group">
+                            <label for="categoryFilter">カテゴリー:</label>
+                            <select id="categoryFilter">
+                                <option value="">すべて</option>
+                                <option value="化粧水">化粧水</option>
+                                <option value="美容液">美容液</option>
+                                <option value="クリーム">クリーム</option>
+                                <option value="クレンジング">クレンジング</option>
+                                <option value="フェイスマスク">フェイスマスク</option>
+                                <option value="日焼け止め">日焼け止め</option>
+                                <option value="ファンデーション">ファンデーション</option>
+                                <option value="乳液">乳液</option>
+                                <option value="オイル">オイル</option>
+                                <option value="ジェル">ジェル</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="skinTypeFilter">肌タイプ:</label>
+                            <select id="skinTypeFilter">
+                                <option value="">すべて</option>
+                                <option value="dry">乾燥肌</option>
+                                <option value="oily">脂性肌</option>
+                                <option value="combination">混合肌</option>
+                                <option value="sensitive">敏感肌</option>
+                                <option value="normal">普通肌</option>
+                                <option value="all">全肌質</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="priceFilter">価格帯:</label>
+                            <select id="priceFilter">
+                                <option value="">すべて</option>
+                                <option value="0-2000">〜2,000円</option>
+                                <option value="2000-3000">2,000円〜3,000円</option>
+                                <option value="3000-4000">3,000円〜4,000円</option>
+                                <option value="4000-5000">4,000円〜5,000円</option>
+                                <option value="5000-">5,000円〜</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="sortBy">並び替え:</label>
+                            <select id="sortBy">
+                                <option value="rating-desc">評価が高い順</option>
+                                <option value="rating-asc">評価が低い順</option>
+                                <option value="price-asc">価格が安い順</option>
+                                <option value="price-desc">価格が高い順</option>
+                                <option value="reviews-desc">レビュー数順</option>
+                            </select>
+                        </div>
+                        
+                        <button id="clearFilters" class="clear-filters">フィルターをクリア</button>
+                    </div>
+                </div>
+                
+                <div class="results-summary">
+                    <p><span id="resultsCount">0</span>件の製品が見つかりました</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-grid">
+            <div class="container">
+                <div id="productsContainer" class="products-container">
+                    <!-- 製品カードがここに動的に追加されます -->
+                </div>
+                
+                <div id="pagination" class="pagination">
+                    <!-- ページネーションがここに動的に追加されます -->
+                </div>
+                
+                <div id="loadingIndicator" class="loading" style="display: none;">
+                    製品を読み込んでいます...
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 コスメファインダー. All rights reserved.</p>
+            <ul>
+                <li><a href="/terms.html">利用規約</a></li>
+                <li><a href="/privacy.html">プライバシーポリシー</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/products.js"></script>
+    <script src="/assets/js/i18n.js"></script>
+</body>
+</html>

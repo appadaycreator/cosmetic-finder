@@ -103,7 +103,9 @@
                         '/assets/js/main.js',
                         '/assets/js/diagnosis.js',
                         '/assets/js/ingredients.js',
-                        '/assets/js/i18n.js'
+                        '/assets/js/products.js',
+                        '/assets/js/i18n.js',
+                        '/products.html'
                     ];
                     
                     for (const file of files) {
@@ -196,6 +198,98 @@
                         
                         const manifest = await response.json();
                         return manifest.name && manifest.icons && manifest.start_url;
+                    } catch (e) {
+                        return false;
+                    }
+                }
+            },
+            {
+                name: "製品データベースのサイズ確認（100製品）",
+                test: async () => {
+                    try {
+                        const response = await fetch('/assets/data/products.json');
+                        const products = await response.json();
+                        return products.length === 100;
+                    } catch (e) {
+                        return false;
+                    }
+                }
+            },
+            {
+                name: "成分データベースのサイズ確認（72成分）",
+                test: async () => {
+                    try {
+                        const response = await fetch('/assets/data/ingredients.json');
+                        const ingredients = await response.json();
+                        return Object.keys(ingredients).length === 72;
+                    } catch (e) {
+                        return false;
+                    }
+                }
+            },
+            {
+                name: "診断質問数の確認（10問）",
+                test: async () => {
+                    try {
+                        // diagnosis.jsが定義するグローバル変数をチェック
+                        const script = document.createElement('script');
+                        script.src = '/assets/js/diagnosis.js';
+                        
+                        return new Promise((resolve) => {
+                            script.onload = () => {
+                                // diagnosisQuestionsは診断スクリプトで定義される
+                                resolve(window.diagnosisQuestions && window.diagnosisQuestions.length === 10);
+                            };
+                            script.onerror = () => resolve(false);
+                            document.head.appendChild(script);
+                        });
+                    } catch (e) {
+                        return false;
+                    }
+                }
+            },
+            {
+                name: "製品データの整合性確認",
+                test: async () => {
+                    try {
+                        const response = await fetch('/assets/data/products.json');
+                        const products = await response.json();
+                        
+                        // 各製品が必要なフィールドを持っているか確認
+                        return products.every(product => 
+                            product.id && 
+                            product.name && 
+                            product.brand && 
+                            product.category && 
+                            product.price >= 0 && 
+                            Array.isArray(product.skinTypes) &&
+                            Array.isArray(product.ingredients) &&
+                            product.rating >= 0 && product.rating <= 5
+                        );
+                    } catch (e) {
+                        return false;
+                    }
+                }
+            },
+            {
+                name: "CLAUDE.mdファイルの存在確認",
+                test: async () => {
+                    try {
+                        const response = await fetch('/CLAUDE.md');
+                        return response.ok;
+                    } catch (e) {
+                        return false;
+                    }
+                }
+            },
+            {
+                name: "Service Workerキャッシュバージョン確認",
+                test: async () => {
+                    try {
+                        const response = await fetch('/sw.js');
+                        const swContent = await response.text();
+                        // v2にアップデートされているか確認
+                        return swContent.includes("'cosmetic-finder-v2'");
                     } catch (e) {
                         return false;
                     }

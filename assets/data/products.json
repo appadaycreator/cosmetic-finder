@@ -1,122 +1,2081 @@
 [
   {
     "id": 1,
-    "name": "ナチュラルモイスチャーローション",
-    "brand": "コスメブランドA",
+    "name": "プロフェッショナルローション",
+    "brand": "ピュアスキン",
     "category": "化粧水",
-    "price": 2500,
-    "skinTypes": ["dry", "normal", "sensitive"],
-    "description": "天然由来成分で作られた高保湿化粧水。敏感肌の方にも安心してお使いいただけます。",
-    "ingredients": ["水", "グリセリン", "ヒアルロン酸", "セラミド", "アロエベラ"],
-    "rating": 4.5,
-    "reviews": 234
+    "price": 2100,
+    "skinTypes": [
+      "oily"
+    ],
+    "description": "さっぱりタイプの化粧水。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "ヒアルロン酸",
+      "コラーゲン",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.2,
+    "reviews": 918
   },
   {
     "id": 2,
-    "name": "オイルコントロールセラム",
-    "brand": "スキンケアラボ",
-    "category": "美容液",
-    "price": 3800,
-    "skinTypes": ["oily", "combination"],
-    "description": "皮脂バランスを整える美容液。毛穴の目立ちにくい肌へ導きます。",
-    "ingredients": ["水", "ナイアシンアミド", "サリチル酸", "ティーツリーオイル"],
-    "rating": 4.2,
-    "reviews": 156
+    "name": "アドバンスバーム",
+    "brand": "ジェントルケア",
+    "category": "クリーム",
+    "price": 5000,
+    "skinTypes": [
+      "dry",
+      "sensitive"
+    ],
+    "description": "高保湿タイプのクリーム。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "ヒアルロン酸",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.6,
+    "reviews": 581
   },
   {
     "id": 3,
-    "name": "エイジングケアクリーム",
-    "brand": "プレミアムケア",
-    "category": "クリーム",
-    "price": 5600,
-    "skinTypes": ["dry", "normal", "mature"],
-    "description": "レチノール配合でシワ・たるみにアプローチ。ハリのある肌へ。",
-    "ingredients": ["水", "レチノール", "コラーゲン", "ペプチド", "シアバター"],
-    "rating": 4.7,
-    "reviews": 342
+    "name": "アドバンスセラム",
+    "brand": "センシティブプラス",
+    "category": "美容液",
+    "price": 4900,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "ペプチド成分が肌のべたつきをサポート。健康的な肌へ導きます。",
+    "ingredients": [
+      "水",
+      "ペプチド",
+      "セラミド",
+      "スクワラン",
+      "ビタミンE"
+    ],
+    "rating": 4.9,
+    "reviews": 723
   },
   {
     "id": 4,
-    "name": "センシティブクレンジング",
-    "brand": "ジェントルケア",
-    "category": "クレンジング",
-    "price": 1800,
-    "skinTypes": ["sensitive", "dry", "normal"],
-    "description": "肌に優しいミルクタイプのクレンジング。メイクをしっかり落としながら潤いを保ちます。",
-    "ingredients": ["水", "スクワラン", "グリセリン", "セラミド"],
+    "name": "アドバンスバーム",
+    "brand": "デイリーケア",
+    "category": "クリーム",
+    "price": 3600,
+    "skinTypes": [
+      "oily",
+      "combination"
+    ],
+    "description": "さっぱりとした使用感で、毛穴にアプローチ。毎日のクリームケアに。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
     "rating": 4.4,
-    "reviews": 189
+    "reviews": 349
   },
   {
     "id": 5,
-    "name": "ブライトニングエッセンス",
-    "brand": "ホワイトラボ",
-    "category": "美容液",
-    "price": 4200,
-    "skinTypes": ["all"],
-    "description": "ビタミンC誘導体配合で透明感のある肌へ。シミ・くすみが気になる方に。",
-    "ingredients": ["水", "ビタミンC誘導体", "アルブチン", "ナイアシンアミド"],
-    "rating": 4.3,
-    "reviews": 267
+    "name": "デイリーカバー",
+    "brand": "ピュアスキン",
+    "category": "ファンデーション",
+    "price": 3400,
+    "skinTypes": [
+      "combination",
+      "normal"
+    ],
+    "description": "ペプチド成分が肌のハリ不足をサポート。透明感のあるな肌へ導きます。",
+    "ingredients": [
+      "水",
+      "ペプチド",
+      "セラミド",
+      "スクワラン",
+      "ビタミンE"
+    ],
+    "rating": 4.8,
+    "reviews": 588
   },
   {
     "id": 6,
-    "name": "ハイドレーティングマスク",
-    "brand": "モイスチャープラス",
+    "name": "デイリーマスク",
+    "brand": "ビューティーエッセンス",
     "category": "フェイスマスク",
-    "price": 3000,
-    "skinTypes": ["dry", "normal"],
-    "description": "週2-3回の集中保湿ケア。乾燥による小じわを目立たなくします。",
-    "ingredients": ["水", "ヒアルロン酸", "コラーゲン", "セラミド", "アロエベラ"],
-    "rating": 4.6,
-    "reviews": 198
+    "price": 3700,
+    "skinTypes": [
+      "combination",
+      "normal"
+    ],
+    "description": "さっぱりとした使用感で、乾燥にアプローチ。毎日のフェイスマスクケアに。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 3.6,
+    "reviews": 211
   },
   {
     "id": 7,
-    "name": "ポアミニマイザー",
-    "brand": "クリアスキン",
-    "category": "美容液",
-    "price": 3200,
-    "skinTypes": ["oily", "combination"],
-    "description": "毛穴の開きを目立たなくする専用美容液。なめらかな肌質へ。",
-    "ingredients": ["水", "ナイアシンアミド", "サリチル酸", "緑茶エキス"],
-    "rating": 4.1,
-    "reviews": 145
+    "name": "ボタニカルミスト",
+    "brand": "ボタニカルラボ",
+    "category": "化粧水",
+    "price": 4200,
+    "skinTypes": [
+      "sensitive",
+      "normal"
+    ],
+    "description": "グリセリン配合でハリ不足を改善。敏感肌、普通肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "尿素",
+      "ヒアルロン酸",
+      "コエンザイムQ10"
+    ],
+    "rating": 4.3,
+    "reviews": 522
   },
   {
     "id": 8,
-    "name": "UVプロテクトクリーム",
-    "brand": "サンケアプロ",
-    "category": "日焼け止め",
-    "price": 2800,
-    "skinTypes": ["all"],
-    "description": "SPF50+ PA++++の高い紫外線防御力。白浮きしない軽いテクスチャー。",
-    "ingredients": ["水", "酸化亜鉛", "酸化チタン", "ヒアルロン酸", "ビタミンE"],
-    "rating": 4.5,
-    "reviews": 423
+    "name": "スペシャルセラム",
+    "brand": "ボタニカルラボ",
+    "category": "美容液",
+    "price": 5800,
+    "skinTypes": [
+      "all"
+    ],
+    "description": "ペプチド配合で乾燥を改善。全肌質の方におすすめ。",
+    "ingredients": [
+      "水",
+      "ペプチド",
+      "セラミド",
+      "スクワラン",
+      "ビタミンE"
+    ],
+    "rating": 3.6,
+    "reviews": 369
   },
   {
     "id": 9,
-    "name": "ナイトリペアセラム",
-    "brand": "リカバリーケア",
-    "category": "美容液",
-    "price": 4800,
-    "skinTypes": ["dry", "normal", "mature"],
-    "description": "寝ている間に肌を集中補修。翌朝の肌が変わります。",
-    "ingredients": ["水", "ペプチド", "セラミド", "スクワラン", "ビタミンE"],
-    "rating": 4.8,
-    "reviews": 301
+    "name": "プレミアムトナー",
+    "brand": "デイリーケア",
+    "category": "化粧水",
+    "price": 3200,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "description": "高保湿タイプの化粧水。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "ヒアルロン酸",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.3,
+    "reviews": 820
   },
   {
     "id": 10,
-    "name": "ミネラルファンデーション",
-    "brand": "ナチュラルメイク",
-    "category": "ファンデーション",
+    "name": "モーニングミルク",
+    "brand": "モイスチャープラス",
+    "category": "乳液",
+    "price": 4500,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "description": "ヒアルロン酸配合でハリ不足を改善。乾燥肌、普通肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "ヒアルロン酸",
+      "コラーゲン",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 3.7,
+    "reviews": 538
+  },
+  {
+    "id": 11,
+    "name": "モーニングプロテクター",
+    "brand": "スキンケアラボ",
+    "category": "日焼け止め",
+    "price": 2500,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "高保湿タイプの日焼け止め。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "尿素",
+      "ヒアルロン酸",
+      "アルガンオイル"
+    ],
+    "rating": 4.9,
+    "reviews": 862
+  },
+  {
+    "id": 12,
+    "name": "オイルコントロールブレンドオイル",
+    "brand": "クリアスキン",
+    "category": "オイル",
+    "price": 5100,
+    "skinTypes": [
+      "oily",
+      "combination"
+    ],
+    "description": "さっぱりタイプのオイル。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 4.7,
+    "reviews": 363
+  },
+  {
+    "id": 13,
+    "name": "モーニングエマルジョン",
+    "brand": "エイジレスビューティー",
+    "category": "乳液",
+    "price": 2800,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "高保湿タイプの乳液。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 3.6,
+    "reviews": 435
+  },
+  {
+    "id": 14,
+    "name": "エイジングミスト",
+    "brand": "デイリーケア",
+    "category": "化粧水",
+    "price": 3100,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "天然由来成分の力で、なめらかな肌を実現。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 4.8,
+    "reviews": 149
+  },
+  {
+    "id": 15,
+    "name": "ブライトニングトナー",
+    "brand": "ピュアスキン",
+    "category": "化粧水",
+    "price": 2000,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "mature"
+    ],
+    "description": "ヒアルロン酸成分が肌の乾燥をサポート。うるおいのあるな肌へ導きます。",
+    "ingredients": [
+      "水",
+      "ヒアルロン酸",
+      "コラーゲン",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 3.8,
+    "reviews": 268
+  },
+  {
+    "id": 16,
+    "name": "ライトアクアジェル",
+    "brand": "ビューティーエッセンス",
+    "category": "ジェル",
+    "price": 2900,
+    "skinTypes": [
+      "combination",
+      "normal"
+    ],
+    "description": "天然由来成分の力で、なめらかな肌を実現。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 4.9,
+    "reviews": 730
+  },
+  {
+    "id": 17,
+    "name": "エイジングウォッシュ",
+    "brand": "オーガニックケア",
+    "category": "クレンジング",
+    "price": 1500,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "天然由来成分の力で、うるおいのあるな肌を実現。",
+    "ingredients": [
+      "水",
+      "スクワラン",
+      "グリセリン",
+      "セラミド",
+      "ビタミンE"
+    ],
+    "rating": 3.8,
+    "reviews": 343
+  },
+  {
+    "id": 18,
+    "name": "オイルコントロールミルク",
+    "brand": "ホワイトラボ",
+    "category": "乳液",
+    "price": 4100,
+    "skinTypes": [
+      "dry",
+      "sensitive"
+    ],
+    "description": "ヒアルロン酸成分が肌のハリ不足をサポート。透明感のあるな肌へ導きます。",
+    "ingredients": [
+      "水",
+      "ヒアルロン酸",
+      "コラーゲン",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 3.9,
+    "reviews": 465
+  },
+  {
+    "id": 19,
+    "name": "フレッシュプロテクター",
+    "brand": "リカバリーケア",
+    "category": "日焼け止め",
+    "price": 3900,
+    "skinTypes": [
+      "oily"
+    ],
+    "description": "レチノール配合で敏感を改善。脂性肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 3.8,
+    "reviews": 162
+  },
+  {
+    "id": 20,
+    "name": "プレミアムオイル",
+    "brand": "ボタニカルラボ",
+    "category": "オイル",
+    "price": 5000,
+    "skinTypes": [
+      "all"
+    ],
+    "description": "さっぱりタイプのオイル。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "ヒアルロン酸",
+      "コラーゲン",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.0,
+    "reviews": 446
+  },
+  {
+    "id": 21,
+    "name": "ブライトニングプロテクター",
+    "brand": "オーガニックケア",
+    "category": "日焼け止め",
+    "price": 3100,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "天然由来成分の力で、ハリのあるな肌を実現。",
+    "ingredients": [
+      "水",
+      "スクワラン",
+      "グリセリン",
+      "セラミド"
+    ],
+    "rating": 3.7,
+    "reviews": 559
+  },
+  {
+    "id": 22,
+    "name": "ボタニカルエッセンス",
+    "brand": "クリアスキン",
+    "category": "美容液",
     "price": 3500,
-    "skinTypes": ["sensitive", "normal"],
-    "description": "肌に優しいミネラル成分100%。自然なカバー力で素肌感を演出。",
-    "ingredients": ["マイカ", "酸化チタン", "酸化鉄", "酸化亜鉛"],
+    "skinTypes": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "description": "ペプチド配合で毛穴を改善。乾燥肌、普通肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "ペプチド",
+      "セラミド",
+      "スクワラン",
+      "ビタミンE"
+    ],
+    "rating": 3.9,
+    "reviews": 686
+  },
+  {
+    "id": 23,
+    "name": "プロフェッショナルトナー",
+    "brand": "サンケアプロ",
+    "category": "化粧水",
+    "price": 2600,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "mature"
+    ],
+    "description": "レチノール配合で敏感を改善。乾燥肌、普通肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 3.6,
+    "reviews": 415
+  },
+  {
+    "id": 24,
+    "name": "スペシャルエッセンス",
+    "brand": "ピュアスキン",
+    "category": "美容液",
+    "price": 5300,
+    "skinTypes": [
+      "all"
+    ],
+    "description": "さっぱりタイプの美容液。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 4.9,
+    "reviews": 486
+  },
+  {
+    "id": 25,
+    "name": "アドバンスエッセンス",
+    "brand": "プレミアムケア",
+    "category": "美容液",
+    "price": 5700,
+    "skinTypes": [
+      "normal"
+    ],
+    "description": "天然由来成分の力で、透明感のあるな肌を実現。",
+    "ingredients": [
+      "水",
+      "スクワラン",
+      "グリセリン",
+      "セラミド",
+      "カモミール"
+    ],
     "rating": 4.4,
-    "reviews": 256
+    "reviews": 704
+  },
+  {
+    "id": 26,
+    "name": "モーニングクリーム",
+    "brand": "モイスチャープラス",
+    "category": "クリーム",
+    "price": 3300,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "mature"
+    ],
+    "description": "グリセリン配合で乾燥を改善。乾燥肌、普通肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "ヒアルロン酸",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.2,
+    "reviews": 961
+  },
+  {
+    "id": 27,
+    "name": "インテンシブジェルクリーム",
+    "brand": "エイジレスビューティー",
+    "category": "クリーム",
+    "price": 3500,
+    "skinTypes": [
+      "oily"
+    ],
+    "description": "さっぱりタイプのクリーム。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "ティーツリーオイル"
+    ],
+    "rating": 4.4,
+    "reviews": 375
+  },
+  {
+    "id": 28,
+    "name": "ハイドレーティングファンデーション",
+    "brand": "スキンケアラボ",
+    "category": "ファンデーション",
+    "price": 5400,
+    "skinTypes": [
+      "all"
+    ],
+    "description": "天然由来成分の力で、なめらかな肌を実現。",
+    "ingredients": [
+      "水",
+      "スクワラン",
+      "グリセリン",
+      "セラミド"
+    ],
+    "rating": 4.1,
+    "reviews": 360
+  },
+  {
+    "id": 29,
+    "name": "デイリーオイル",
+    "brand": "ジェントルケア",
+    "category": "オイル",
+    "price": 4000,
+    "skinTypes": [
+      "oily"
+    ],
+    "description": "さっぱりタイプのオイル。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 4.0,
+    "reviews": 809
+  },
+  {
+    "id": 30,
+    "name": "リッチマスク",
+    "brand": "モイスチャープラス",
+    "category": "フェイスマスク",
+    "price": 3100,
+    "skinTypes": [
+      "oily"
+    ],
+    "description": "天然由来成分の力で、なめらかな肌を実現。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "尿素",
+      "ヒアルロン酸"
+    ],
+    "rating": 3.6,
+    "reviews": 402
+  },
+  {
+    "id": 31,
+    "name": "インテンシブクーリングジェル",
+    "brand": "リカバリーケア",
+    "category": "ジェル",
+    "price": 2900,
+    "skinTypes": [
+      "sensitive",
+      "normal"
+    ],
+    "description": "レチノール配合で乾燥を改善。敏感肌、普通肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 4.6,
+    "reviews": 112
+  },
+  {
+    "id": 32,
+    "name": "エイジングクレンジング",
+    "brand": "エイジレスビューティー",
+    "category": "クレンジング",
+    "price": 2700,
+    "skinTypes": [
+      "dry",
+      "sensitive"
+    ],
+    "description": "ナイアシンアミド配合でくすみを改善。乾燥肌、敏感肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "緑茶エキス",
+      "フラーレン"
+    ],
+    "rating": 4.3,
+    "reviews": 45
+  },
+  {
+    "id": 33,
+    "name": "センシティブアクアジェル",
+    "brand": "アクアケア",
+    "category": "ジェル",
+    "price": 2200,
+    "skinTypes": [
+      "normal"
+    ],
+    "description": "さっぱりとした使用感で、毛穴にアプローチ。毎日のジェルケアに。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "緑茶エキス"
+    ],
+    "rating": 4.5,
+    "reviews": 664
+  },
+  {
+    "id": 34,
+    "name": "センシティブミスト",
+    "brand": "ピュアスキン",
+    "category": "化粧水",
+    "price": 3200,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "description": "天然由来成分の力で、うるおいのあるな肌を実現。",
+    "ingredients": [
+      "水",
+      "ヒアルロン酸",
+      "コラーゲン",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.9,
+    "reviews": 193
+  },
+  {
+    "id": 35,
+    "name": "ピュアトリートメント",
+    "brand": "サンケアプロ",
+    "category": "フェイスマスク",
+    "price": 3100,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "mature"
+    ],
+    "description": "グリセリン成分が肌のべたつきをサポート。うるおいのあるな肌へ導きます。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "ヒアルロン酸",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.4,
+    "reviews": 242
+  },
+  {
+    "id": 36,
+    "name": "オイルコントロールUVクリーム",
+    "brand": "ナイトケアプロ",
+    "category": "日焼け止め",
+    "price": 2900,
+    "skinTypes": [
+      "combination",
+      "normal"
+    ],
+    "description": "さっぱりとした使用感で、毛穴にアプローチ。毎日の日焼け止めケアに。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "尿素",
+      "ヒアルロン酸"
+    ],
+    "rating": 3.5,
+    "reviews": 548
+  },
+  {
+    "id": 37,
+    "name": "ピュアトリートメント",
+    "brand": "ホワイトラボ",
+    "category": "フェイスマスク",
+    "price": 2500,
+    "skinTypes": [
+      "normal"
+    ],
+    "description": "さっぱりとした使用感で、敏感にアプローチ。毎日のフェイスマスクケアに。",
+    "ingredients": [
+      "水",
+      "ヒアルロン酸",
+      "コラーゲン",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.3,
+    "reviews": 671
+  },
+  {
+    "id": 38,
+    "name": "ディープジェル",
+    "brand": "モイスチャープラス",
+    "category": "ジェル",
+    "price": 2600,
+    "skinTypes": [
+      "sensitive",
+      "normal"
+    ],
+    "description": "さっぱりとした使用感で、乾燥にアプローチ。毎日のジェルケアに。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "尿素",
+      "ヒアルロン酸",
+      "ローズマリー"
+    ],
+    "rating": 3.8,
+    "reviews": 344
+  },
+  {
+    "id": 39,
+    "name": "センシティブトナー",
+    "brand": "モイスチャープラス",
+    "category": "化粧水",
+    "price": 2300,
+    "skinTypes": [
+      "oily",
+      "combination"
+    ],
+    "description": "天然由来成分の力で、ハリのあるな肌を実現。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "緑茶エキス",
+      "フラーレン"
+    ],
+    "rating": 3.8,
+    "reviews": 843
+  },
+  {
+    "id": 40,
+    "name": "ディープジェルクリーム",
+    "brand": "ナチュラルメイク",
+    "category": "クリーム",
+    "price": 5300,
+    "skinTypes": [
+      "oily"
+    ],
+    "description": "さっぱりとした使用感で、乾燥にアプローチ。毎日のクリームケアに。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "緑茶エキス"
+    ],
+    "rating": 3.9,
+    "reviews": 662
+  },
+  {
+    "id": 41,
+    "name": "センシティブセラム",
+    "brand": "ビューティーエッセンス",
+    "category": "美容液",
+    "price": 5800,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "mature"
+    ],
+    "description": "天然由来成分の力で、うるおいのあるな肌を実現。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 3.5,
+    "reviews": 288
+  },
+  {
+    "id": 42,
+    "name": "アドバンスアクアジェル",
+    "brand": "コスメブランドA",
+    "category": "ジェル",
+    "price": 2400,
+    "skinTypes": [
+      "dry",
+      "sensitive"
+    ],
+    "description": "アロエベラ配合で毛穴を改善。乾燥肌、敏感肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "アロエベラ",
+      "カモミール",
+      "セラミド",
+      "グリセリン"
+    ],
+    "rating": 3.7,
+    "reviews": 584
+  },
+  {
+    "id": 43,
+    "name": "エイジングウォッシュ",
+    "brand": "モイスチャープラス",
+    "category": "クレンジング",
+    "price": 2000,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "mature"
+    ],
+    "description": "高保湿タイプのクレンジング。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "緑茶エキス",
+      "ローズマリー"
+    ],
+    "rating": 4.5,
+    "reviews": 577
+  },
+  {
+    "id": 44,
+    "name": "ナイトオイル",
+    "brand": "ナチュラルメイク",
+    "category": "オイル",
+    "price": 5200,
+    "skinTypes": [
+      "normal"
+    ],
+    "description": "さっぱりタイプのオイル。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "アロエベラ",
+      "カモミール",
+      "セラミド",
+      "グリセリン"
+    ],
+    "rating": 4.0,
+    "reviews": 934
+  },
+  {
+    "id": 45,
+    "name": "ピュアUVクリーム",
+    "brand": "モイスチャープラス",
+    "category": "日焼け止め",
+    "price": 3800,
+    "skinTypes": [
+      "all"
+    ],
+    "description": "ナイアシンアミド配合で乾燥を改善。全肌質の方におすすめ。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "ティーツリーオイル",
+      "プラセンタ"
+    ],
+    "rating": 3.8,
+    "reviews": 509
+  },
+  {
+    "id": 46,
+    "name": "モーニングクリーム",
+    "brand": "センシティブプラス",
+    "category": "クリーム",
+    "price": 4600,
+    "skinTypes": [
+      "sensitive",
+      "normal"
+    ],
+    "description": "さっぱりタイプのクリーム。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "ペプチド",
+      "セラミド",
+      "スクワラン",
+      "ビタミンE"
+    ],
+    "rating": 3.8,
+    "reviews": 168
+  },
+  {
+    "id": 47,
+    "name": "エイジングトリートメント",
+    "brand": "デイリーケア",
+    "category": "フェイスマスク",
+    "price": 4600,
+    "skinTypes": [
+      "normal"
+    ],
+    "description": "天然由来成分の力で、うるおいのあるな肌を実現。",
+    "ingredients": [
+      "水",
+      "スクワラン",
+      "グリセリン",
+      "セラミド",
+      "アスタキサンチン"
+    ],
+    "rating": 4.3,
+    "reviews": 795
+  },
+  {
+    "id": 48,
+    "name": "ナチュラルジェル",
+    "brand": "ジェントルケア",
+    "category": "ジェル",
+    "price": 2400,
+    "skinTypes": [
+      "oily",
+      "combination"
+    ],
+    "description": "ナイアシンアミド成分が肌の乾燥をサポート。ハリのあるな肌へ導きます。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "ティーツリーオイル"
+    ],
+    "rating": 4.7,
+    "reviews": 254
+  },
+  {
+    "id": 49,
+    "name": "リッチパック",
+    "brand": "クリアスキン",
+    "category": "フェイスマスク",
+    "price": 4300,
+    "skinTypes": [
+      "oily",
+      "combination"
+    ],
+    "description": "さっぱりタイプのフェイスマスク。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "尿素",
+      "ヒアルロン酸",
+      "アルガンオイル"
+    ],
+    "rating": 4.5,
+    "reviews": 580
+  },
+  {
+    "id": 50,
+    "name": "ライトクリーム",
+    "brand": "ビューティーエッセンス",
+    "category": "クリーム",
+    "price": 4800,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "さっぱりとした使用感で、べたつきにアプローチ。毎日のクリームケアに。",
+    "ingredients": [
+      "水",
+      "ペプチド",
+      "セラミド",
+      "スクワラン",
+      "ビタミンE"
+    ],
+    "rating": 4.3,
+    "reviews": 652
+  },
+  {
+    "id": 51,
+    "name": "インテンシブウォッシュ",
+    "brand": "ナイトケアプロ",
+    "category": "クレンジング",
+    "price": 3200,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "description": "さっぱりとした使用感で、敏感にアプローチ。毎日のクレンジングケアに。",
+    "ingredients": [
+      "水",
+      "スクワラン",
+      "グリセリン",
+      "セラミド",
+      "アルガンオイル"
+    ],
+    "rating": 4.6,
+    "reviews": 519
+  },
+  {
+    "id": 52,
+    "name": "フレッシュセラム",
+    "brand": "ジェントルケア",
+    "category": "美容液",
+    "price": 3900,
+    "skinTypes": [
+      "dry",
+      "sensitive"
+    ],
+    "description": "ヒアルロン酸配合で毛穴を改善。乾燥肌、敏感肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "ヒアルロン酸",
+      "コラーゲン",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.2,
+    "reviews": 25
+  },
+  {
+    "id": 53,
+    "name": "ハイドレーティングサンスクリーン",
+    "brand": "ジェントルケア",
+    "category": "日焼け止め",
+    "price": 4200,
+    "skinTypes": [
+      "oily",
+      "combination"
+    ],
+    "description": "天然由来成分の力で、透明感のあるな肌を実現。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "ティーツリーオイル",
+      "ローズマリー"
+    ],
+    "rating": 5.0,
+    "reviews": 638
+  },
+  {
+    "id": 54,
+    "name": "エイジングエッセンス",
+    "brand": "センシティブプラス",
+    "category": "美容液",
+    "price": 4000,
+    "skinTypes": [
+      "oily"
+    ],
+    "description": "さっぱりタイプの美容液。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "緑茶エキス",
+      "ホホバオイル"
+    ],
+    "rating": 4.5,
+    "reviews": 451
+  },
+  {
+    "id": 55,
+    "name": "ブライトニングベース",
+    "brand": "モイスチャープラス",
+    "category": "ファンデーション",
+    "price": 4100,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "さっぱりとした使用感で、ハリ不足にアプローチ。毎日のファンデーションケアに。",
+    "ingredients": [
+      "水",
+      "ヒアルロン酸",
+      "コラーゲン",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 3.8,
+    "reviews": 226
+  },
+  {
+    "id": 56,
+    "name": "プレミアムトナー",
+    "brand": "エイジレスビューティー",
+    "category": "化粧水",
+    "price": 4000,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "高保湿タイプの化粧水。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 4.0,
+    "reviews": 459
+  },
+  {
+    "id": 57,
+    "name": "ブライトニングミスト",
+    "brand": "ボタニカルラボ",
+    "category": "化粧水",
+    "price": 4200,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "アロエベラ成分が肌のくすみをサポート。健康的な肌へ導きます。",
+    "ingredients": [
+      "水",
+      "アロエベラ",
+      "カモミール",
+      "セラミド",
+      "グリセリン"
+    ],
+    "rating": 3.8,
+    "reviews": 883
+  },
+  {
+    "id": 58,
+    "name": "ディープカバー",
+    "brand": "エイジレスビューティー",
+    "category": "ファンデーション",
+    "price": 3900,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "description": "高保湿タイプのファンデーション。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "ビタミンC誘導体",
+      "アルブチン",
+      "ナイアシンアミド"
+    ],
+    "rating": 4.9,
+    "reviews": 344
+  },
+  {
+    "id": 59,
+    "name": "プロフェッショナルオイル",
+    "brand": "アクアケア",
+    "category": "オイル",
+    "price": 5100,
+    "skinTypes": [
+      "dry",
+      "sensitive"
+    ],
+    "description": "グリセリン成分が肌のべたつきをサポート。健康的な肌へ導きます。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "ヒアルロン酸",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.1,
+    "reviews": 625
+  },
+  {
+    "id": 60,
+    "name": "モーニングセラムオイル",
+    "brand": "ホワイトラボ",
+    "category": "オイル",
+    "price": 4300,
+    "skinTypes": [
+      "oily"
+    ],
+    "description": "アロエベラ配合でハリ不足を改善。脂性肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "アロエベラ",
+      "カモミール",
+      "セラミド",
+      "グリセリン"
+    ],
+    "rating": 5.0,
+    "reviews": 422
+  },
+  {
+    "id": 61,
+    "name": "センシティブマスク",
+    "brand": "エイジレスビューティー",
+    "category": "フェイスマスク",
+    "price": 2500,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "mature"
+    ],
+    "description": "スクワラン配合でハリ不足を改善。乾燥肌、普通肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "スクワラン",
+      "グリセリン",
+      "セラミド",
+      "フラーレン"
+    ],
+    "rating": 4.0,
+    "reviews": 585
+  },
+  {
+    "id": 62,
+    "name": "リッチマスク",
+    "brand": "スキンケアラボ",
+    "category": "フェイスマスク",
+    "price": 3200,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "description": "高保湿タイプのフェイスマスク。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "ティーツリーオイル",
+      "アルガンオイル"
+    ],
+    "rating": 4.4,
+    "reviews": 303
+  },
+  {
+    "id": 63,
+    "name": "ナイトセラムオイル",
+    "brand": "ジェントルケア",
+    "category": "オイル",
+    "price": 4900,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "mature"
+    ],
+    "description": "天然由来成分の力で、透明感のあるな肌を実現。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 4.2,
+    "reviews": 178
+  },
+  {
+    "id": 64,
+    "name": "ピュアエマルジョン",
+    "brand": "ホワイトラボ",
+    "category": "乳液",
+    "price": 2500,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "ペプチド成分が肌の乾燥をサポート。透明感のあるな肌へ導きます。",
+    "ingredients": [
+      "水",
+      "ペプチド",
+      "セラミド",
+      "スクワラン",
+      "ビタミンE"
+    ],
+    "rating": 3.9,
+    "reviews": 32
+  },
+  {
+    "id": 65,
+    "name": "ブライトニングファンデーション",
+    "brand": "サンケアプロ",
+    "category": "ファンデーション",
+    "price": 4500,
+    "skinTypes": [
+      "combination",
+      "normal"
+    ],
+    "description": "アロエベラ配合で乾燥を改善。混合肌、普通肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "アロエベラ",
+      "カモミール",
+      "セラミド",
+      "グリセリン"
+    ],
+    "rating": 4.5,
+    "reviews": 216
+  },
+  {
+    "id": 66,
+    "name": "ピュアエッセンス",
+    "brand": "モイスチャープラス",
+    "category": "美容液",
+    "price": 5900,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "高保湿タイプの美容液。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "ヒアルロン酸",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.5,
+    "reviews": 426
+  },
+  {
+    "id": 67,
+    "name": "リッチクレンジング",
+    "brand": "エイジレスビューティー",
+    "category": "クレンジング",
+    "price": 3100,
+    "skinTypes": [
+      "oily"
+    ],
+    "description": "アロエベラ配合で毛穴を改善。脂性肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "アロエベラ",
+      "カモミール",
+      "セラミド",
+      "グリセリン"
+    ],
+    "rating": 4.5,
+    "reviews": 589
+  },
+  {
+    "id": 68,
+    "name": "ナイトミルク",
+    "brand": "ジェントルケア",
+    "category": "乳液",
+    "price": 4400,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "高保湿タイプの乳液。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "アロエベラ",
+      "カモミール",
+      "セラミド",
+      "グリセリン"
+    ],
+    "rating": 3.7,
+    "reviews": 116
+  },
+  {
+    "id": 69,
+    "name": "ライトジェルクリーム",
+    "brand": "アクアケア",
+    "category": "クリーム",
+    "price": 5000,
+    "skinTypes": [
+      "oily"
+    ],
+    "description": "さっぱりとした使用感で、毛穴にアプローチ。毎日のクリームケアに。",
+    "ingredients": [
+      "水",
+      "アロエベラ",
+      "カモミール",
+      "セラミド",
+      "グリセリン"
+    ],
+    "rating": 4.1,
+    "reviews": 787
+  },
+  {
+    "id": 70,
+    "name": "モーニングバーム",
+    "brand": "プレミアムケア",
+    "category": "クリーム",
+    "price": 4800,
+    "skinTypes": [
+      "normal"
+    ],
+    "description": "スクワラン成分が肌の敏感をサポート。なめらかな肌へ導きます。",
+    "ingredients": [
+      "水",
+      "スクワラン",
+      "グリセリン",
+      "セラミド",
+      "コエンザイムQ10"
+    ],
+    "rating": 4.3,
+    "reviews": 82
+  },
+  {
+    "id": 71,
+    "name": "リッチセラム",
+    "brand": "リカバリーケア",
+    "category": "美容液",
+    "price": 5100,
+    "skinTypes": [
+      "oily",
+      "combination"
+    ],
+    "description": "さっぱりタイプの美容液。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "アロエベラ",
+      "カモミール",
+      "セラミド",
+      "グリセリン"
+    ],
+    "rating": 4.0,
+    "reviews": 231
+  },
+  {
+    "id": 72,
+    "name": "モーニングクーリングジェル",
+    "brand": "リカバリーケア",
+    "category": "ジェル",
+    "price": 3700,
+    "skinTypes": [
+      "oily"
+    ],
+    "description": "ビタミンC誘導体配合で敏感を改善。脂性肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "ビタミンC誘導体",
+      "アルブチン",
+      "ナイアシンアミド",
+      "アルガンオイル"
+    ],
+    "rating": 3.5,
+    "reviews": 228
+  },
+  {
+    "id": 73,
+    "name": "センシティブローション",
+    "brand": "ビューティーエッセンス",
+    "category": "乳液",
+    "price": 3900,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "mature"
+    ],
+    "description": "天然由来成分の力で、健康的な肌を実現。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "ヒアルロン酸",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 3.9,
+    "reviews": 888
+  },
+  {
+    "id": 74,
+    "name": "プレミアムオイル",
+    "brand": "モイスチャープラス",
+    "category": "オイル",
+    "price": 4300,
+    "skinTypes": [
+      "sensitive",
+      "normal"
+    ],
+    "description": "さっぱりタイプのオイル。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "スクワラン",
+      "グリセリン",
+      "セラミド"
+    ],
+    "rating": 4.1,
+    "reviews": 534
+  },
+  {
+    "id": 75,
+    "name": "ナイトセラムオイル",
+    "brand": "ピュアスキン",
+    "category": "オイル",
+    "price": 4400,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "グリセリン成分が肌の乾燥をサポート。ハリのあるな肌へ導きます。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "尿素",
+      "ヒアルロン酸",
+      "フラーレン"
+    ],
+    "rating": 4.7,
+    "reviews": 900
+  },
+  {
+    "id": 76,
+    "name": "ライトファンデーション",
+    "brand": "デイリーケア",
+    "category": "ファンデーション",
+    "price": 3100,
+    "skinTypes": [
+      "oily",
+      "combination"
+    ],
+    "description": "ビタミンC誘導体成分が肌の乾燥をサポート。うるおいのあるな肌へ導きます。",
+    "ingredients": [
+      "水",
+      "ビタミンC誘導体",
+      "アルブチン",
+      "ナイアシンアミド"
+    ],
+    "rating": 4.9,
+    "reviews": 577
+  },
+  {
+    "id": 77,
+    "name": "エイジングブレンドオイル",
+    "brand": "デイリーケア",
+    "category": "オイル",
+    "price": 6300,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "高保湿タイプのオイル。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "ティーツリーオイル"
+    ],
+    "rating": 4.5,
+    "reviews": 601
+  },
+  {
+    "id": 78,
+    "name": "ピュアUVクリーム",
+    "brand": "サンケアプロ",
+    "category": "日焼け止め",
+    "price": 3800,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "description": "高保湿タイプの日焼け止め。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "ペプチド",
+      "セラミド",
+      "スクワラン",
+      "ビタミンE"
+    ],
+    "rating": 4.2,
+    "reviews": 646
+  },
+  {
+    "id": 79,
+    "name": "ナイトトナー",
+    "brand": "モイスチャープラス",
+    "category": "化粧水",
+    "price": 4200,
+    "skinTypes": [
+      "sensitive",
+      "normal"
+    ],
+    "description": "さっぱりとした使用感で、べたつきにアプローチ。毎日の化粧水ケアに。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "ティーツリーオイル",
+      "カモミール"
+    ],
+    "rating": 3.6,
+    "reviews": 40
+  },
+  {
+    "id": 80,
+    "name": "デイリーバーム",
+    "brand": "アクアケア",
+    "category": "クリーム",
+    "price": 4600,
+    "skinTypes": [
+      "sensitive",
+      "normal"
+    ],
+    "description": "グリセリン配合で毛穴を改善。敏感肌、普通肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "ヒアルロン酸",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.3,
+    "reviews": 107
+  },
+  {
+    "id": 81,
+    "name": "インテンシブコンセントレート",
+    "brand": "ナイトケアプロ",
+    "category": "美容液",
+    "price": 4500,
+    "skinTypes": [
+      "dry",
+      "sensitive"
+    ],
+    "description": "スクワラン成分が肌のべたつきをサポート。なめらかな肌へ導きます。",
+    "ingredients": [
+      "水",
+      "スクワラン",
+      "グリセリン",
+      "セラミド",
+      "アスタキサンチン"
+    ],
+    "rating": 4.3,
+    "reviews": 548
+  },
+  {
+    "id": 82,
+    "name": "リッチジェルクリーム",
+    "brand": "コスメブランドA",
+    "category": "クリーム",
+    "price": 3700,
+    "skinTypes": [
+      "combination",
+      "normal"
+    ],
+    "description": "ナイアシンアミド成分が肌の敏感をサポート。健康的な肌へ導きます。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "緑茶エキス",
+      "ローズマリー"
+    ],
+    "rating": 3.9,
+    "reviews": 834
+  },
+  {
+    "id": 83,
+    "name": "ハイドレーティングカバー",
+    "brand": "コスメブランドA",
+    "category": "ファンデーション",
+    "price": 3300,
+    "skinTypes": [
+      "oily"
+    ],
+    "description": "さっぱりタイプのファンデーション。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "ヒアルロン酸",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 3.8,
+    "reviews": 810
+  },
+  {
+    "id": 84,
+    "name": "プロフェッショナルマスク",
+    "brand": "リカバリーケア",
+    "category": "フェイスマスク",
+    "price": 4400,
+    "skinTypes": [
+      "dry",
+      "sensitive"
+    ],
+    "description": "天然由来成分の力で、健康的な肌を実現。",
+    "ingredients": [
+      "水",
+      "スクワラン",
+      "グリセリン",
+      "セラミド"
+    ],
+    "rating": 3.6,
+    "reviews": 332
+  },
+  {
+    "id": 85,
+    "name": "スペシャルエマルジョン",
+    "brand": "センシティブプラス",
+    "category": "乳液",
+    "price": 3800,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "description": "天然由来成分の力で、なめらかな肌を実現。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "尿素",
+      "ヒアルロン酸",
+      "アスタキサンチン"
+    ],
+    "rating": 5.0,
+    "reviews": 721
+  },
+  {
+    "id": 86,
+    "name": "フレッシュジェルクリーム",
+    "brand": "アクアケア",
+    "category": "クリーム",
+    "price": 4900,
+    "skinTypes": [
+      "dry",
+      "sensitive"
+    ],
+    "description": "天然由来成分の力で、なめらかな肌を実現。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "尿素",
+      "ヒアルロン酸",
+      "ラベンダー"
+    ],
+    "rating": 4.8,
+    "reviews": 22
+  },
+  {
+    "id": 87,
+    "name": "プレミアムクレンジング",
+    "brand": "スペシャルケア",
+    "category": "クレンジング",
+    "price": 2000,
+    "skinTypes": [
+      "dry",
+      "sensitive"
+    ],
+    "description": "さっぱりとした使用感で、乾燥にアプローチ。毎日のクレンジングケアに。",
+    "ingredients": [
+      "水",
+      "レチノール",
+      "コラーゲン",
+      "ペプチド",
+      "シアバター"
+    ],
+    "rating": 4.9,
+    "reviews": 579
+  },
+  {
+    "id": 88,
+    "name": "フレッシュオイル",
+    "brand": "コスメブランドA",
+    "category": "オイル",
+    "price": 4300,
+    "skinTypes": [
+      "dry",
+      "sensitive"
+    ],
+    "description": "ナイアシンアミド成分が肌のハリ不足をサポート。なめらかな肌へ導きます。",
+    "ingredients": [
+      "水",
+      "ナイアシンアミド",
+      "サリチル酸",
+      "ティーツリーオイル"
+    ],
+    "rating": 3.9,
+    "reviews": 332
+  },
+  {
+    "id": 89,
+    "name": "ナチュラルコンセントレート",
+    "brand": "ボタニカルラボ",
+    "category": "美容液",
+    "price": 3800,
+    "skinTypes": [
+      "dry",
+      "sensitive"
+    ],
+    "description": "グリセリン成分が肌の毛穴をサポート。ハリのあるな肌へ導きます。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "ヒアルロン酸",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.1,
+    "reviews": 906
+  },
+  {
+    "id": 90,
+    "name": "インテンシブセラム",
+    "brand": "アクアケア",
+    "category": "美容液",
+    "price": 3700,
+    "skinTypes": [
+      "normal"
+    ],
+    "description": "さっぱりとした使用感で、くすみにアプローチ。毎日の美容液ケアに。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "尿素",
+      "ヒアルロン酸",
+      "プラセンタ"
+    ],
+    "rating": 4.4,
+    "reviews": 989
+  },
+  {
+    "id": 91,
+    "name": "ナイトファンデーション",
+    "brand": "ホワイトラボ",
+    "category": "ファンデーション",
+    "price": 4200,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "ヒアルロン酸配合で乾燥を改善。乾燥肌、普通肌の方におすすめ。",
+    "ingredients": [
+      "水",
+      "ヒアルロン酸",
+      "コラーゲン",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 3.8,
+    "reviews": 461
+  },
+  {
+    "id": 92,
+    "name": "ブライトニングエマルジョン",
+    "brand": "デイリーケア",
+    "category": "乳液",
+    "price": 3700,
+    "skinTypes": [
+      "all"
+    ],
+    "description": "天然由来成分の力で、なめらかな肌を実現。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "ヒアルロン酸",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.9,
+    "reviews": 427
+  },
+  {
+    "id": 93,
+    "name": "ボタニカルセラムオイル",
+    "brand": "エイジレスビューティー",
+    "category": "オイル",
+    "price": 4900,
+    "skinTypes": [
+      "dry",
+      "sensitive"
+    ],
+    "description": "高保湿タイプのオイル。朝晩のケアに最適。",
+    "ingredients": [
+      "水",
+      "ヒアルロン酸",
+      "コラーゲン",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.9,
+    "reviews": 403
+  },
+  {
+    "id": 94,
+    "name": "ナイトミルク",
+    "brand": "スキンケアラボ",
+    "category": "乳液",
+    "price": 3800,
+    "skinTypes": [
+      "sensitive",
+      "normal"
+    ],
+    "description": "ビタミンC誘導体成分が肌のべたつきをサポート。ハリのあるな肌へ導きます。",
+    "ingredients": [
+      "水",
+      "ビタミンC誘導体",
+      "アルブチン",
+      "ナイアシンアミド",
+      "アスタキサンチン"
+    ],
+    "rating": 3.6,
+    "reviews": 723
+  },
+  {
+    "id": 95,
+    "name": "プレミアムセラムオイル",
+    "brand": "スキンケアラボ",
+    "category": "オイル",
+    "price": 6000,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "description": "グリセリン成分が肌の乾燥をサポート。健康的な肌へ導きます。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "尿素",
+      "ヒアルロン酸",
+      "カモミール"
+    ],
+    "rating": 4.5,
+    "reviews": 916
+  },
+  {
+    "id": 96,
+    "name": "センシティブマスク",
+    "brand": "デイリーケア",
+    "category": "フェイスマスク",
+    "price": 4000,
+    "skinTypes": [
+      "oily",
+      "combination"
+    ],
+    "description": "さっぱりとした使用感で、毛穴にアプローチ。毎日のフェイスマスクケアに。",
+    "ingredients": [
+      "水",
+      "アロエベラ",
+      "カモミール",
+      "セラミド",
+      "グリセリン"
+    ],
+    "rating": 4.4,
+    "reviews": 722
+  },
+  {
+    "id": 97,
+    "name": "エイジングパック",
+    "brand": "ナイトケアプロ",
+    "category": "フェイスマスク",
+    "price": 4000,
+    "skinTypes": [
+      "dry",
+      "normal"
+    ],
+    "description": "天然由来成分の力で、なめらかな肌を実現。",
+    "ingredients": [
+      "水",
+      "グリセリン",
+      "ヒアルロン酸",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 4.7,
+    "reviews": 298
+  },
+  {
+    "id": 98,
+    "name": "ボタニカルリムーバー",
+    "brand": "ボタニカルラボ",
+    "category": "クレンジング",
+    "price": 1900,
+    "skinTypes": [
+      "oily",
+      "combination"
+    ],
+    "description": "さっぱりとした使用感で、ハリ不足にアプローチ。毎日のクレンジングケアに。",
+    "ingredients": [
+      "水",
+      "アロエベラ",
+      "カモミール",
+      "セラミド",
+      "グリセリン"
+    ],
+    "rating": 4.8,
+    "reviews": 361
+  },
+  {
+    "id": 99,
+    "name": "フレッシュオイル",
+    "brand": "ビューティーエッセンス",
+    "category": "オイル",
+    "price": 5700,
+    "skinTypes": [
+      "all"
+    ],
+    "description": "天然由来成分の力で、ハリのあるな肌を実現。",
+    "ingredients": [
+      "水",
+      "ペプチド",
+      "セラミド",
+      "スクワラン",
+      "ビタミンE"
+    ],
+    "rating": 3.8,
+    "reviews": 864
+  },
+  {
+    "id": 100,
+    "name": "プロフェッショナルオイル",
+    "brand": "リカバリーケア",
+    "category": "オイル",
+    "price": 4400,
+    "skinTypes": [
+      "combination",
+      "normal"
+    ],
+    "description": "天然由来成分の力で、健康的な肌を実現。",
+    "ingredients": [
+      "水",
+      "ヒアルロン酸",
+      "コラーゲン",
+      "セラミド",
+      "アロエベラ"
+    ],
+    "rating": 3.6,
+    "reviews": 814
   }
 ]

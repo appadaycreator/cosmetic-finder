@@ -4,209 +4,710 @@
     "category": "溶剤",
     "description": "最も一般的な溶剤。すべての肌タイプに安全",
     "allergen": false,
-    "functions": ["溶剤", "基剤"]
+    "functions": [
+      "溶剤",
+      "基剤"
+    ]
   },
   "グリセリン": {
     "safety": 5,
     "category": "保湿剤",
     "description": "肌に潤いを与える優れた保湿成分",
     "allergen": false,
-    "functions": ["保湿", "柔軟化"]
+    "functions": [
+      "保湿",
+      "柔軟化"
+    ]
   },
   "ヒアルロン酸": {
     "safety": 5,
     "category": "保湿剤",
     "description": "高い保水力を持つ保湿成分。1gで6Lの水を保持",
     "allergen": false,
-    "functions": ["保湿", "肌のハリ"]
+    "functions": [
+      "保湿",
+      "肌のハリ"
+    ]
   },
   "セラミド": {
     "safety": 5,
     "category": "保湿剤",
     "description": "肌のバリア機能をサポートする重要な成分",
     "allergen": false,
-    "functions": ["バリア機能", "保湿"]
+    "functions": [
+      "バリア機能",
+      "保湿"
+    ]
   },
   "コラーゲン": {
     "safety": 4,
     "category": "保湿剤",
     "description": "肌にハリと弾力を与える成分",
     "allergen": false,
-    "functions": ["保湿", "ハリ"]
+    "functions": [
+      "保湿",
+      "ハリ"
+    ]
   },
   "ビタミンC": {
     "safety": 4,
     "category": "抗酸化剤",
     "description": "美白効果とコラーゲン生成促進",
     "allergen": false,
-    "functions": ["美白", "抗酸化"]
+    "functions": [
+      "美白",
+      "抗酸化"
+    ]
   },
   "ビタミンC誘導体": {
     "safety": 4,
     "category": "美白剤",
     "description": "安定化されたビタミンC。肌への浸透性が高い",
     "allergen": false,
-    "functions": ["美白", "抗酸化"]
+    "functions": [
+      "美白",
+      "抗酸化"
+    ]
   },
   "レチノール": {
     "safety": 3,
     "category": "抗老化",
     "description": "シワ改善に効果的だが刺激性があるため注意が必要",
     "allergen": false,
-    "functions": ["アンチエイジング", "細胞活性化"]
+    "functions": [
+      "アンチエイジング",
+      "細胞活性化"
+    ]
   },
   "エタノール": {
     "safety": 3,
     "category": "溶剤",
     "description": "清涼感を与えるが乾燥を招く可能性がある",
     "allergen": false,
-    "functions": ["収れん", "清涼感"]
+    "functions": [
+      "収れん",
+      "清涼感"
+    ]
   },
   "パラベン": {
     "safety": 3,
     "category": "防腐剤",
     "description": "製品の保存性を高めるが、敏感肌には刺激となる場合がある",
     "allergen": true,
-    "functions": ["防腐", "保存性向上"]
+    "functions": [
+      "防腐",
+      "保存性向上"
+    ]
   },
   "香料": {
     "safety": 2,
     "category": "香料",
     "description": "アレルギーを引き起こす可能性が高い",
     "allergen": true,
-    "functions": ["香り付け"]
+    "functions": [
+      "香り付け"
+    ]
   },
   "着色料": {
     "safety": 2,
     "category": "着色剤",
     "description": "見た目を良くするが刺激の可能性がある",
     "allergen": true,
-    "functions": ["着色"]
+    "functions": [
+      "着色"
+    ]
   },
   "フェノキシエタノール": {
     "safety": 3,
     "category": "防腐剤",
     "description": "パラベンの代替防腐剤。比較的低刺激",
     "allergen": false,
-    "functions": ["防腐"]
+    "functions": [
+      "防腐"
+    ]
   },
   "ナイアシンアミド": {
     "safety": 5,
     "category": "美白剤",
     "description": "肌のトーンを整え、毛穴を目立たなくする",
     "allergen": false,
-    "functions": ["美白", "毛穴ケア", "抗炎症"]
+    "functions": [
+      "美白",
+      "毛穴ケア",
+      "抗炎症"
+    ]
   },
   "アロエベラ": {
     "safety": 5,
     "category": "鎮静剤",
     "description": "肌を落ち着かせる天然成分",
     "allergen": false,
-    "functions": ["鎮静", "保湿", "抗炎症"]
+    "functions": [
+      "鎮静",
+      "保湿",
+      "抗炎症"
+    ]
   },
   "ティーツリーオイル": {
     "safety": 3,
     "category": "抗菌剤",
     "description": "ニキビケアに効果的だが濃度に注意",
     "allergen": true,
-    "functions": ["抗菌", "抗炎症"]
+    "functions": [
+      "抗菌",
+      "抗炎症"
+    ]
   },
   "サリチル酸": {
     "safety": 3,
     "category": "角質除去",
     "description": "毛穴の詰まりを改善。敏感肌には刺激となる場合がある",
     "allergen": false,
-    "functions": ["角質除去", "毛穴ケア"]
+    "functions": [
+      "角質除去",
+      "毛穴ケア"
+    ]
   },
   "尿素": {
     "safety": 4,
     "category": "保湿剤",
     "description": "角質を柔らかくし、保湿効果もある",
     "allergen": false,
-    "functions": ["保湿", "角質軟化"]
+    "functions": [
+      "保湿",
+      "角質軟化"
+    ]
   },
   "スクワラン": {
     "safety": 5,
     "category": "エモリエント",
     "description": "肌になじみやすく、べたつかない保湿成分",
     "allergen": false,
-    "functions": ["保湿", "柔軟化"]
+    "functions": [
+      "保湿",
+      "柔軟化"
+    ]
   },
   "シアバター": {
     "safety": 5,
     "category": "エモリエント",
     "description": "濃厚な保湿効果。乾燥肌に最適",
     "allergen": false,
-    "functions": ["保湿", "保護"]
+    "functions": [
+      "保湿",
+      "保護"
+    ]
   },
   "ペプチド": {
     "safety": 5,
     "category": "抗老化",
     "description": "コラーゲン生成を促進し、肌のハリを改善",
     "allergen": false,
-    "functions": ["アンチエイジング", "ハリ"]
+    "functions": [
+      "アンチエイジング",
+      "ハリ"
+    ]
   },
   "アルブチン": {
     "safety": 4,
     "category": "美白剤",
     "description": "メラニン生成を抑制する美白成分",
     "allergen": false,
-    "functions": ["美白"]
+    "functions": [
+      "美白"
+    ]
   },
   "緑茶エキス": {
     "safety": 5,
     "category": "抗酸化剤",
     "description": "抗酸化作用と抗炎症作用を持つ",
     "allergen": false,
-    "functions": ["抗酸化", "抗炎症"]
+    "functions": [
+      "抗酸化",
+      "抗炎症"
+    ]
   },
   "酸化亜鉛": {
     "safety": 5,
     "category": "日焼け止め",
     "description": "物理的な紫外線防御成分。肌に優しい",
     "allergen": false,
-    "functions": ["UV防御", "抗炎症"]
+    "functions": [
+      "UV防御",
+      "抗炎症"
+    ]
   },
   "酸化チタン": {
     "safety": 5,
     "category": "日焼け止め",
     "description": "物理的な紫外線防御成分。白浮きしやすい",
     "allergen": false,
-    "functions": ["UV防御"]
+    "functions": [
+      "UV防御"
+    ]
   },
   "ビタミンE": {
     "safety": 5,
     "category": "抗酸化剤",
     "description": "強力な抗酸化作用。肌を保護",
     "allergen": false,
-    "functions": ["抗酸化", "保護"]
+    "functions": [
+      "抗酸化",
+      "保護"
+    ]
   },
   "マイカ": {
     "safety": 4,
     "category": "鉱物",
     "description": "化粧品に光沢を与える鉱物成分",
     "allergen": false,
-    "functions": ["光沢", "カバー"]
+    "functions": [
+      "光沢",
+      "カバー"
+    ]
   },
   "酸化鉄": {
     "safety": 4,
     "category": "着色剤",
     "description": "ミネラルファンデーションの着色成分",
     "allergen": false,
-    "functions": ["着色"]
+    "functions": [
+      "着色"
+    ]
   },
   "BHA": {
     "safety": 3,
     "category": "角質除去",
     "description": "油溶性の角質除去成分。毛穴の奥まで浸透",
     "allergen": false,
-    "functions": ["角質除去", "毛穴ケア"]
+    "functions": [
+      "角質除去",
+      "毛穴ケア"
+    ]
   },
   "AHA": {
     "safety": 3,
     "category": "角質除去",
     "description": "水溶性の角質除去成分。肌表面の古い角質を除去",
     "allergen": false,
-    "functions": ["角質除去", "肌のトーン改善"]
+    "functions": [
+      "角質除去",
+      "肌のトーン改善"
+    ]
+  },
+  "カモミール": {
+    "safety": 5,
+    "category": "鎮静剤",
+    "description": "敏感肌を落ち着かせる天然成分",
+    "allergen": false,
+    "functions": [
+      "鎮静",
+      "抗炎症"
+    ]
+  },
+  "ローズマリー": {
+    "safety": 4,
+    "category": "抗酸化剤",
+    "description": "抗酸化作用と収れん作用を持つハーブエキス",
+    "allergen": false,
+    "functions": [
+      "抗酸化",
+      "収れん"
+    ]
+  },
+  "ラベンダー": {
+    "safety": 4,
+    "category": "鎮静剤",
+    "description": "リラックス効果と抗炎症作用",
+    "allergen": true,
+    "functions": [
+      "鎮静",
+      "抗炎症",
+      "香り"
+    ]
+  },
+  "アルガンオイル": {
+    "safety": 5,
+    "category": "エモリエント",
+    "description": "ビタミンEが豊富な高級オイル",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "抗酸化"
+    ]
+  },
+  "ホホバオイル": {
+    "safety": 5,
+    "category": "エモリエント",
+    "description": "人の皮脂に近い構造を持つオイル",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "皮脂バランス"
+    ]
+  },
+  "プラセンタ": {
+    "safety": 3,
+    "category": "抗老化",
+    "description": "細胞活性化作用があるが、アレルギーに注意",
+    "allergen": true,
+    "functions": [
+      "細胞活性化",
+      "美白"
+    ]
+  },
+  "コエンザイムQ10": {
+    "safety": 5,
+    "category": "抗酸化剤",
+    "description": "細胞のエネルギー生成をサポート",
+    "allergen": false,
+    "functions": [
+      "抗酸化",
+      "エネルギー活性化"
+    ]
+  },
+  "アスタキサンチン": {
+    "safety": 5,
+    "category": "抗酸化剤",
+    "description": "強力な抗酸化作用を持つ赤色の色素",
+    "allergen": false,
+    "functions": [
+      "抗酸化",
+      "抗炎症"
+    ]
+  },
+  "フラーレン": {
+    "safety": 4,
+    "category": "抗酸化剤",
+    "description": "活性酸素を吸着する球状炭素分子",
+    "allergen": false,
+    "functions": [
+      "抗酸化",
+      "美白"
+    ]
+  },
+  "プロピレングリコール": {
+    "safety": 3,
+    "category": "保湿剤",
+    "description": "保湿と製品の安定化に使用",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "溶剤"
+    ]
+  },
+  "ミネラルオイル": {
+    "safety": 3,
+    "category": "エモリエント",
+    "description": "石油由来の保湿成分。毛穴を詰まらせる可能性",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "保護"
+    ]
+  },
+  "ラウリル硫酸ナトリウム": {
+    "safety": 2,
+    "category": "界面活性剤",
+    "description": "洗浄力は強いが刺激性も高い",
+    "allergen": true,
+    "functions": [
+      "洗浄",
+      "起泡"
+    ]
+  },
+  "トリクロサン": {
+    "safety": 2,
+    "category": "抗菌剤",
+    "description": "抗菌作用があるが環境への影響が懸念される",
+    "allergen": false,
+    "functions": [
+      "抗菌"
+    ]
+  },
+  "オキシベンゾン": {
+    "safety": 2,
+    "category": "日焼け止め",
+    "description": "化学的紫外線吸収剤。アレルギーリスクあり",
+    "allergen": true,
+    "functions": [
+      "UV防御"
+    ]
+  },
+  "メチルパラベン": {
+    "safety": 3,
+    "category": "防腐剤",
+    "description": "パラベンの一種。低濃度では比較的安全",
+    "allergen": true,
+    "functions": [
+      "防腐"
+    ]
+  },
+  "プロピルパラベン": {
+    "safety": 3,
+    "category": "防腐剤",
+    "description": "パラベンの一種。メチルパラベンより刺激性が高い",
+    "allergen": true,
+    "functions": [
+      "防腐"
+    ]
+  },
+  "BHT": {
+    "safety": 2,
+    "category": "酸化防止剤",
+    "description": "製品の酸化を防ぐが、刺激性の懸念あり",
+    "allergen": false,
+    "functions": [
+      "酸化防止"
+    ]
+  },
+  "EDTA": {
+    "safety": 3,
+    "category": "キレート剤",
+    "description": "金属イオンを封鎖し、製品の安定性を保つ",
+    "allergen": false,
+    "functions": [
+      "安定化"
+    ]
+  },
+  "トコフェロール": {
+    "safety": 5,
+    "category": "抗酸化剤",
+    "description": "ビタミンEの別名。強力な抗酸化作用",
+    "allergen": false,
+    "functions": [
+      "抗酸化",
+      "保護"
+    ]
+  },
+  "パンテノール": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "プロビタミンB5。肌の修復を促進",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "修復"
+    ]
+  },
+  "アラントイン": {
+    "safety": 5,
+    "category": "鎮静剤",
+    "description": "肌の修復と鎮静効果",
+    "allergen": false,
+    "functions": [
+      "鎮静",
+      "修復"
+    ]
+  },
+  "ビサボロール": {
+    "safety": 5,
+    "category": "鎮静剤",
+    "description": "カモミール由来の鎮静成分",
+    "allergen": false,
+    "functions": [
+      "鎮静",
+      "抗炎症"
+    ]
+  },
+  "センテラアジアチカ": {
+    "safety": 5,
+    "category": "鎮静剤",
+    "description": "肌の修復と鎮静効果のあるツボクサエキス",
+    "allergen": false,
+    "functions": [
+      "修復",
+      "鎮静"
+    ]
+  },
+  "マデカッソシド": {
+    "safety": 5,
+    "category": "修復剤",
+    "description": "ツボクサ由来の肌修復成分",
+    "allergen": false,
+    "functions": [
+      "修復",
+      "抗炎症"
+    ]
+  },
+  "アデノシン": {
+    "safety": 5,
+    "category": "抗老化",
+    "description": "シワ改善効果が認められた成分",
+    "allergen": false,
+    "functions": [
+      "シワ改善",
+      "エネルギー活性化"
+    ]
+  },
+  "カフェイン": {
+    "safety": 4,
+    "category": "引き締め",
+    "description": "血行促進と引き締め効果",
+    "allergen": false,
+    "functions": [
+      "引き締め",
+      "血行促進"
+    ]
+  },
+  "ヒト幹細胞培養液": {
+    "safety": 3,
+    "category": "抗老化",
+    "description": "細胞活性化作用があるが、安全性データは限定的",
+    "allergen": false,
+    "functions": [
+      "細胞活性化",
+      "修復"
+    ]
+  },
+  "EGF": {
+    "safety": 4,
+    "category": "成長因子",
+    "description": "上皮成長因子。細胞の再生を促進",
+    "allergen": false,
+    "functions": [
+      "細胞再生",
+      "修復"
+    ]
+  },
+  "FGF": {
+    "safety": 4,
+    "category": "成長因子",
+    "description": "線維芽細胞成長因子。コラーゲン生成促進",
+    "allergen": false,
+    "functions": [
+      "コラーゲン生成",
+      "修復"
+    ]
+  },
+  "トラネキサム酸": {
+    "safety": 4,
+    "category": "美白剤",
+    "description": "肝斑に効果的な美白成分",
+    "allergen": false,
+    "functions": [
+      "美白",
+      "抗炎症"
+    ]
+  },
+  "コウジ酸": {
+    "safety": 4,
+    "category": "美白剤",
+    "description": "メラニン生成を抑制する発酵由来成分",
+    "allergen": false,
+    "functions": [
+      "美白"
+    ]
+  },
+  "アゼライン酸": {
+    "safety": 4,
+    "category": "角質除去",
+    "description": "ニキビと色素沈着の両方に効果",
+    "allergen": false,
+    "functions": [
+      "角質除去",
+      "美白",
+      "抗菌"
+    ]
+  },
+  "乳酸": {
+    "safety": 4,
+    "category": "角質除去",
+    "description": "AHAの一種。保湿効果もある",
+    "allergen": false,
+    "functions": [
+      "角質除去",
+      "保湿"
+    ]
+  },
+  "グリコール酸": {
+    "safety": 3,
+    "category": "角質除去",
+    "description": "最も小さいAHA。浸透力が高い",
+    "allergen": false,
+    "functions": [
+      "角質除去",
+      "肌質改善"
+    ]
+  },
+  "マンデル酸": {
+    "safety": 4,
+    "category": "角質除去",
+    "description": "大きな分子のAHA。低刺激",
+    "allergen": false,
+    "functions": [
+      "角質除去",
+      "抗菌"
+    ]
+  },
+  "レゾルシノール": {
+    "safety": 3,
+    "category": "角質除去",
+    "description": "ニキビと色素沈着に効果",
+    "allergen": false,
+    "functions": [
+      "角質除去",
+      "美白"
+    ]
+  },
+  "ベンゾイルペルオキシド": {
+    "safety": 3,
+    "category": "抗菌剤",
+    "description": "強力なニキビ治療成分。乾燥と刺激に注意",
+    "allergen": false,
+    "functions": [
+      "抗菌",
+      "角質除去"
+    ]
+  },
+  "硫黄": {
+    "safety": 3,
+    "category": "抗菌剤",
+    "description": "皮脂吸収とニキビ菌への効果",
+    "allergen": false,
+    "functions": [
+      "抗菌",
+      "皮脂吸収"
+    ]
+  },
+  "亜鉛": {
+    "safety": 5,
+    "category": "鎮静剤",
+    "description": "抗炎症作用と皮脂調整効果",
+    "allergen": false,
+    "functions": [
+      "抗炎症",
+      "皮脂調整"
+    ]
+  },
+  "シリカ": {
+    "safety": 5,
+    "category": "吸収剤",
+    "description": "余分な皮脂を吸収する鉱物",
+    "allergen": false,
+    "functions": [
+      "皮脂吸収",
+      "マット化"
+    ]
+  },
+  "カオリン": {
+    "safety": 5,
+    "category": "吸収剤",
+    "description": "クレイの一種。余分な皮脂を吸収",
+    "allergen": false,
+    "functions": [
+      "皮脂吸収",
+      "浄化"
+    ]
+  },
+  "ベントナイト": {
+    "safety": 4,
+    "category": "吸収剤",
+    "description": "強力な吸着力を持つクレイ",
+    "allergen": false,
+    "functions": [
+      "皮脂吸収",
+      "デトックス"
+    ]
   }
 }
