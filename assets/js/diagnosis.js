@@ -1,5 +1,19 @@
-// 肌質診断ロジック
-const diagnosisQuestions = [
+// 肌質診断ロジック（リファクタリング版）
+class DiagnosisManager {
+    constructor() {
+        this.currentQuestion = 1;
+        this.totalQuestions = 10;
+        this.answers = {};
+        this.questions = this.getQuestions();
+        this.init();
+    }
+
+    init() {
+        this.setupKeyboardListeners();
+    }
+
+    getQuestions() {
+        return [
     {
         id: 'skin-type',
         question: 'あなたの肌質は？',
