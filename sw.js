@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cosmetic-finder-v3';
+const CACHE_NAME = 'cosmetic-finder-v4';
 const urlsToCache = [
   './',
   './lp.html',
@@ -31,6 +31,11 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
+  // Skip non-http/https requests (chrome-extension, etc.)
+  if (!event.request.url.startsWith('http')) {
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request)
       .then(response => {
@@ -42,14 +47,31 @@ self.addEventListener('fetch', event => {
             if (!response || response.status !== 200 || response.type !== 'basic') {
               return response;
             }
-            const responseToCache = response.clone();
-            caches.open(CACHE_NAME)
-              .then(cache => {
-                cache.put(event.request, responseToCache);
-              });
+            
+            // Only cache requests from the same origin
+            const requestUrl = new URL(event.request.url);
+            const currentUrl = new URL(self.location.origin);
+            
+            if (requestUrl.origin === currentUrl.origin) {
+              const responseToCache = response.clone();
+              caches.open(CACHE_NAME)
+                .then(cache => {
+                  cache.put(event.request, responseToCache);
+                })
+                .catch(err => {
+                  console.warn('Cache put failed:', err);
+                });
+            }
+            
             return response;
           }
-        );
+        ).catch(err => {
+          console.warn('Fetch failed:', err);
+          return new Response('Network error', {
+            status: 408,
+            headers: { 'Content-Type': 'text/plain' }
+          });
+        });
       })
   );
 });

@@ -80,7 +80,7 @@ export const CONFIG = {
 
     // PWA設定
     PWA: {
-        CACHE_NAME: 'cosmefinder-v1',
+        CACHE_NAME: 'cosmetic-finder-v4',
         CACHE_URLS: [
             '/',
             '/assets/css/style.css',

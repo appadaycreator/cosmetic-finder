@@ -13,6 +13,7 @@ AI_DEVELOPMENT_SPEC.md
 # テストファイル（開発時のみ）
 tests/functional-test-spec.md
 tests/regression-test.js
+tests/ai-refactor-test.js
 
 # システムファイル
 .DS_Store
