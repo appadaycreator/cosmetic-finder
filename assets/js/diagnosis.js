@@ -233,10 +233,8 @@ function selectOption(optionElement) {
     // 回答を保存
     answers[questionId] = value;
     
-    // 次の質問へ
-    setTimeout(() => {
-        proceedToNext();
-    }, 300);
+    // 選択後は自動で次に進まず、Enterキーでの進行を待つ
+    // 自動進行を削除してユーザーの意図的な操作を重視
 }
 
 function proceedToNext() {

@@ -517,4 +517,54 @@ if (totalPages > 1 && elements.pageInfo) {
 - ✅ ページ遷移時の動的更新確認
 - ✅ レスポンシブ表示対応確認
 
+### 診断結果画面進行状況表示修正（v4.1.1追加内容）
+
+#### 修正した問題
+診断結果画面で進行状況バー（4/5など）が表示されたままになっていた問題を修正しました。
+
+#### 実装した修正内容
+
+1. **index.html の displayResult 関数**
+```javascript
+function displayResult(result) {
+    // 進行状況表示を非表示にする
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    if (progressBar && progressBar.parentElement && progressBar.parentElement.parentElement) {
+        progressBar.parentElement.parentElement.style.display = 'none';
+    }
+    // ... 結果表示処理
+}
+```
+
+2. **assets/js/diagnosis.js の showResults 関数**
+```javascript
+function showResults() {
+    // 進行状況表示を非表示にする
+    const progressContainer = document.querySelector('.progress-container, .mb-8:has(.progress-bar)');
+    if (progressContainer) {
+        progressContainer.style.display = 'none';
+    }
+    // ... 結果表示処理
+}
+```
+
+3. **診断再開時の進行状況復元**
+```javascript
+function restartDiagnosis() {
+    // 進行状況表示を再表示
+    const progressContainer = document.querySelector('.progress-container, .mb-8:has(.progress-bar)');
+    if (progressContainer) {
+        progressContainer.style.display = 'block';
+    }
+    // ... 診断リスタート処理
+}
+```
+
+#### 修正結果
+- ✅ 診断結果画面での進行状況バー非表示
+- ✅ 「もう一度診断」時の進行状況表示復元
+- ✅ クリーンな結果画面UI実現
+- ✅ 診断フロー状態管理の改善
+
 最終更新: 2025年1月26日

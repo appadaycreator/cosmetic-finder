@@ -1397,6 +1397,24 @@
                         break;
                 }
             }
+            
+            // 診断画面でのEnterキー進行機能
+            if (e.key === 'Enter' && !document.getElementById('diagnosisPage').classList.contains('hidden')) {
+                // 現在の質問に回答が選択されているかチェック
+                const currentQ = document.getElementById(`question${currentQuestion}`);
+                if (currentQ && !currentQ.classList.contains('hidden')) {
+                    const inputs = currentQ.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked');
+                    if (inputs.length > 0) {
+                        e.preventDefault();
+                        // 次の質問に進む、または診断を完了
+                        if (currentQuestion < totalQuestions) {
+                            nextQuestion();
+                        } else {
+                            submitDiagnosis();
+                        }
+                    }
+                }
+            }
         });
 
         // タッチジェスチャー（スワイプ）サポート
