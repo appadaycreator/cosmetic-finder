@@ -709,5 +709,594 @@
       "皮脂吸収",
       "デトックス"
     ]
+  },
+  "ガラクトミセス培養液": {
+    "safety": 5,
+    "category": "発酵成分",
+    "description": "SK-IIのピテラ™の主成分。肌の透明感とキメを整える",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "整肌",
+      "透明感"
+    ]
+  },
+  "4MSK": {
+    "safety": 4,
+    "category": "美白剤",
+    "description": "資生堂開発の美白有効成分。メラニン生成を抑制",
+    "allergen": false,
+    "functions": [
+      "美白",
+      "メラニン抑制"
+    ]
+  },
+  "m-トラネキサム酸": {
+    "safety": 4,
+    "category": "美白剤",
+    "description": "資生堂の美白有効成分。肌荒れも防ぐ",
+    "allergen": false,
+    "functions": [
+      "美白",
+      "抗炎症"
+    ]
+  },
+  "レシチン": {
+    "safety": 5,
+    "category": "乳化剤",
+    "description": "リポソーム形成に使用。肌への浸透性を高める",
+    "allergen": false,
+    "functions": [
+      "乳化",
+      "浸透促進"
+    ]
+  },
+  "ハトムギエキス": {
+    "safety": 5,
+    "category": "植物エキス",
+    "description": "肌荒れを防ぎ、透明感を与える和漢植物成分",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "抗炎症",
+      "透明感"
+    ]
+  },
+  "トウキエキス": {
+    "safety": 5,
+    "category": "植物エキス",
+    "description": "血行促進と保湿効果のある和漢植物成分",
+    "allergen": false,
+    "functions": [
+      "血行促進",
+      "保湿"
+    ]
+  },
+  "DPG": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "ジプロピレングリコール。さらっとした保湿成分",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "溶剤"
+    ]
+  },
+  "BG": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "ブチレングリコール。低刺激な保湿成分",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "溶剤"
+    ]
+  },
+  "安息香酸ナトリウム": {
+    "safety": 4,
+    "category": "防腐剤",
+    "description": "食品にも使用される安全性の高い防腐剤",
+    "allergen": false,
+    "functions": [
+      "防腐"
+    ]
+  },
+  "ソルビン酸": {
+    "safety": 4,
+    "category": "防腐剤",
+    "description": "天然にも存在する防腐剤",
+    "allergen": false,
+    "functions": [
+      "防腐"
+    ]
+  },
+  "グリチルリチン酸ジカリウム": {
+    "safety": 5,
+    "category": "抗炎症剤",
+    "description": "甘草由来の抗炎症成分。肌荒れを防ぐ",
+    "allergen": false,
+    "functions": [
+      "抗炎症",
+      "鎮静"
+    ]
+  },
+  "グリチルリチン酸2K": {
+    "safety": 5,
+    "category": "抗炎症剤",
+    "description": "グリチルリチン酸ジカリウムの別名",
+    "allergen": false,
+    "functions": [
+      "抗炎症",
+      "鎮静"
+    ]
+  },
+  "ツボクサエキス": {
+    "safety": 5,
+    "category": "鎮静剤",
+    "description": "CICA成分として知られる肌修復成分",
+    "allergen": false,
+    "functions": [
+      "修復",
+      "鎮静",
+      "抗炎症"
+    ]
+  },
+  "カタツムリ分泌液": {
+    "safety": 4,
+    "category": "修復剤",
+    "description": "肌の修復と保湿に効果的な成分",
+    "allergen": true,
+    "functions": [
+      "修復",
+      "保湿"
+    ]
+  },
+  "ビフィズス菌培養溶解質": {
+    "safety": 5,
+    "category": "発酵成分",
+    "description": "肌の善玉菌をサポートする発酵成分",
+    "allergen": false,
+    "functions": [
+      "整肌",
+      "バリア機能"
+    ]
+  },
+  "月下香培養エッセンス": {
+    "safety": 5,
+    "category": "植物エキス",
+    "description": "ソフィーナ独自の保湿成分",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "整肌"
+    ]
+  },
+  "二酸化炭素": {
+    "safety": 5,
+    "category": "血行促進剤",
+    "description": "炭酸による血行促進効果",
+    "allergen": false,
+    "functions": [
+      "血行促進",
+      "浸透促進"
+    ]
+  },
+  "エクトイン": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "極限環境微生物由来の保護成分",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "保護"
+    ]
+  },
+  "プロパンジオール": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "植物由来の保湿成分",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "溶剤"
+    ]
+  },
+  "セラミドNP": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "ヒト型セラミド3。バリア機能強化",
+    "allergen": false,
+    "functions": [
+      "バリア機能",
+      "保湿"
+    ]
+  },
+  "セラミドAP": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "ヒト型セラミド6II。肌を滑らかに",
+    "allergen": false,
+    "functions": [
+      "バリア機能",
+      "保湿"
+    ]
+  },
+  "セラミドEOP": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "ヒト型セラミド1。バリア機能の要",
+    "allergen": false,
+    "functions": [
+      "バリア機能",
+      "保湿"
+    ]
+  },
+  "白色ワセリン": {
+    "safety": 5,
+    "category": "保護剤",
+    "description": "純度の高いワセリン。肌を保護",
+    "allergen": false,
+    "functions": [
+      "保護",
+      "保湿"
+    ]
+  },
+  "馬油": {
+    "safety": 5,
+    "category": "エモリエント",
+    "description": "人の皮脂に近い組成の天然オイル",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "保護"
+    ]
+  },
+  "豆乳発酵液": {
+    "safety": 5,
+    "category": "発酵成分",
+    "description": "イソフラボン含有の保湿成分",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "整肌"
+    ]
+  },
+  "コメ発酵液": {
+    "safety": 5,
+    "category": "発酵成分",
+    "description": "日本酒由来の保湿成分",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "透明感"
+    ]
+  },
+  "酒粕エキス": {
+    "safety": 5,
+    "category": "発酵成分",
+    "description": "美白と保湿効果のある日本酒由来成分",
+    "allergen": false,
+    "functions": [
+      "美白",
+      "保湿"
+    ]
+  },
+  "チャ葉エキス": {
+    "safety": 5,
+    "category": "植物エキス",
+    "description": "緑茶エキス。抗酸化作用",
+    "allergen": false,
+    "functions": [
+      "抗酸化",
+      "抗炎症"
+    ]
+  },
+  "ダマスクバラ花水": {
+    "safety": 5,
+    "category": "芳香水",
+    "description": "ローズウォーター。保湿と香り",
+    "allergen": true,
+    "functions": [
+      "保湿",
+      "香り"
+    ]
+  },
+  "サッカロミセス培養液": {
+    "safety": 5,
+    "category": "発酵成分",
+    "description": "酵母発酵エキス。肌のキメを整える",
+    "allergen": false,
+    "functions": [
+      "整肌",
+      "保湿"
+    ]
+  },
+  "アロエベラ葉エキス": {
+    "safety": 5,
+    "category": "植物エキス",
+    "description": "アロエベラの葉から抽出。鎮静効果",
+    "allergen": false,
+    "functions": [
+      "鎮静",
+      "保湿"
+    ]
+  },
+  "L-アスコルビン酸2-グルコシド": {
+    "safety": 4,
+    "category": "美白剤",
+    "description": "安定型ビタミンC誘導体",
+    "allergen": false,
+    "functions": [
+      "美白",
+      "抗酸化"
+    ]
+  },
+  "イソプロピルメチルフェノール": {
+    "safety": 4,
+    "category": "抗菌剤",
+    "description": "ニキビの原因菌を殺菌",
+    "allergen": false,
+    "functions": [
+      "抗菌",
+      "殺菌"
+    ]
+  },
+  "クロルヘキシジングルコン酸塩液": {
+    "safety": 4,
+    "category": "殺菌剤",
+    "description": "広範囲の細菌に効果的な殺菌成分",
+    "allergen": false,
+    "functions": [
+      "殺菌",
+      "抗菌"
+    ]
+  },
+  "イブプロフェンピコノール": {
+    "safety": 4,
+    "category": "抗炎症剤",
+    "description": "ニキビの炎症を鎮める成分",
+    "allergen": false,
+    "functions": [
+      "抗炎症",
+      "鎮痛"
+    ]
+  },
+  "ε-アミノカプロン酸": {
+    "safety": 4,
+    "category": "抗炎症剤",
+    "description": "肌荒れを防ぐ有効成分",
+    "allergen": false,
+    "functions": [
+      "抗炎症",
+      "止血"
+    ]
+  },
+  "セラミド1": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "ヒト型セラミドEOPの別名",
+    "allergen": false,
+    "functions": [
+      "バリア機能",
+      "保湿"
+    ]
+  },
+  "セラミド2": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "ヒト型セラミドNGの別名",
+    "allergen": false,
+    "functions": [
+      "バリア機能",
+      "保湿"
+    ]
+  },
+  "セラミド3": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "ヒト型セラミドNPの別名",
+    "allergen": false,
+    "functions": [
+      "バリア機能",
+      "保湿"
+    ]
+  },
+  "セラミドNG": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "ヒト型セラミド2。最も多く含まれるセラミド",
+    "allergen": false,
+    "functions": [
+      "バリア機能",
+      "保湿"
+    ]
+  },
+  "モモ葉エキス": {
+    "safety": 5,
+    "category": "植物エキス",
+    "description": "桃の葉エキス。あせもや肌荒れに",
+    "allergen": false,
+    "functions": [
+      "抗炎症",
+      "鎮静"
+    ]
+  },
+  "キシリトール": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "糖アルコール。清涼感のある保湿成分",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "清涼感"
+    ]
+  },
+  "エリスリトール": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "糖アルコール。低刺激な保湿成分",
+    "allergen": false,
+    "functions": [
+      "保湿"
+    ]
+  },
+  "発酵ツバキエキス": {
+    "safety": 5,
+    "category": "発酵成分",
+    "description": "資生堂独自成分。肌の免疫力をサポート",
+    "allergen": false,
+    "functions": [
+      "免疫サポート",
+      "保湿"
+    ]
+  },
+  "レイシエキス": {
+    "safety": 5,
+    "category": "植物エキス",
+    "description": "霊芝エキス。抗酸化作用",
+    "allergen": false,
+    "functions": [
+      "抗酸化",
+      "免疫サポート"
+    ]
+  },
+  "メトキシケイヒ酸エチルヘキシル": {
+    "safety": 4,
+    "category": "日焼け止め",
+    "description": "UVB吸収剤。SPF値に寄与",
+    "allergen": false,
+    "functions": [
+      "UV防御"
+    ]
+  },
+  "ジメチコン": {
+    "safety": 4,
+    "category": "シリコーン",
+    "description": "肌を滑らかにするシリコーン",
+    "allergen": false,
+    "functions": [
+      "皮膜形成",
+      "感触改良"
+    ]
+  },
+  "シクロペンタシロキサン": {
+    "safety": 4,
+    "category": "シリコーン",
+    "description": "揮発性シリコーン。さらっとした使用感",
+    "allergen": false,
+    "functions": [
+      "感触改良",
+      "揮発性"
+    ]
+  },
+  "加水分解コラーゲン": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "低分子化されたコラーゲン",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "皮膜形成"
+    ]
+  },
+  "水溶性コラーゲン": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "水に溶けるコラーゲン",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "皮膜形成"
+    ]
+  },
+  "加水分解ヒアルロン酸": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "低分子ヒアルロン酸。浸透性が高い",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "浸透"
+    ]
+  },
+  "アセチルヒアルロン酸Na": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "スーパーヒアルロン酸。高い保水力",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "密着"
+    ]
+  },
+  "リンゴ果実培養細胞エキス": {
+    "safety": 5,
+    "category": "幹細胞エキス",
+    "description": "植物幹細胞エキス。エイジングケア",
+    "allergen": false,
+    "functions": [
+      "抗老化",
+      "保護"
+    ]
+  },
+  "グルタミン酸": {
+    "safety": 5,
+    "category": "アミノ酸",
+    "description": "肌の天然保湿因子の一つ",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "バリア機能"
+    ]
+  },
+  "プロリン": {
+    "safety": 5,
+    "category": "アミノ酸",
+    "description": "コラーゲンの構成アミノ酸",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "コラーゲンサポート"
+    ]
+  },
+  "グリシン": {
+    "safety": 5,
+    "category": "アミノ酸",
+    "description": "最も小さいアミノ酸。保湿効果",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "pH調整"
+    ]
+  },
+  "アルギニン": {
+    "safety": 5,
+    "category": "アミノ酸",
+    "description": "血行促進とバリア機能強化",
+    "allergen": false,
+    "functions": [
+      "血行促進",
+      "保湿"
+    ]
+  },
+  "ベタイン": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "植物由来の保湿成分",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "刺激緩和"
+    ]
+  },
+  "トリメチルグリシン": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "ベタインの別名",
+    "allergen": false,
+    "functions": [
+      "保湿",
+      "刺激緩和"
+    ]
   }
 }
