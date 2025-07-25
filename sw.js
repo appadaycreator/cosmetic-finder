@@ -1,21 +1,21 @@
 const CACHE_NAME = 'cosmetic-finder-v2';
 const urlsToCache = [
-  '/',
-  '/lp.html',
-  '/products.html',
-  '/how-to-use.html',
-  '/terms.html',
-  '/privacy.html',
-  '/contact.html',
-  '/function.html',
-  '/assets/css/style.css',
-  '/assets/js/main.js',
-  '/assets/js/diagnosis.js',
-  '/assets/js/ingredients.js',
-  '/assets/js/products.js',
-  '/assets/js/i18n.js',
-  '/assets/data/products.json',
-  '/assets/data/ingredients.json'
+  './',
+  './lp.html',
+  './products.html',
+  './how-to-use.html',
+  './terms.html',
+  './privacy.html',
+  './contact.html',
+  './function.html',
+  './assets/css/style.css',
+  './assets/js/main.js',
+  './assets/js/diagnosis.js',
+  './assets/js/ingredients.js',
+  './assets/js/products.js',
+  './assets/js/i18n.js',
+  './assets/data/products.json',
+  './assets/data/ingredients.json'
 ];
 
 self.addEventListener('install', event => {

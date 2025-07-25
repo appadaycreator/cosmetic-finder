@@ -727,7 +727,7 @@
         // PWAサービスワーカー登録
         function registerServiceWorker() {
             if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/sw.js')
+                navigator.serviceWorker.register('./sw.js')
                 .then(registration => log.info('ServiceWorker registered'))
                 .catch(error => log.error('ServiceWorker registration failed', error));
             }
