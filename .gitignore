@@ -5,7 +5,10 @@
 # バックアップファイル
 *-backup.html
 *-refactored.html
+*-ai-friendly.html
+*-original-backup.html
 refactoring-plan.md
+AI_DEVELOPMENT_SPEC.md
 
 # テストファイル（開発時のみ）
 tests/functional-test-spec.md

@@ -3,6 +3,7 @@
 ## プロジェクト概要
 
 コスメファインダーは、肌質診断と成分解析機能を備えた化粧品検索・推奨Webアプリケーションです。
+**v4.0.0 - AI開発フレンドリー版**にて、AI開発に最適化されたアーキテクチャを実装しました。
 
 ## 主要機能
 
@@ -17,10 +18,13 @@
 
 ## 技術スタック
 
-- **フロントエンド**: HTML5, CSS3, JavaScript (ES6+)
-- **データ管理**: LocalStorage, JSON
-- **PWA**: Service Worker, Web App Manifest
+- **フロントエンド**: HTML5, CSS3, JavaScript (ES6+), TailwindCSS
+- **データ管理**: LocalStorage, JSON, Web Crypto API
+- **PWA**: Service Worker, Web App Manifest, Web Push API
 - **パフォーマンス**: デバウンス検索、ページネーション、キャッシュ最適化
+- **アーキテクチャ**: AI開発フレンドリー設計、モジュール化、関数型プログラミング原則
+- **型安全性**: JSDocによる型定義、Result型パターン
+- **コード品質**: 小ファイル分割（200行以内）、単一責任原則、純粋関数
 
 ## 開発時の注意事項
 
