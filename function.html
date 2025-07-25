@@ -123,7 +123,7 @@
                     <ul>
                         <li>オフライン対応（Service Worker）</li>
                         <li>ホーム画面への追加</li>
-                        <li>プッシュ通知（将来実装）</li>
+                        <li>プッシュ通知（実装済み）</li>
                         <li>バックグラウンド同期</li>
                     </ul>
 
@@ -139,9 +139,9 @@
                     <h4>機能詳細</h4>
                     <ul>
                         <li>ローカルストレージでのデータ保存</li>
-                        <li>データのエクスポート/インポート</li>
+                        <li>データのエクスポート/インポート（実装済み）</li>
                         <li>プライバシー設定</li>
-                        <li>データの暗号化（将来実装）</li>
+                        <li>データの暗号化（実装済み）</li>
                     </ul>
 
                     <h4>実装状況</h4>
@@ -158,8 +158,8 @@
                         <li>WCAG 2.1 AA準拠</li>
                         <li>キーボードナビゲーション</li>
                         <li>スクリーンリーダー対応</li>
-                        <li>高コントラストモード</li>
-                        <li>文字サイズ調整</li>
+                        <li>高コントラストモード（実装済み）</li>
+                        <li>文字サイズ調整（実装済み）</li>
                     </ul>
 
                     <h4>実装状況</h4>
@@ -244,13 +244,13 @@
                     <h4>概要</h4>
                     <p>今後実装予定の機能リスト</p>
                     
-                    <h4>優先度：高</h4>
+                    <h4>優先度：高（実装済み）</h4>
                     <ul>
-                        <li><strong>データのエクスポート/インポート機能</strong> - 診断結果や履歴をファイルとして保存・復元</li>
-                        <li><strong>プッシュ通知</strong> - 新製品やキャンペーン情報の通知</li>
-                        <li><strong>データの暗号化</strong> - ローカルストレージ内のセンシティブ情報の保護</li>
-                        <li><strong>高コントラストモード</strong> - 視覚障害者向けの表示モード</li>
-                        <li><strong>文字サイズ調整機能</strong> - ユーザビリティ向上のための可変フォントサイズ</li>
+                        <li><strong>データのエクスポート/インポート機能</strong> - 診断結果や履歴をファイルとして保存・復元 <span class="status implemented">実装済み</span></li>
+                        <li><strong>プッシュ通知</strong> - 新製品やキャンペーン情報の通知 <span class="status implemented">実装済み</span></li>
+                        <li><strong>データの暗号化</strong> - ローカルストレージ内のセンシティブ情報の保護 <span class="status implemented">実装済み</span></li>
+                        <li><strong>高コントラストモード</strong> - 視覚障害者向けの表示モード <span class="status implemented">実装済み</span></li>
+                        <li><strong>文字サイズ調整機能</strong> - ユーザビリティ向上のための可変フォントサイズ <span class="status implemented">実装済み</span></li>
                     </ul>
 
                     <h4>優先度：中</h4>
@@ -273,6 +273,25 @@
 
                     <h4>実装状況</h4>
                     <p class="status pending">未実装</p>
+                </div>
+
+                <div class="section">
+                    <h3>13. 設定管理機能</h3>
+                    <h4>概要</h4>
+                    <p>ユーザー設定を一元管理する機能</p>
+                    
+                    <h4>機能詳細</h4>
+                    <ul>
+                        <li>データのエクスポート/インポート（JSON形式）</li>
+                        <li>Web Push通知の管理</li>
+                        <li>データ暗号化の切り替え（Web Crypto API使用）</li>
+                        <li>高コントラストモードの切り替え</li>
+                        <li>文字サイズの3段階調整（小・中・大）</li>
+                        <li>設定の自動保存と復元</li>
+                    </ul>
+
+                    <h4>実装状況</h4>
+                    <p class="status implemented">実装済み（新規）</p>
                 </div>
 
                 <div class="update-info">

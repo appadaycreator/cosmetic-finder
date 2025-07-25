@@ -140,6 +140,7 @@
                     <button onclick="showPage('diagnosis')" class="text-gray-700 hover:text-pink-500 px-3 py-2 rounded-md font-medium transition-colors" data-ja="診断開始" data-en="Start Diagnosis">診断開始</button>
                     <button onclick="showPage('usage')" class="text-gray-700 hover:text-pink-500 px-3 py-2 rounded-md font-medium transition-colors" data-ja="使い方" data-en="How to Use">使い方</button>
                     <button onclick="showPage('history')" class="text-gray-700 hover:text-pink-500 px-3 py-2 rounded-md font-medium transition-colors" data-ja="履歴" data-en="History">履歴</button>
+                    <a href="settings.html" class="text-gray-700 hover:text-pink-500 px-3 py-2 rounded-md font-medium transition-colors" data-ja="設定" data-en="Settings">設定</a>
                 </nav>
 
                 <!-- ユーティリティボタン -->
@@ -158,6 +159,11 @@
                         <option value="1.25">大</option>
                         <option value="1.5">特大</option>
                     </select>
+                    
+                    <!-- 高コントラストモード -->
+                    <button id="highContrastBtn" onclick="toggleHighContrast()" class="text-sm border rounded px-2 py-1 hover:bg-gray-100" title="高コントラストモード">
+                        <i class="fas fa-adjust"></i>
+                    </button>
 
                     <!-- モバイルメニューボタン -->
                     <button class="md:hidden" onclick="toggleMobileSidebar()">
@@ -182,6 +188,7 @@
                     <button onclick="showPage('terms')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="📄 利用規約" data-en="📄 Terms">📄 利用規約</button>
                     <button onclick="showPage('privacy')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="🔒 プライバシー" data-en="🔒 Privacy">🔒 プライバシー</button>
                     <button onclick="showPage('contact')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="✉️ お問い合わせ" data-en="✉️ Contact">✉️ お問い合わせ</button>
+                    <a href="settings.html" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="⚙️ 設定" data-en="⚙️ Settings">⚙️ 設定</a>
                 </nav>
             </div>
         </aside>
@@ -203,6 +210,7 @@
                     <button onclick="showPage('terms'); toggleMobileSidebar();" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="📄 利用規約" data-en="📄 Terms">📄 利用規約</button>
                     <button onclick="showPage('privacy'); toggleMobileSidebar();" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="🔒 プライバシー" data-en="🔒 Privacy">🔒 プライバシー</button>
                     <button onclick="showPage('contact'); toggleMobileSidebar();" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="✉️ お問い合わせ" data-en="✉️ Contact">✉️ お問い合わせ</button>
+                    <a href="settings.html" onclick="toggleMobileSidebar();" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="⚙️ 設定" data-en="⚙️ Settings">⚙️ 設定</a>
                 </nav>
             </div>
         </div>
@@ -721,6 +729,9 @@
             // 言語設定を適用
             applyLanguage();
             
+            // 高コントラストモードの初期化
+            initHighContrast();
+            
             log.info('Application initialized successfully');
         }
 
@@ -825,6 +836,40 @@
             document.documentElement.style.setProperty('--font-scale', scale);
             localStorage.setItem('cosmefinder_fontsize', scale);
             log.info('Font size changed', scale);
+        }
+        
+        // 高コントラストモード切り替え
+        function toggleHighContrast() {
+            const body = document.body;
+            const btn = document.getElementById('highContrastBtn');
+            const isEnabled = body.classList.toggle('high-contrast');
+            
+            // 設定を保存
+            localStorage.setItem('cosmefinder_highcontrast', isEnabled);
+            
+            // ボタンのスタイルを更新
+            if (isEnabled) {
+                btn.classList.add('bg-gray-800', 'text-white');
+                btn.classList.remove('hover:bg-gray-100');
+            } else {
+                btn.classList.remove('bg-gray-800', 'text-white');
+                btn.classList.add('hover:bg-gray-100');
+            }
+            
+            log.info('High contrast mode', isEnabled ? 'enabled' : 'disabled');
+        }
+        
+        // 高コントラストモードの初期化
+        function initHighContrast() {
+            const isEnabled = localStorage.getItem('cosmefinder_highcontrast') === 'true';
+            if (isEnabled) {
+                document.body.classList.add('high-contrast');
+                const btn = document.getElementById('highContrastBtn');
+                if (btn) {
+                    btn.classList.add('bg-gray-800', 'text-white');
+                    btn.classList.remove('hover:bg-gray-100');
+                }
+            }
         }
 
         // 診断ロジック

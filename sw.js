@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cosmetic-finder-v2';
+const CACHE_NAME = 'cosmetic-finder-v3';
 const urlsToCache = [
   './',
   './lp.html',
@@ -8,12 +8,14 @@ const urlsToCache = [
   './privacy.html',
   './contact.html',
   './function.html',
+  './settings.html',
   './assets/css/style.css',
   './assets/js/main.js',
   './assets/js/diagnosis.js',
   './assets/js/ingredients.js',
   './assets/js/products.js',
   './assets/js/i18n.js',
+  './assets/js/settings.js',
   './assets/data/products.json',
   './assets/data/ingredients.json'
 ];
@@ -66,3 +68,65 @@ self.addEventListener('activate', event => {
     })
   );
 });
+
+// Push notification event listeners
+self.addEventListener('push', event => {
+  const options = {
+    body: event.data ? event.data.text() : 'CosmeFinderからの新着情報があります',
+    icon: '/assets/icons/icon-192.png',
+    badge: '/assets/icons/icon-192.png',
+    vibrate: [200, 100, 200],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: '1'
+    },
+    actions: [
+      {
+        action: 'explore',
+        title: '詳しく見る',
+        icon: '/assets/icons/icon-192.png'
+      },
+      {
+        action: 'close',
+        title: '閉じる',
+        icon: '/assets/icons/icon-192.png'
+      }
+    ]
+  };
+
+  event.waitUntil(
+    self.registration.showNotification('CosmeFinder', options)
+  );
+});
+
+// Notification click event
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+
+  if (event.action === 'explore') {
+    // Open the app and navigate to a specific page
+    event.waitUntil(
+      clients.openWindow('/')
+    );
+  } else if (event.action === 'close') {
+    // Just close the notification
+    event.notification.close();
+  } else {
+    // Default action - open the app
+    event.waitUntil(
+      clients.openWindow('/')
+    );
+  }
+});
+
+// Background sync for offline functionality
+self.addEventListener('sync', event => {
+  if (event.tag === 'sync-data') {
+    event.waitUntil(syncData());
+  }
+});
+
+async function syncData() {
+  // Implement data synchronization logic here
+  console.log('Background sync triggered');
+}

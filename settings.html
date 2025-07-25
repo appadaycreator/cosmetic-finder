@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>設定 - CosmeFinder</title>
+    <meta name="description" content="CosmeFinderの設定ページ。データのエクスポート/インポート、通知設定、表示設定などをカスタマイズできます">
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="min-h-screen bg-gray-50">
+        <div class="container mx-auto px-4 py-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-8">設定</h1>
+            
+            <!-- データ管理セクション -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-xl font-semibold mb-4">
+                    <i class="fas fa-database mr-2 text-pink-500"></i>
+                    データ管理
+                </h2>
+                
+                <div class="space-y-4">
+                    <!-- エクスポート -->
+                    <div class="border rounded-lg p-4">
+                        <h3 class="font-semibold mb-2">データのエクスポート</h3>
+                        <p class="text-sm text-gray-600 mb-3">診断結果、履歴、お気に入りなどのデータをファイルとして保存します</p>
+                        <button id="exportDataBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors">
+                            <i class="fas fa-download mr-2"></i>データをエクスポート
+                        </button>
+                    </div>
+                    
+                    <!-- インポート -->
+                    <div class="border rounded-lg p-4">
+                        <h3 class="font-semibold mb-2">データのインポート</h3>
+                        <p class="text-sm text-gray-600 mb-3">以前にエクスポートしたデータファイルを読み込んで復元します</p>
+                        <input type="file" id="importFileInput" accept=".json" class="hidden">
+                        <button id="importDataBtn" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors">
+                            <i class="fas fa-upload mr-2"></i>データをインポート
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 通知設定セクション -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-xl font-semibold mb-4">
+                    <i class="fas fa-bell mr-2 text-pink-500"></i>
+                    通知設定
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-semibold">プッシュ通知</h3>
+                            <p class="text-sm text-gray-600">新機能やお得な情報をお知らせします</p>
+                        </div>
+                        <button id="notificationToggle" class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors">
+                            <span class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-1"></span>
+                        </button>
+                    </div>
+                    
+                    <button id="testNotificationBtn" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition-colors">
+                        <i class="fas fa-paper-plane mr-2"></i>テスト通知を送信
+                    </button>
+                </div>
+            </div>
+            
+            <!-- 表示設定セクション -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-xl font-semibold mb-4">
+                    <i class="fas fa-paint-brush mr-2 text-pink-500"></i>
+                    表示設定
+                </h2>
+                
+                <div class="space-y-4">
+                    <!-- 高コントラストモード -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-semibold">高コントラストモード</h3>
+                            <p class="text-sm text-gray-600">視認性を高めるための表示モード</p>
+                        </div>
+                        <button id="highContrastToggle" class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors">
+                            <span class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-1"></span>
+                        </button>
+                    </div>
+                    
+                    <!-- 文字サイズ設定 -->
+                    <div>
+                        <h3 class="font-semibold mb-2">文字サイズ</h3>
+                        <div class="flex space-x-2">
+                            <button data-size="small" class="font-size-btn px-4 py-2 border rounded-lg hover:bg-gray-100 transition-colors">
+                                <span class="text-sm">小</span>
+                            </button>
+                            <button data-size="medium" class="font-size-btn px-4 py-2 border rounded-lg hover:bg-gray-100 transition-colors bg-pink-100 border-pink-300">
+                                <span class="text-base">中</span>
+                            </button>
+                            <button data-size="large" class="font-size-btn px-4 py-2 border rounded-lg hover:bg-gray-100 transition-colors">
+                                <span class="text-lg">大</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- セキュリティ設定セクション -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-xl font-semibold mb-4">
+                    <i class="fas fa-lock mr-2 text-pink-500"></i>
+                    セキュリティ設定
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-semibold">データ暗号化</h3>
+                            <p class="text-sm text-gray-600">ローカルストレージのデータを暗号化して保存</p>
+                        </div>
+                        <button id="encryptionToggle" class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors">
+                            <span class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-1"></span>
+                        </button>
+                    </div>
+                    
+                    <div id="encryptionStatus" class="text-sm text-gray-600 p-3 bg-gray-100 rounded-lg hidden">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        <span id="encryptionStatusText">暗号化は無効です</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 戻るボタン -->
+            <div class="text-center">
+                <a href="index.html" class="inline-block bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-lg transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>ホームに戻る
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 通知許可モーダル -->
+    <div id="notificationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-6 max-w-sm w-full mx-4">
+            <h3 class="text-lg font-semibold mb-3">通知の許可</h3>
+            <p class="text-gray-600 mb-4">CosmeFinderからの通知を受け取るには、ブラウザの通知を許可してください。</p>
+            <div class="flex space-x-3">
+                <button id="allowNotificationBtn" class="flex-1 bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg transition-colors">
+                    許可する
+                </button>
+                <button id="cancelNotificationBtn" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded-lg transition-colors">
+                    キャンセル
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/settings.js"></script>
+</body>
+</html>
