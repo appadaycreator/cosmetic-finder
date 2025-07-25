@@ -120,6 +120,48 @@ node tests/ui-test.js
 3. すべてのリンクが正しく機能することを確認
 4. オフライン動作を確認
 
+### GitHub Pages固有の対応
+
+#### Service Worker 404エラーの解決
+
+GitHub Pagesでは、リポジトリ名がサブディレクトリ（例：`/cosmetic-finder/`）として扱われるため、絶対パス（`/sw.js`）では404エラーが発生します。以下の対応を実施済み：
+
+1. **Service Worker登録パスの修正**
+   ```javascript
+   // 修正前
+   navigator.serviceWorker.register('/sw.js')
+   
+   // 修正後（相対パス）
+   navigator.serviceWorker.register('./sw.js')
+   ```
+
+2. **manifest.jsonのパス修正**
+   ```json
+   {
+     "start_url": "./",
+     "scope": "./",
+     "icons": [
+       {"src": "./assets/icons/icon-192.png"},
+       {"src": "./assets/icons/icon-512.png"}
+     ],
+     "serviceworker": {
+       "src": "./sw.js",
+       "scope": "./"
+     }
+   }
+   ```
+
+3. **Service Workerキャッシュパスの修正**
+   ```javascript
+   const urlsToCache = [
+     './',          // '/' から './'' に変更
+     './lp.html',   // '/lp.html' から './lp.html' に変更
+     // その他のパスも同様に相対パスに修正
+   ];
+   ```
+
+この修正により、GitHub Pagesのサブディレクトリ環境でもService Workerが正常に動作するようになります。
+
 ### 今後の拡張予定
 
 1. **バックエンドAPI統合**: 製品データの動的取得
@@ -141,4 +183,4 @@ node tests/ui-test.js
 3. 診断質問を追加する場合は、スコアリングアルゴリズムも調整
 4. パフォーマンスが気になる場合は、製品表示数を調整（現在12件/ページ）
 
-最終更新: 2025年1月25日
+最終更新: 2025年7月25日
