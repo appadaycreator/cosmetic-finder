@@ -144,15 +144,15 @@
                 </nav>
 
                 <!-- ユーティリティボタン -->
-                <div class="flex items-center space-x-4">
-                    <!-- 言語切替 -->
-                    <select id="languageSelect" class="text-sm border rounded px-2 py-1" onchange="changeLanguage()">
+                <div class="flex items-center space-x-2 md:space-x-4">
+                    <!-- 言語切替（PC用） -->
+                    <select id="languageSelect" class="hidden md:block text-sm border rounded px-2 py-1" onchange="changeLanguage()">
                         <option value="ja">日本語</option>
                         <option value="en">English</option>
                     </select>
                     
-                    <!-- フォントサイズ調整 -->
-                    <select id="fontSizeSelect" class="text-sm border rounded px-2 py-1" onchange="changeFontSize()">
+                    <!-- フォントサイズ調整（PC用） -->
+                    <select id="fontSizeSelect" class="hidden md:block text-sm border rounded px-2 py-1" onchange="changeFontSize()">
                         <option value="0.75">極小</option>
                         <option value="0.875">小</option>
                         <option value="1" selected>標準</option>
@@ -161,12 +161,12 @@
                     </select>
                     
                     <!-- 高コントラストモード -->
-                    <button id="highContrastBtn" onclick="toggleHighContrast()" class="text-sm border rounded px-2 py-1 hover:bg-gray-100" title="高コントラストモード">
+                    <button id="highContrastBtn" onclick="toggleHighContrast()" class="text-sm border rounded p-2 hover:bg-gray-100" title="高コントラストモード">
                         <i class="fas fa-adjust"></i>
                     </button>
 
                     <!-- モバイルメニューボタン -->
-                    <button class="md:hidden" onclick="toggleMobileSidebar()">
+                    <button class="md:hidden p-2" onclick="toggleMobileSidebar()">
                         <i class="fas fa-bars text-xl text-gray-700"></i>
                     </button>
                 </div>
@@ -214,6 +214,27 @@
                     <button onclick="showPage('contact'); toggleMobileSidebar();" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="✉️ お問い合わせ" data-en="✉️ Contact">✉️ お問い合わせ</button>
                     <a href="settings.html" onclick="toggleMobileSidebar();" class="block w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="⚙️ 設定" data-en="⚙️ Settings">⚙️ 設定</a>
                 </nav>
+                
+                <!-- モバイル用設定オプション -->
+                <div class="mt-6 pt-6 border-t border-gray-200 space-y-4 md:hidden">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">言語 / Language</label>
+                        <select id="languageSelectMobile" class="w-full text-sm border rounded px-3 py-2" onchange="changeLanguageMobile()">
+                            <option value="ja">日本語</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">文字サイズ</label>
+                        <select id="fontSizeSelectMobile" class="w-full text-sm border rounded px-3 py-2" onchange="changeFontSizeMobile()">
+                            <option value="0.75">極小</option>
+                            <option value="0.875">小</option>
+                            <option value="1" selected>標準</option>
+                            <option value="1.25">大</option>
+                            <option value="1.5">特大</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -838,6 +859,38 @@
             document.documentElement.style.setProperty('--font-scale', scale);
             localStorage.setItem('cosmefinder_fontsize', scale);
             log.info('Font size changed', scale);
+        }
+
+        // モバイル用言語切替
+        function changeLanguageMobile() {
+            const select = document.getElementById('languageSelectMobile');
+            currentLanguage = select.value;
+            localStorage.setItem('cosmefinder_language', currentLanguage);
+            applyLanguage();
+            
+            // PC版のセレクトも同期
+            const pcSelect = document.getElementById('languageSelect');
+            if (pcSelect) {
+                pcSelect.value = currentLanguage;
+            }
+            
+            log.info('Language changed (mobile)', currentLanguage);
+        }
+
+        // モバイル用フォントサイズ変更
+        function changeFontSizeMobile() {
+            const select = document.getElementById('fontSizeSelectMobile');
+            const scale = parseFloat(select.value);
+            document.documentElement.style.setProperty('--font-scale', scale);
+            localStorage.setItem('cosmefinder_fontsize', scale);
+            
+            // PC版のセレクトも同期
+            const pcSelect = document.getElementById('fontSizeSelect');
+            if (pcSelect) {
+                pcSelect.value = scale;
+            }
+            
+            log.info('Font size changed (mobile)', scale);
         }
         
         // 高コントラストモード切り替え
