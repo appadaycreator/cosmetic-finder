@@ -381,6 +381,17 @@ GitHub Pagesでは、リポジトリ名がサブディレクトリ（例：`/cos
 
 ## 最近の更新履歴
 
+### v4.1.1 (2025-01-26) - ページネーション表示改善版
+- **ページネーション表示の改善**
+  - 製品一覧ページに現在ページ/総ページ数表示を追加（例: 4/5ページ）
+  - 検索結果表示エリアにページ情報をリアルタイム表示
+  - 1ページのみの場合は非表示にして表示を最適化
+  - ページ遷移時の自動更新機能実装
+- **ユーザビリティ向上**
+  - レスポンシブ対応でモバイル環境での視認性向上
+  - HTMLに`pageInfo`要素追加、JavaScript連携強化
+  - DOM要素の適切な初期化と管理
+
 ### v4.1.0 (2025-01-26) - Service Worker最適化版
 - **Service Workerキャッシュエラー完全修正**
   - chrome-extension URLなど無効スキームのキャッシュ回避実装
@@ -459,5 +470,51 @@ if (requestUrl.origin === currentUrl.origin) {
 - ✅ GitHub Pages環境での動作確認完了  
 - ✅ コンソールエラー完全解消
 - ✅ PWA機能正常動作確認
+
+### ページネーション表示改善の詳細（v4.1.1追加内容）
+
+#### 実装した改善点
+
+1. **HTMLテンプレートの修正**
+```html
+<div class="results-summary text-sm text-gray-600">
+    <span id="resultsCount">0</span>件の製品
+    <span id="pageInfo" class="ml-4"></span>
+</div>
+```
+
+2. **JavaScript機能の追加**
+```javascript
+// DOM要素にpageInfo追加
+const elements = {
+    // ... 既存要素
+    pageInfo: null,
+    // ...
+};
+
+// ページ情報更新ロジック
+const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+if (totalPages > 1 && elements.pageInfo) {
+    elements.pageInfo.textContent = `(${currentPage}/${totalPages}ページ)`;
+} else if (elements.pageInfo) {
+    elements.pageInfo.textContent = '';
+}
+```
+
+3. **表示条件の最適化**
+- 総ページ数が1ページの場合：ページ情報を非表示
+- 複数ページの場合：「(現在ページ/総ページ数ページ)」形式で表示
+- ページ遷移時のリアルタイム更新
+
+#### 技術的な特徴
+- **レスポンシブ対応**: TailwindCSSの`ml-4`クラスでスペーシング調整
+- **動的更新**: ページ遷移、フィルタリング、検索時に自動更新
+- **DOM管理**: 適切な要素参照と初期化処理
+
+#### 検証結果
+- ✅ HTML要素の追加完了
+- ✅ JavaScript機能実装完了
+- ✅ ページ遷移時の動的更新確認
+- ✅ レスポンシブ表示対応確認
 
 最終更新: 2025年1月26日

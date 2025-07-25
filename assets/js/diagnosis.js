@@ -276,6 +276,12 @@ function showResults() {
     const diagnosisContent = document.getElementById('diagnosis-content');
     if (!diagnosisContent) return;
     
+    // 進行状況表示を非表示にする
+    const progressContainer = document.querySelector('.progress-container, .mb-8:has(.progress-bar)');
+    if (progressContainer) {
+        progressContainer.style.display = 'none';
+    }
+    
     // 診断結果の計算
     const result = calculateDiagnosisResult(answers);
     
@@ -508,6 +514,13 @@ async function viewRecommendedProducts() {
 function restartDiagnosis() {
     currentQuestionIndex = 0;
     answers = {};
+    
+    // 進行状況表示を再表示
+    const progressContainer = document.querySelector('.progress-container, .mb-8:has(.progress-bar)');
+    if (progressContainer) {
+        progressContainer.style.display = 'block';
+    }
+    
     showQuestion();
 }
 

@@ -1141,6 +1141,13 @@
         }
 
         function displayResult(result) {
+            // 進行状況表示を非表示にする
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            if (progressBar && progressBar.parentElement && progressBar.parentElement.parentElement) {
+                progressBar.parentElement.parentElement.style.display = 'none';
+            }
+            
             const resultContainer = document.getElementById('resultContent');
             
             let html = `
@@ -1210,6 +1217,12 @@
         function resetDiagnosis() {
             currentQuestion = 1;
             diagnosisData = {};
+            
+            // 進行状況表示を再表示
+            const progressBar = document.getElementById('progressBar');
+            if (progressBar && progressBar.parentElement && progressBar.parentElement.parentElement) {
+                progressBar.parentElement.parentElement.style.display = 'block';
+            }
             
             // 全質問を非表示
             document.querySelectorAll('.question').forEach(q => q.classList.add('hidden'));
