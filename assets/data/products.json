@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "ナチュラルモイスチャーローション",
+    "brand": "コスメブランドA",
+    "category": "化粧水",
+    "price": 2500,
+    "skinTypes": ["dry", "normal", "sensitive"],
+    "description": "天然由来成分で作られた高保湿化粧水。敏感肌の方にも安心してお使いいただけます。",
+    "ingredients": ["水", "グリセリン", "ヒアルロン酸", "セラミド", "アロエベラ"],
+    "rating": 4.5,
+    "reviews": 234
+  },
+  {
+    "id": 2,
+    "name": "オイルコントロールセラム",
+    "brand": "スキンケアラボ",
+    "category": "美容液",
+    "price": 3800,
+    "skinTypes": ["oily", "combination"],
+    "description": "皮脂バランスを整える美容液。毛穴の目立ちにくい肌へ導きます。",
+    "ingredients": ["水", "ナイアシンアミド", "サリチル酸", "ティーツリーオイル"],
+    "rating": 4.2,
+    "reviews": 156
+  },
+  {
+    "id": 3,
+    "name": "エイジングケアクリーム",
+    "brand": "プレミアムケア",
+    "category": "クリーム",
+    "price": 5600,
+    "skinTypes": ["dry", "normal", "mature"],
+    "description": "レチノール配合でシワ・たるみにアプローチ。ハリのある肌へ。",
+    "ingredients": ["水", "レチノール", "コラーゲン", "ペプチド", "シアバター"],
+    "rating": 4.7,
+    "reviews": 342
+  },
+  {
+    "id": 4,
+    "name": "センシティブクレンジング",
+    "brand": "ジェントルケア",
+    "category": "クレンジング",
+    "price": 1800,
+    "skinTypes": ["sensitive", "dry", "normal"],
+    "description": "肌に優しいミルクタイプのクレンジング。メイクをしっかり落としながら潤いを保ちます。",
+    "ingredients": ["水", "スクワラン", "グリセリン", "セラミド"],
+    "rating": 4.4,
+    "reviews": 189
+  },
+  {
+    "id": 5,
+    "name": "ブライトニングエッセンス",
+    "brand": "ホワイトラボ",
+    "category": "美容液",
+    "price": 4200,
+    "skinTypes": ["all"],
+    "description": "ビタミンC誘導体配合で透明感のある肌へ。シミ・くすみが気になる方に。",
+    "ingredients": ["水", "ビタミンC誘導体", "アルブチン", "ナイアシンアミド"],
+    "rating": 4.3,
+    "reviews": 267
+  },
+  {
+    "id": 6,
+    "name": "ハイドレーティングマスク",
+    "brand": "モイスチャープラス",
+    "category": "フェイスマスク",
+    "price": 3000,
+    "skinTypes": ["dry", "normal"],
+    "description": "週2-3回の集中保湿ケア。乾燥による小じわを目立たなくします。",
+    "ingredients": ["水", "ヒアルロン酸", "コラーゲン", "セラミド", "アロエベラ"],
+    "rating": 4.6,
+    "reviews": 198
+  },
+  {
+    "id": 7,
+    "name": "ポアミニマイザー",
+    "brand": "クリアスキン",
+    "category": "美容液",
+    "price": 3200,
+    "skinTypes": ["oily", "combination"],
+    "description": "毛穴の開きを目立たなくする専用美容液。なめらかな肌質へ。",
+    "ingredients": ["水", "ナイアシンアミド", "サリチル酸", "緑茶エキス"],
+    "rating": 4.1,
+    "reviews": 145
+  },
+  {
+    "id": 8,
+    "name": "UVプロテクトクリーム",
+    "brand": "サンケアプロ",
+    "category": "日焼け止め",
+    "price": 2800,
+    "skinTypes": ["all"],
+    "description": "SPF50+ PA++++の高い紫外線防御力。白浮きしない軽いテクスチャー。",
+    "ingredients": ["水", "酸化亜鉛", "酸化チタン", "ヒアルロン酸", "ビタミンE"],
+    "rating": 4.5,
+    "reviews": 423
+  },
+  {
+    "id": 9,
+    "name": "ナイトリペアセラム",
+    "brand": "リカバリーケア",
+    "category": "美容液",
+    "price": 4800,
+    "skinTypes": ["dry", "normal", "mature"],
+    "description": "寝ている間に肌を集中補修。翌朝の肌が変わります。",
+    "ingredients": ["水", "ペプチド", "セラミド", "スクワラン", "ビタミンE"],
+    "rating": 4.8,
+    "reviews": 301
+  },
+  {
+    "id": 10,
+    "name": "ミネラルファンデーション",
+    "brand": "ナチュラルメイク",
+    "category": "ファンデーション",
+    "price": 3500,
+    "skinTypes": ["sensitive", "normal"],
+    "description": "肌に優しいミネラル成分100%。自然なカバー力で素肌感を演出。",
+    "ingredients": ["マイカ", "酸化チタン", "酸化鉄", "酸化亜鉛"],
+    "rating": 4.4,
+    "reviews": 256
+  }
+]

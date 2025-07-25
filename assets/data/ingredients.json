@@ -1,0 +1,212 @@
+{
+  "水": {
+    "safety": 5,
+    "category": "溶剤",
+    "description": "最も一般的な溶剤。すべての肌タイプに安全",
+    "allergen": false,
+    "functions": ["溶剤", "基剤"]
+  },
+  "グリセリン": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "肌に潤いを与える優れた保湿成分",
+    "allergen": false,
+    "functions": ["保湿", "柔軟化"]
+  },
+  "ヒアルロン酸": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "高い保水力を持つ保湿成分。1gで6Lの水を保持",
+    "allergen": false,
+    "functions": ["保湿", "肌のハリ"]
+  },
+  "セラミド": {
+    "safety": 5,
+    "category": "保湿剤",
+    "description": "肌のバリア機能をサポートする重要な成分",
+    "allergen": false,
+    "functions": ["バリア機能", "保湿"]
+  },
+  "コラーゲン": {
+    "safety": 4,
+    "category": "保湿剤",
+    "description": "肌にハリと弾力を与える成分",
+    "allergen": false,
+    "functions": ["保湿", "ハリ"]
+  },
+  "ビタミンC": {
+    "safety": 4,
+    "category": "抗酸化剤",
+    "description": "美白効果とコラーゲン生成促進",
+    "allergen": false,
+    "functions": ["美白", "抗酸化"]
+  },
+  "ビタミンC誘導体": {
+    "safety": 4,
+    "category": "美白剤",
+    "description": "安定化されたビタミンC。肌への浸透性が高い",
+    "allergen": false,
+    "functions": ["美白", "抗酸化"]
+  },
+  "レチノール": {
+    "safety": 3,
+    "category": "抗老化",
+    "description": "シワ改善に効果的だが刺激性があるため注意が必要",
+    "allergen": false,
+    "functions": ["アンチエイジング", "細胞活性化"]
+  },
+  "エタノール": {
+    "safety": 3,
+    "category": "溶剤",
+    "description": "清涼感を与えるが乾燥を招く可能性がある",
+    "allergen": false,
+    "functions": ["収れん", "清涼感"]
+  },
+  "パラベン": {
+    "safety": 3,
+    "category": "防腐剤",
+    "description": "製品の保存性を高めるが、敏感肌には刺激となる場合がある",
+    "allergen": true,
+    "functions": ["防腐", "保存性向上"]
+  },
+  "香料": {
+    "safety": 2,
+    "category": "香料",
+    "description": "アレルギーを引き起こす可能性が高い",
+    "allergen": true,
+    "functions": ["香り付け"]
+  },
+  "着色料": {
+    "safety": 2,
+    "category": "着色剤",
+    "description": "見た目を良くするが刺激の可能性がある",
+    "allergen": true,
+    "functions": ["着色"]
+  },
+  "フェノキシエタノール": {
+    "safety": 3,
+    "category": "防腐剤",
+    "description": "パラベンの代替防腐剤。比較的低刺激",
+    "allergen": false,
+    "functions": ["防腐"]
+  },
+  "ナイアシンアミド": {
+    "safety": 5,
+    "category": "美白剤",
+    "description": "肌のトーンを整え、毛穴を目立たなくする",
+    "allergen": false,
+    "functions": ["美白", "毛穴ケア", "抗炎症"]
+  },
+  "アロエベラ": {
+    "safety": 5,
+    "category": "鎮静剤",
+    "description": "肌を落ち着かせる天然成分",
+    "allergen": false,
+    "functions": ["鎮静", "保湿", "抗炎症"]
+  },
+  "ティーツリーオイル": {
+    "safety": 3,
+    "category": "抗菌剤",
+    "description": "ニキビケアに効果的だが濃度に注意",
+    "allergen": true,
+    "functions": ["抗菌", "抗炎症"]
+  },
+  "サリチル酸": {
+    "safety": 3,
+    "category": "角質除去",
+    "description": "毛穴の詰まりを改善。敏感肌には刺激となる場合がある",
+    "allergen": false,
+    "functions": ["角質除去", "毛穴ケア"]
+  },
+  "尿素": {
+    "safety": 4,
+    "category": "保湿剤",
+    "description": "角質を柔らかくし、保湿効果もある",
+    "allergen": false,
+    "functions": ["保湿", "角質軟化"]
+  },
+  "スクワラン": {
+    "safety": 5,
+    "category": "エモリエント",
+    "description": "肌になじみやすく、べたつかない保湿成分",
+    "allergen": false,
+    "functions": ["保湿", "柔軟化"]
+  },
+  "シアバター": {
+    "safety": 5,
+    "category": "エモリエント",
+    "description": "濃厚な保湿効果。乾燥肌に最適",
+    "allergen": false,
+    "functions": ["保湿", "保護"]
+  },
+  "ペプチド": {
+    "safety": 5,
+    "category": "抗老化",
+    "description": "コラーゲン生成を促進し、肌のハリを改善",
+    "allergen": false,
+    "functions": ["アンチエイジング", "ハリ"]
+  },
+  "アルブチン": {
+    "safety": 4,
+    "category": "美白剤",
+    "description": "メラニン生成を抑制する美白成分",
+    "allergen": false,
+    "functions": ["美白"]
+  },
+  "緑茶エキス": {
+    "safety": 5,
+    "category": "抗酸化剤",
+    "description": "抗酸化作用と抗炎症作用を持つ",
+    "allergen": false,
+    "functions": ["抗酸化", "抗炎症"]
+  },
+  "酸化亜鉛": {
+    "safety": 5,
+    "category": "日焼け止め",
+    "description": "物理的な紫外線防御成分。肌に優しい",
+    "allergen": false,
+    "functions": ["UV防御", "抗炎症"]
+  },
+  "酸化チタン": {
+    "safety": 5,
+    "category": "日焼け止め",
+    "description": "物理的な紫外線防御成分。白浮きしやすい",
+    "allergen": false,
+    "functions": ["UV防御"]
+  },
+  "ビタミンE": {
+    "safety": 5,
+    "category": "抗酸化剤",
+    "description": "強力な抗酸化作用。肌を保護",
+    "allergen": false,
+    "functions": ["抗酸化", "保護"]
+  },
+  "マイカ": {
+    "safety": 4,
+    "category": "鉱物",
+    "description": "化粧品に光沢を与える鉱物成分",
+    "allergen": false,
+    "functions": ["光沢", "カバー"]
+  },
+  "酸化鉄": {
+    "safety": 4,
+    "category": "着色剤",
+    "description": "ミネラルファンデーションの着色成分",
+    "allergen": false,
+    "functions": ["着色"]
+  },
+  "BHA": {
+    "safety": 3,
+    "category": "角質除去",
+    "description": "油溶性の角質除去成分。毛穴の奥まで浸透",
+    "allergen": false,
+    "functions": ["角質除去", "毛穴ケア"]
+  },
+  "AHA": {
+    "safety": 3,
+    "category": "角質除去",
+    "description": "水溶性の角質除去成分。肌表面の古い角質を除去",
+    "allergen": false,
+    "functions": ["角質除去", "肌のトーン改善"]
+  }
+}

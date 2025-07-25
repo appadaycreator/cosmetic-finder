@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>機能要件書 - コスメファインダー</title>
+    <meta name="description" content="コスメファインダーの機能要件書">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/assets/icons/favicon.ico">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1><a href="/">コスメファインダー</a></h1>
+                <ul>
+                    <li><a href="/">ホーム</a></li>
+                    <li><a href="/how-to-use.html">使い方</a></li>
+                    <li><a href="/contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>機能要件書</h2>
+            </div>
+        </section>
+
+        <section class="spec-content">
+            <div class="container">
+                <div class="section">
+                    <h3>1. 肌質診断機能</h3>
+                    <h4>概要</h4>
+                    <p>ユーザーの肌質を診断し、最適な化粧品を推奨する機能</p>
+                    
+                    <h4>機能詳細</h4>
+                    <ul>
+                        <li>10問程度の質問による肌質判定</li>
+                        <li>肌タイプの分類（乾燥肌、脂性肌、混合肌、敏感肌、普通肌）</li>
+                        <li>年齢・性別による細分化</li>
+                        <li>診断結果の保存（ローカルストレージ）</li>
+                        <li>診断履歴の管理</li>
+                    </ul>
+
+                    <h4>実装状況</h4>
+                    <p class="status implemented">実装済み</p>
+                </div>
+
+                <div class="section">
+                    <h3>2. 成分解析機能</h3>
+                    <h4>概要</h4>
+                    <p>化粧品の成分リストを解析し、安全性や効果を評価する機能</p>
+                    
+                    <h4>機能詳細</h4>
+                    <ul>
+                        <li>成分名の自動認識</li>
+                        <li>成分の安全性評価（5段階）</li>
+                        <li>アレルギー成分の警告表示</li>
+                        <li>成分の効果説明</li>
+                        <li>EWGスコアの表示（可能な場合）</li>
+                    </ul>
+
+                    <h4>実装状況</h4>
+                    <p class="status implemented">実装済み</p>
+                </div>
+
+                <div class="section">
+                    <h3>3. 製品レコメンド機能</h3>
+                    <h4>概要</h4>
+                    <p>肌質診断結果に基づいて最適な製品を推奨する機能</p>
+                    
+                    <h4>機能詳細</h4>
+                    <ul>
+                        <li>肌質別の製品フィルタリング</li>
+                        <li>価格帯での絞り込み</li>
+                        <li>ブランド別検索</li>
+                        <li>成分ベースでの類似製品提案</li>
+                        <li>レビュースコアの表示</li>
+                    </ul>
+
+                    <h4>実装状況</h4>
+                    <p class="status implemented">実装済み</p>
+                </div>
+
+                <div class="section">
+                    <h3>4. 多言語対応</h3>
+                    <h4>概要</h4>
+                    <p>日本語、英語、中国語、韓国語への対応</p>
+                    
+                    <h4>機能詳細</h4>
+                    <ul>
+                        <li>UIテキストの多言語化</li>
+                        <li>成分名の多言語表示</li>
+                        <li>言語自動検出</li>
+                        <li>言語切り替えボタン</li>
+                    </ul>
+
+                    <h4>実装状況</h4>
+                    <p class="status implemented">実装済み</p>
+                </div>
+
+                <div class="section">
+                    <h3>5. PWA機能</h3>
+                    <h4>概要</h4>
+                    <p>Progressive Web Appとしての機能実装</p>
+                    
+                    <h4>機能詳細</h4>
+                    <ul>
+                        <li>オフライン対応（Service Worker）</li>
+                        <li>ホーム画面への追加</li>
+                        <li>プッシュ通知（将来実装）</li>
+                        <li>バックグラウンド同期</li>
+                    </ul>
+
+                    <h4>実装状況</h4>
+                    <p class="status implemented">実装済み</p>
+                </div>
+
+                <div class="section">
+                    <h3>6. データ管理</h3>
+                    <h4>概要</h4>
+                    <p>ユーザーデータと製品データの管理</p>
+                    
+                    <h4>機能詳細</h4>
+                    <ul>
+                        <li>ローカルストレージでのデータ保存</li>
+                        <li>データのエクスポート/インポート</li>
+                        <li>プライバシー設定</li>
+                        <li>データの暗号化（将来実装）</li>
+                    </ul>
+
+                    <h4>実装状況</h4>
+                    <p class="status implemented">実装済み</p>
+                </div>
+
+                <div class="section">
+                    <h3>7. アクセシビリティ</h3>
+                    <h4>概要</h4>
+                    <p>すべてのユーザーが利用しやすいUI/UX</p>
+                    
+                    <h4>機能詳細</h4>
+                    <ul>
+                        <li>WCAG 2.1 AA準拠</li>
+                        <li>キーボードナビゲーション</li>
+                        <li>スクリーンリーダー対応</li>
+                        <li>高コントラストモード</li>
+                        <li>文字サイズ調整</li>
+                    </ul>
+
+                    <h4>実装状況</h4>
+                    <p class="status implemented">実装済み</p>
+                </div>
+
+                <div class="update-info">
+                    <p>最終更新日: 2025年1月25日</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 コスメファインダー. All rights reserved.</p>
+            <ul>
+                <li><a href="/terms.html">利用規約</a></li>
+                <li><a href="/privacy.html">プライバシーポリシー</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/i18n.js"></script>
+</body>
+</html>
