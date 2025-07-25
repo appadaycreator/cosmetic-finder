@@ -379,4 +379,85 @@ GitHub Pagesでは、リポジトリ名がサブディレクトリ（例：`/cos
 2. **キャッシュ戦略**: Service Workerによる適切なキャッシュ
 3. **デバウンス処理**: 検索・フィルタリング時の過剰なリクエスト防止
 
-最終更新: 2025年1月25日
+## 最近の更新履歴
+
+### v4.1.0 (2025-01-26) - Service Worker最適化版
+- **Service Workerキャッシュエラー完全修正**
+  - chrome-extension URLなど無効スキームのキャッシュ回避実装
+  - 同一オリジンリクエスト限定によるセキュリティ強化
+  - エラーハンドリング強化（catch句追加）
+  - キャッシュバージョンをv4に統一更新
+- **PWA安定性向上**
+  - コンソールエラー完全解消
+  - ネットワークエラー時の適切なレスポンス実装
+  - GitHub Pages環境での動作確認完了
+- **コードクリーンアップ**
+  - 不要なテストファイルをgitignoreに追加
+  - ドキュメント更新（README.md, SPEC.md, function.html）
+
+### v4.0.0 (2025-01-26) - AI開発フレンドリー版
+- 全面的なコードリファクタリング完了
+- src/ディレクトリによるモジュール構造の実装
+- 小さなファイル単位（200行以内）への分割
+- JSDocによる型定義の統一
+- 結果オブジェクトパターンの導入
+- 設定の外部化とエラーハンドリング統一
+- 退行テスト完了、全機能正常動作確認済み
+
+### Service Worker最適化の詳細（v4.1.0追加内容）
+
+#### 問題の特定と解決
+報告されたコンソールエラー:
+```
+sw.js:48 Uncaught (in promise) TypeError: Failed to execute 'put' on 'Cache': Request scheme 'chrome-extension' is unsupported
+```
+
+#### 実装した修正内容
+
+1. **無効スキームのフィルタリング**
+```javascript
+self.addEventListener('fetch', event => {
+  // Skip non-http/https requests (chrome-extension, etc.)
+  if (!event.request.url.startsWith('http')) {
+    return;
+  }
+  // ... 後続処理
+});
+```
+
+2. **同一オリジン限定キャッシュ**
+```javascript
+// Only cache requests from the same origin
+const requestUrl = new URL(event.request.url);
+const currentUrl = new URL(self.location.origin);
+
+if (requestUrl.origin === currentUrl.origin) {
+  const responseToCache = response.clone();
+  caches.open(CACHE_NAME)
+    .then(cache => {
+      cache.put(event.request, responseToCache);
+    })
+    .catch(err => {
+      console.warn('Cache put failed:', err);
+    });
+}
+```
+
+3. **エラーハンドリング強化**
+```javascript
+.catch(err => {
+  console.warn('Fetch failed:', err);
+  return new Response('Network error', {
+    status: 408,
+    headers: { 'Content-Type': 'text/plain' }
+  });
+});
+```
+
+#### 検証結果
+- ✅ ローカル環境での動作テスト完了
+- ✅ GitHub Pages環境での動作確認完了  
+- ✅ コンソールエラー完全解消
+- ✅ PWA機能正常動作確認
+
+最終更新: 2025年1月26日

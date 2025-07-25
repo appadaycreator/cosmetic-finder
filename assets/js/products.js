@@ -20,6 +20,7 @@ const elements = {
     productsContainer: null,
     pagination: null,
     resultsCount: null,
+    pageInfo: null,
     loadingIndicator: null
 };
 
@@ -49,6 +50,7 @@ function initializeElements() {
     elements.productsContainer = document.getElementById('productsContainer');
     elements.pagination = document.getElementById('pagination');
     elements.resultsCount = document.getElementById('resultsCount');
+    elements.pageInfo = document.getElementById('pageInfo');
     elements.loadingIndicator = document.getElementById('loadingIndicator');
 }
 
@@ -170,6 +172,14 @@ function displayProducts() {
     
     // 結果数を更新
     elements.resultsCount.textContent = filteredProducts.length;
+    
+    // ページ情報を更新
+    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+    if (totalPages > 1 && elements.pageInfo) {
+        elements.pageInfo.textContent = `(${currentPage}/${totalPages}ページ)`;
+    } else if (elements.pageInfo) {
+        elements.pageInfo.textContent = '';
+    }
     
     // 製品カードを生成
     if (productsToDisplay.length === 0) {
