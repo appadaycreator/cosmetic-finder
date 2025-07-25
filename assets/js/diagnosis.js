@@ -266,33 +266,76 @@ function showResults() {
     const result = calculateDiagnosisResult(answers);
     
     // 結果を保存
-    const savedResult = window.saveDiagnosisResult({
+    const savedResult = window.saveDiagnosisResult ? window.saveDiagnosisResult({
         answers,
         result,
         recommendations: result.recommendations
+    }) : null;
+    
+    // 回答履歴を整理
+    const answerHistory = diagnosisQuestions.map(question => {
+        const answer = answers[question.id];
+        const selectedOption = question.options.find(opt => opt.value === answer);
+        return {
+            question: question.question,
+            answer: selectedOption ? selectedOption.label : '未回答'
+        };
     });
     
     diagnosisContent.innerHTML = `
         <div class="diagnosis-result">
-            <h3>診断結果</h3>
-            <div class="result-summary">
-                <h4>あなたの肌タイプ: ${result.skinTypeLabel}</h4>
-                <p>${result.description}</p>
+            <h2>診断結果</h2>
+            
+            <div class="result-header">
+                <div class="skin-type-result">
+                    <h3>あなたの肌タイプ</h3>
+                    <div class="skin-type-badge">${result.skinTypeLabel}</div>
+                </div>
+                <p class="result-description">${result.description}</p>
+            </div>
+            
+            <div class="answer-summary">
+                <h3>あなたの回答内容</h3>
+                <div class="answer-list">
+                    ${answerHistory.map((item, index) => `
+                        <div class="answer-item">
+                            <div class="question-number">Q${index + 1}</div>
+                            <div class="answer-content">
+                                <div class="answer-question">${item.question}</div>
+                                <div class="answer-value">${item.answer}</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            
+            <div class="recommendation-reason">
+                <h3>推奨理由</h3>
+                <div class="reason-content">
+                    ${generateRecommendationReason(answers, result)}
+                </div>
+            </div>
+            
+            <div class="diagnosis-score">
+                <h3>診断スコア内訳</h3>
+                <div class="score-breakdown">
+                    ${generateScoreBreakdown(answers)}
+                </div>
             </div>
             
             <div class="recommendations">
-                <h4>おすすめのスキンケア</h4>
-                <ul>
-                    ${result.recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                <h3>おすすめのスキンケア</h3>
+                <ul class="recommendation-list">
+                    ${result.recommendations.map(rec => `<li><span class="recommendation-icon">✓</span>${rec}</li>`).join('')}
                 </ul>
             </div>
             
             <div class="product-suggestions">
-                <h4>おすすめ製品カテゴリー</h4>
+                <h3>おすすめ製品カテゴリー</h3>
                 <div class="product-categories">
                     ${result.productCategories.map(cat => `
                         <div class="category-card">
-                            <h5>${cat.name}</h5>
+                            <h4>${cat.name}</h4>
                             <p>${cat.description}</p>
                         </div>
                     `).join('')}
@@ -300,9 +343,9 @@ function showResults() {
             </div>
             
             <div class="actions">
-                <button onclick="viewRecommendedProducts()">おすすめ製品を見る</button>
-                <button onclick="restartDiagnosis()">もう一度診断する</button>
-                <button onclick="shareDiagnosis()">結果をシェアする</button>
+                <button class="primary-button" onclick="viewRecommendedProducts()">おすすめ製品を見る</button>
+                <button class="secondary-button" onclick="restartDiagnosis()">もう一度診断する</button>
+                <button class="secondary-button" onclick="shareDiagnosis()">結果をシェアする</button>
             </div>
         </div>
     `;
@@ -465,4 +508,124 @@ function shareDiagnosis() {
     } else {
         alert('シェア機能は準備中です');
     }
+}
+
+function generateRecommendationReason(answers, result) {
+    let reasons = [];
+    
+    // 肌質に基づく理由
+    const skinTypeReasons = {
+        'dry': '乾燥肌の方は、水分と油分のバランスが崩れやすいため、高保湿成分を含む製品が必要です。',
+        'oily': '脂性肌の方は、皮脂分泌が活発なため、軽いテクスチャーで皮脂コントロール効果のある製品が適しています。',
+        'combination': '混合肌の方は、部位によって肌質が異なるため、バランスの取れたケアが重要です。',
+        'sensitive': '敏感肌の方は、刺激に弱いため、低刺激性で肌バリア機能を強化する製品が必要です。',
+        'normal': '普通肌の方は、肌の状態が安定しているため、予防的なケアと基本的な保湿が大切です。'
+    };
+    
+    reasons.push(skinTypeReasons[answers['skin-type']] || '');
+    
+    // 年齢に基づく理由
+    const ageReasons = {
+        '10s': '10代は皮脂分泌が活発な時期なので、ニキビケアと基本的な保湿が重要です。',
+        '20s': '20代は肌のターンオーバーが活発な時期で、予防的なエイジングケアを始める良いタイミングです。',
+        '30s': '30代は肌の変化が現れ始める時期で、保湿とエイジングケアのバランスが大切です。',
+        '40s': '40代は肌の弾力が低下しやすい時期で、コラーゲン生成を促進するケアが重要です。',
+        '50s+': '50代以上は肌の乾燥が進みやすいため、濃厚な保湿とエイジングケアが必要です。'
+    };
+    
+    reasons.push(ageReasons[answers['age-range']] || '');
+    
+    // 肌悩みに基づく理由
+    const concernReasons = {
+        'acne': 'ニキビ・吹き出物には、抗炎症成分と皮脂コントロール成分を含む製品が効果的です。',
+        'wrinkles': 'シワ・たるみには、レチノールやペプチドなどのエイジングケア成分が有効です。',
+        'spots': 'シミ・くすみには、ビタミンC誘導体やトラネキサム酸などの美白成分が効果的です。',
+        'pores': '毛穴の開きには、収れん効果のある成分と角質ケア成分が重要です。',
+        'none': '特定の悩みがない場合は、予防的なケアと基本的な保湿を心がけることが大切です。'
+    };
+    
+    if (answers['skin-concerns'] !== 'none') {
+        reasons.push(concernReasons[answers['skin-concerns']] || '');
+    }
+    
+    // 敏感度に基づく理由
+    if (answers['sensitivity'] === 'very-sensitive' || answers['sensitivity'] === 'sensitive') {
+        reasons.push('敏感な肌質のため、アレルギーテスト済みで無香料・無着色の製品を選ぶことが重要です。');
+    }
+    
+    return reasons.filter(r => r).join('<br><br>');
+}
+
+function generateScoreBreakdown(answers) {
+    const scores = [];
+    
+    // 保湿必要度スコア
+    let moistureScore = 0;
+    if (answers['skin-type'] === 'dry') moistureScore += 3;
+    else if (answers['skin-type'] === 'combination') moistureScore += 2;
+    else if (answers['skin-type'] === 'normal') moistureScore += 1;
+    
+    if (answers['age-range'] === '40s' || answers['age-range'] === '50s+') moistureScore += 1;
+    if (answers['environment'] === 'urban') moistureScore += 1;
+    
+    scores.push({
+        name: '保湿必要度',
+        score: moistureScore,
+        maxScore: 5,
+        description: moistureScore >= 3 ? '高保湿ケアが必要' : '標準的な保湿で十分'
+    });
+    
+    // 皮脂コントロール必要度
+    let oilControlScore = 0;
+    if (answers['skin-type'] === 'oily') oilControlScore += 3;
+    else if (answers['skin-type'] === 'combination') oilControlScore += 2;
+    
+    if (answers['age-range'] === '10s' || answers['age-range'] === '20s') oilControlScore += 1;
+    if (answers['skin-concerns'] === 'acne' || answers['skin-concerns'] === 'pores') oilControlScore += 1;
+    
+    scores.push({
+        name: '皮脂コントロール必要度',
+        score: oilControlScore,
+        maxScore: 5,
+        description: oilControlScore >= 3 ? '皮脂コントロールが重要' : '基本的なケアで対応可能'
+    });
+    
+    // エイジングケア必要度
+    let agingCareScore = 0;
+    if (answers['age-range'] === '30s') agingCareScore += 1;
+    else if (answers['age-range'] === '40s') agingCareScore += 2;
+    else if (answers['age-range'] === '50s+') agingCareScore += 3;
+    
+    if (answers['skin-concerns'] === 'wrinkles') agingCareScore += 2;
+    
+    scores.push({
+        name: 'エイジングケア必要度',
+        score: agingCareScore,
+        maxScore: 5,
+        description: agingCareScore >= 3 ? 'エイジングケアを重視' : '予防的なケアを推奨'
+    });
+    
+    // 低刺激性必要度
+    let gentleScore = 0;
+    if (answers['skin-type'] === 'sensitive') gentleScore += 2;
+    if (answers['sensitivity'] === 'very-sensitive') gentleScore += 3;
+    else if (answers['sensitivity'] === 'sensitive') gentleScore += 2;
+    
+    scores.push({
+        name: '低刺激性必要度',
+        score: gentleScore,
+        maxScore: 5,
+        description: gentleScore >= 3 ? '低刺激性製品が必須' : '通常の製品も使用可能'
+    });
+    
+    return scores.map(score => `
+        <div class="score-item">
+            <div class="score-label">${score.name}</div>
+            <div class="score-bar">
+                <div class="score-fill" style="width: ${(score.score / score.maxScore) * 100}%"></div>
+            </div>
+            <div class="score-value">${score.score}/${score.maxScore}</div>
+            <div class="score-description">${score.description}</div>
+        </div>
+    `).join('');
 }

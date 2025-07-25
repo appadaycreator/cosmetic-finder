@@ -158,7 +158,7 @@ nav a.active {
 }
 
 #diagnosis-content {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -226,6 +226,320 @@ nav a.active {
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-family: monospace;
+}
+
+/* 診断結果画面のスタイル */
+.diagnosis-result {
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.diagnosis-result h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.result-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.skin-type-result h3 {
+    font-size: 1.2rem;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+.skin-type-badge {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.result-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 回答履歴セクション */
+.answer-summary {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.answer-summary h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.answer-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.answer-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.question-number {
+    background-color: var(--primary-color);
+    color: var(--white);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.answer-content {
+    flex: 1;
+}
+
+.answer-question {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: 0.25rem;
+}
+
+.answer-value {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* 推奨理由セクション */
+.recommendation-reason {
+    background-color: #e3f2fd;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.recommendation-reason h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.reason-content {
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+/* スコア内訳セクション */
+.diagnosis-score {
+    margin-bottom: 2rem;
+}
+
+.diagnosis-score h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.score-breakdown {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.score-item {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.score-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.score-bar {
+    width: 100%;
+    height: 24px;
+    background-color: var(--gray-light);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.score-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    transition: width 0.6s ease;
+    border-radius: 12px;
+}
+
+.score-value {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.score-description {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* おすすめスキンケアセクション */
+.recommendations {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.recommendations h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.recommendation-list {
+    list-style: none;
+    padding: 0;
+}
+
+.recommendation-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--gray-light);
+    display: flex;
+    align-items: center;
+}
+
+.recommendation-list li:last-child {
+    border-bottom: none;
+}
+
+.recommendation-icon {
+    color: var(--success);
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* 製品カテゴリーセクション */
+.product-suggestions {
+    margin-bottom: 2rem;
+}
+
+.product-suggestions h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.product-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.category-card {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.category-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* アクションボタン */
+.diagnosis-result .actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.primary-button:hover {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.secondary-button {
+    background-color: var(--gray-light);
+    color: var(--text-color);
+}
+
+.secondary-button:hover {
+    background-color: var(--gray);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+    .diagnosis-result {
+        padding: 2rem 1rem;
+    }
+    
+    .answer-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .question-number {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .product-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .diagnosis-result .actions {
+        flex-direction: column;
+    }
+    
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
 }
 
 /* Ingredient Checker */

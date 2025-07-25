@@ -225,6 +225,55 @@ GitHub Pagesでは、リポジトリ名がサブディレクトリ（例：`/cos
    - 画面下部にキーボード操作のガイドを表示
    - 数字キー、矢印キー、Enterキーの説明
 
+## 診断結果画面の改善（2025-01-25追加）
+
+### 概要
+診断結果画面を大幅に改善し、ユーザーにとってより分かりやすく価値のある情報を提供できるようになりました。
+
+### 実装内容
+
+1. **回答内容の一覧表示**
+   - 全10問の質問と選択した回答を明確に表示
+   - 質問番号を円形バッジで視覚的に強調
+   ```javascript
+   const answerHistory = diagnosisQuestions.map(question => {
+     const answer = answers[question.id];
+     const selectedOption = question.options.find(opt => opt.value === answer);
+     return {
+       question: question.question,
+       answer: selectedOption ? selectedOption.label : '未回答'
+     };
+   });
+   ```
+
+2. **推奨理由の具体的な説明**
+   - 肌質、年齢、肌悩み、敏感度に基づいた詳細な理由を表示
+   - なぜその製品がおすすめなのかを論理的に説明
+   ```javascript
+   function generateRecommendationReason(answers, result) {
+     // 肌質、年齢、悩み、敏感度別の理由を生成
+   }
+   ```
+
+3. **診断スコアの内訳表示**
+   - 4つのカテゴリー（保湿必要度、皮脂コントロール、エイジングケア、低刺激性）でスコアを可視化
+   - プログレスバーで直感的に理解できるデザイン
+   ```javascript
+   function generateScoreBreakdown(answers) {
+     // 各カテゴリーのスコアを計算し、視覚的に表示
+   }
+   ```
+
+4. **視覚的なデザイン改善**
+   - グラデーション背景の肌タイプバッジ
+   - セクション別の背景色分け
+   - アイコンを使った視覚的強調
+   - レスポンシブ対応の強化
+
+5. **進行状況表示の適切な管理**
+   - 診断中は「質問 4/10」のような進行状況を表示
+   - 結果画面では進行状況表示を削除し、結果に集中できるUI
+
 ### 今後の拡張予定
 
 1. **バックエンドAPI統合**: 製品データの動的取得
