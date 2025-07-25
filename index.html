@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmeFinder - あなたにぴったりの化粧品を見つけよう</title>
+    <meta name="description" content="肌悩みと成分への関心度から最適な化粧品をAIが提案。成分解析機能付きで安心して選べるパーソナライズドビューティーサービス">
+    <meta name="keywords" content="化粧品,スキンケア,美容,成分解析,パーソナライズ,レコメンド">
+    <meta name="author" content="CosmeFinder">
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="CosmeFinder - あなたにぴったりの化粧品を見つけよう">
+    <meta property="og:description" content="肌悩みと成分への関心度から最適な化粧品をAIが提案。成分解析機能付きで安心して選べるパーソナライズドビューティーサービス">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appadaycreator.github.io/cosmetic-finder/">
+    <meta property="og:image" content="https://appadaycreator.github.io/cosmetic-finder/ogp-image.jpg">
+    <meta property="og:site_name" content="CosmeFinder">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CosmeFinder - あなたにぴったりの化粧品を見つけよう">
+    <meta name="twitter:description" content="肌悩みと成分への関心度から最適な化粧品をAIが提案">
+    <meta name="twitter:image" content="https://appadaycreator.github.io/cosmetic-finder/ogp-image.jpg">
+    
+    <!-- PWA設定 -->
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQ29zbWVGaW5kZXIiLCJzaG9ydF9uYW1lIjoiQ29zbWVGaW5kZXIiLCJkZXNjcmlwdGlvbiI6IuiCjOaCpOOBv+OBqOaIkOWIhuOBuOOBruOBo+OBt+OBv+OBq+OBpOOBhOOBpuacgOmBqeOBquWMluetpuWTgeOCkuaPkOahiCIsInN0YXJ0X3VybCI6Ii8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjZmZmIiwidGhlbWVfY29sb3IiOiIjZWM0ODk5IiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIZHBaSFJvUFNJME9EQWlJR2hsYVdkb2REMGlORGd3SWlBK1BHSnNiMk5yY2dCK1BDOWliRzlqYXlCK1BDOXZaRVZtY3oxNUlHSmpPWGRyZVd4dEluVjJJR2xrUFNKQk1EWXpReUkyT1VJeUlDMHpPUzVqTmpKeE1pNHpOVUV6T0M0MU15QXpPQzQxTXlBd0xqQXdNRElnTUN3Z1QySkVSU3Q5SWlKMCIsInNpemVzIjoiNDgweDQ4MCIsInR5cGUiOiJpbWFnZS9zdmcreG1sIn1dfQ==">
+    <meta name="theme-color" content="#ec4899">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="CosmeFinder">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0ODAiIGhlaWdodD0iNDgwIj4KICA8YmxvY2sgZmlsbD0iI2VjNDg5OSIgd2lkdGg9IjQ4MCIgaGVpZ2h0PSI0ODAiLz4KICA8dGV4dCB4PSIyNDAiIHk9IjI2MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwMCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkM8L3RleHQ+Cjwvc3ZnPg==">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- 外部ライブラリ -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+    <style>
+        /* フォントサイズ調整用CSS変数 */
+        :root {
+            --font-scale: 1;
+            --base-font-size: 16px;
+        }
+        .font-xs { font-size: calc(var(--base-font-size) * 0.75 * var(--font-scale)); }
+        .font-sm { font-size: calc(var(--base-font-size) * 0.875 * var(--font-scale)); }
+        .font-base { font-size: calc(var(--base-font-size) * var(--font-scale)); }
+        .font-lg { font-size: calc(var(--base-font-size) * 1.125 * var(--font-scale)); }
+        .font-xl { font-size: calc(var(--base-font-size) * 1.25 * var(--font-scale)); }
+        .font-2xl { font-size: calc(var(--base-font-size) * 1.5 * var(--font-scale)); }
+        .font-3xl { font-size: calc(var(--base-font-size) * 1.875 * var(--font-scale)); }
+        .font-4xl { font-size: calc(var(--base-font-size) * 2.25 * var(--font-scale)); }
+        
+        /* カスタムアニメーション */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.3s ease-out;
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        
+        /* サイドバー */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar.hidden {
+            transform: translateX(100%);
+        }
+        
+        /* プログレスバー */
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+        
+        /* ボタンホバーエフェクト */
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+        }
+        
+        /* グラデーション背景 */
+        .gradient-bg {
+            background: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 100%);
+        }
+        
+        /* カスタムスクロールバー */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ec4899;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="font-base bg-gray-50">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- ヘッダー -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- ロゴ -->
+                <div class="flex-shrink-0">
+                    <button onclick="showPage('home')" class="flex items-center space-x-2">
+                        <svg class="w-8 h-8 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <span class="text-xl font-bold text-gray-900" data-ja="CosmeFinder" data-en="CosmeFinder">CosmeFinder</span>
+                    </button>
+                </div>
+
+                <!-- PC用ナビゲーション -->
+                <nav class="hidden md:flex space-x-8">
+                    <button onclick="showPage('home')" class="text-gray-700 hover:text-pink-500 px-3 py-2 rounded-md font-medium transition-colors" data-ja="ホーム" data-en="Home">ホーム</button>
+                    <button onclick="showPage('diagnosis')" class="text-gray-700 hover:text-pink-500 px-3 py-2 rounded-md font-medium transition-colors" data-ja="診断開始" data-en="Start Diagnosis">診断開始</button>
+                    <button onclick="showPage('usage')" class="text-gray-700 hover:text-pink-500 px-3 py-2 rounded-md font-medium transition-colors" data-ja="使い方" data-en="How to Use">使い方</button>
+                    <button onclick="showPage('history')" class="text-gray-700 hover:text-pink-500 px-3 py-2 rounded-md font-medium transition-colors" data-ja="履歴" data-en="History">履歴</button>
+                </nav>
+
+                <!-- ユーティリティボタン -->
+                <div class="flex items-center space-x-4">
+                    <!-- 言語切替 -->
+                    <select id="languageSelect" class="text-sm border rounded px-2 py-1" onchange="changeLanguage()">
+                        <option value="ja">日本語</option>
+                        <option value="en">English</option>
+                    </select>
+                    
+                    <!-- フォントサイズ調整 -->
+                    <select id="fontSizeSelect" class="text-sm border rounded px-2 py-1" onchange="changeFontSize()">
+                        <option value="0.75">極小</option>
+                        <option value="0.875">小</option>
+                        <option value="1" selected>標準</option>
+                        <option value="1.25">大</option>
+                        <option value="1.5">特大</option>
+                    </select>
+
+                    <!-- モバイルメニューボタン -->
+                    <button class="md:hidden" onclick="toggleMobileSidebar()">
+                        <i class="fas fa-bars text-xl text-gray-700"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツエリア -->
+    <div class="flex">
+        <!-- PC用左サイドバー -->
+        <aside class="hidden md:block w-64 bg-white shadow-lg min-h-screen">
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4" data-ja="メニュー" data-en="Menu">メニュー</h3>
+                <nav class="space-y-2">
+                    <button onclick="showPage('home')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="🏠 ホーム" data-en="🏠 Home">🏠 ホーム</button>
+                    <button onclick="showPage('diagnosis')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="✨ 診断開始" data-en="✨ Start Diagnosis">✨ 診断開始</button>
+                    <button onclick="showPage('usage')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="📖 使い方" data-en="📖 How to Use">📖 使い方</button>
+                    <button onclick="showPage('history')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="📋 履歴" data-en="📋 History">📋 履歴</button>
+                    <button onclick="showPage('terms')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="📄 利用規約" data-en="📄 Terms">📄 利用規約</button>
+                    <button onclick="showPage('privacy')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="🔒 プライバシー" data-en="🔒 Privacy">🔒 プライバシー</button>
+                    <button onclick="showPage('contact')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="✉️ お問い合わせ" data-en="✉️ Contact">✉️ お問い合わせ</button>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- モバイル用右サイドバー -->
+        <div id="mobileSidebar" class="fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 md:hidden sidebar">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900" data-ja="メニュー" data-en="Menu">メニュー</h3>
+                    <button onclick="toggleMobileSidebar()">
+                        <i class="fas fa-times text-xl text-gray-700"></i>
+                    </button>
+                </div>
+                <nav class="space-y-2">
+                    <button onclick="showPage('home'); toggleMobileSidebar();" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="🏠 ホーム" data-en="🏠 Home">🏠 ホーム</button>
+                    <button onclick="showPage('diagnosis'); toggleMobileSidebar();" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="✨ 診断開始" data-en="✨ Start Diagnosis">✨ 診断開始</button>
+                    <button onclick="showPage('usage'); toggleMobileSidebar();" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="📖 使い方" data-en="📖 How to Use">📖 使い方</button>
+                    <button onclick="showPage('history'); toggleMobileSidebar();" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="📋 履歴" data-en="📋 History">📋 履歴</button>
+                    <button onclick="showPage('terms'); toggleMobileSidebar();" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="📄 利用規約" data-en="📄 Terms">📄 利用規約</button>
+                    <button onclick="showPage('privacy'); toggleMobileSidebar();" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="🔒 プライバシー" data-en="🔒 Privacy">🔒 プライバシー</button>
+                    <button onclick="showPage('contact'); toggleMobileSidebar();" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-50 hover:text-pink-600 transition-colors" data-ja="✉️ お問い合わせ" data-en="✉️ Contact">✉️ お問い合わせ</button>
+                </nav>
+            </div>
+        </div>
+
+        <!-- モバイルサイドバー用オーバーレイ -->
+        <div id="sidebarOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleMobileSidebar()"></div>
+
+        <!-- メインコンテンツ -->
+        <main class="flex-1 p-6 custom-scrollbar overflow-y-auto">
+            <!-- ホームページ -->
+            <div id="homePage" class="page">
+                <!-- ヒーローセクション -->
+                <section class="gradient-bg rounded-2xl p-8 mb-8 text-center">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4" data-ja="あなたにぴったりの化粧品を見つけよう" data-en="Find Your Perfect Cosmetics">あなたにぴったりの化粧品を見つけよう</h1>
+                    <p class="text-lg text-gray-700 mb-6" data-ja="肌悩みと成分への関心度から、AIが最適な化粧品を提案します" data-en="AI recommends optimal cosmetics based on your skin concerns and ingredient preferences">肌悩みと成分への関心度から、AIが最適な化粧品を提案します</p>
+                    <button onclick="showPage('diagnosis')" class="btn-primary bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg" data-ja="今すぐ診断を始める" data-en="Start Diagnosis Now">今すぐ診断を始める</button>
+                </section>
+
+                <!-- 特徴セクション -->
+                <section class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                        <div class="text-3xl mb-4">🔬</div>
+                        <h3 class="text-xl font-semibold mb-2" data-ja="成分解析" data-en="Ingredient Analysis">成分解析</h3>
+                        <p class="text-gray-600" data-ja="化粧品の成分を詳しく分析し、安全性を評価します" data-en="Detailed analysis of cosmetic ingredients and safety evaluation">化粧品の成分を詳しく分析し、安全性を評価します</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                        <div class="text-3xl mb-4">✨</div>
+                        <h3 class="text-xl font-semibold mb-2" data-ja="パーソナライズ" data-en="Personalized">パーソナライズ</h3>
+                        <p class="text-gray-600" data-ja="あなたの肌質や悩みに合わせて最適な商品を提案" data-en="Optimal product recommendations based on your skin type and concerns">あなたの肌質や悩みに合わせて最適な商品を提案</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                        <div class="text-3xl mb-4">📱</div>
+                        <h3 class="text-xl font-semibold mb-2" data-ja="簡単操作" data-en="Easy to Use">簡単操作</h3>
+                        <p class="text-gray-600" data-ja="3つの質問に答えるだけで、すぐに結果を表示" data-en="Get results instantly by answering just 3 questions">3つの質問に答えるだけで、すぐに結果を表示</p>
+                    </div>
+                </section>
+
+                <!-- アフィリエイト商品紹介セクション -->
+                <section class="bg-white rounded-xl p-6 shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6" data-ja="おすすめ化粧品" data-en="Recommended Cosmetics">おすすめ化粧品</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- A8.net アフィリエイト商品例 -->
+                        <div class="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                            <div class="h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                                <span class="text-gray-500" data-ja="商品画像" data-en="Product Image">商品画像</span>
+                            </div>
+                            <h3 class="font-semibold mb-2" data-ja="敏感肌用美容液" data-en="Serum for Sensitive Skin">敏感肌用美容液</h3>
+                            <p class="text-sm text-gray-600 mb-3" data-ja="敏感肌の方におすすめの低刺激美容液" data-en="Low-irritation serum recommended for sensitive skin">敏感肌の方におすすめの低刺激美容液</p>
+                            <a href="#" target="_blank" rel="noopener" class="inline-block bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition-colors" data-ja="詳細を見る" data-en="View Details">詳細を見る</a>
+                        </div>
+                        <!-- 楽天アフィリエイト商品例 -->
+                        <div class="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                            <div class="h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                                <span class="text-gray-500" data-ja="商品画像" data-en="Product Image">商品画像</span>
+                            </div>
+                            <h3 class="font-semibold mb-2" data-ja="保湿クリーム" data-en="Moisturizing Cream">保湿クリーム</h3>
+                            <p class="text-sm text-gray-600 mb-3" data-ja="乾燥肌対策に効果的な高保湿クリーム" data-en="Highly moisturizing cream effective for dry skin care">乾燥肌対策に効果的な高保湿クリーム</p>
+                            <a href="#" target="_blank" rel="noopener" class="inline-block bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition-colors" data-ja="詳細を見る" data-en="View Details">詳細を見る</a>
+                        </div>
+                        <!-- Amazonアソシエイト商品例 -->
+                        <div class="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                            <div class="h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                                <span class="text-gray-500" data-ja="商品画像" data-en="Product Image">商品画像</span>
+                            </div>
+                            <h3 class="font-semibold mb-2" data-ja="日焼け止め" data-en="Sunscreen">日焼け止め</h3>
+                            <p class="text-sm text-gray-600 mb-3" data-ja="UVカット効果の高い日焼け止めクリーム" data-en="High UV protection sunscreen cream">UVカット効果の高い日焼け止めクリーム</p>
+                            <a href="#" target="_blank" rel="noopener" class="inline-block bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition-colors" data-ja="詳細を見る" data-en="View Details">詳細を見る</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 診断ページ -->
+            <div id="diagnosisPage" class="page hidden">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-8 text-center" data-ja="化粧品診断" data-en="Cosmetic Diagnosis">化粧品診断</h1>
+                    
+                    <!-- プログレスバー -->
+                    <div class="mb-8">
+                        <div class="flex justify-between text-sm text-gray-600 mb-2">
+                            <span data-ja="進捗" data-en="Progress">進捗</span>
+                            <span id="progressText">0/5</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div id="progressBar" class="progress-bar bg-pink-500 h-2 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- 質問フォーム -->
+                    <div id="questionContainer" class="bg-white rounded-xl p-6 shadow-md">
+                        <!-- 質問1: 肌タイプ -->
+                        <div id="question1" class="question fade-in">
+                            <h2 class="text-xl font-semibold mb-4" data-ja="あなたの肌タイプを教えてください" data-en="What is your skin type?">あなたの肌タイプを教えてください</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="radio" name="skinType" value="dry" class="mr-3">
+                                    <div>
+                                        <div class="font-medium" data-ja="乾燥肌" data-en="Dry Skin">乾燥肌</div>
+                                        <div class="text-sm text-gray-600" data-ja="カサカサしやすく、つっぱり感がある" data-en="Tends to be rough and feels tight">カサカサしやすく、つっぱり感がある</div>
+                                    </div>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="radio" name="skinType" value="oily" class="mr-3">
+                                    <div>
+                                        <div class="font-medium" data-ja="脂性肌" data-en="Oily Skin">脂性肌</div>
+                                        <div class="text-sm text-gray-600" data-ja="皮脂分泌が多く、テカリやすい" data-en="High sebum production, prone to shininess">皮脂分泌が多く、テカリやすい</div>
+                                    </div>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="radio" name="skinType" value="combination" class="mr-3">
+                                    <div>
+                                        <div class="font-medium" data-ja="混合肌" data-en="Combination Skin">混合肌</div>
+                                        <div class="text-sm text-gray-600" data-ja="Tゾーンは脂っぽく、頬は乾燥しがち" data-en="T-zone is oily, cheeks tend to be dry">Tゾーンは脂っぽく、頬は乾燥しがち</div>
+                                    </div>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="radio" name="skinType" value="sensitive" class="mr-3">
+                                    <div>
+                                        <div class="font-medium" data-ja="敏感肌" data-en="Sensitive Skin">敏感肌</div>
+                                        <div class="text-sm text-gray-600" data-ja="刺激に弱く、赤みやかゆみが出やすい" data-en="Sensitive to irritation, prone to redness and itching">刺激に弱く、赤みやかゆみが出やすい</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 質問2: 肌の悩み -->
+                        <div id="question2" class="question hidden">
+                            <h2 class="text-xl font-semibold mb-4" data-ja="主な肌の悩みは何ですか？（複数選択可）" data-en="What are your main skin concerns? (Multiple selections allowed)">主な肌の悩みは何ですか？（複数選択可）</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="checkbox" name="skinConcerns" value="acne" class="mr-3">
+                                    <span data-ja="ニキビ・吹き出物" data-en="Acne & Breakouts">ニキビ・吹き出物</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="checkbox" name="skinConcerns" value="wrinkles" class="mr-3">
+                                    <span data-ja="シワ・たるみ" data-en="Wrinkles & Sagging">シワ・たるみ</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="checkbox" name="skinConcerns" value="spots" class="mr-3">
+                                    <span data-ja="シミ・くすみ" data-en="Dark Spots & Dullness">シミ・くすみ</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="checkbox" name="skinConcerns" value="pores" class="mr-3">
+                                    <span data-ja="毛穴の開き・黒ずみ" data-en="Open Pores & Blackheads">毛穴の開き・黒ずみ</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="checkbox" name="skinConcerns" value="dryness" class="mr-3">
+                                    <span data-ja="乾燥・カサつき" data-en="Dryness & Roughness">乾燥・カサつき</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="checkbox" name="skinConcerns" value="sensitivity" class="mr-3">
+                                    <span data-ja="敏感・赤み" data-en="Sensitivity & Redness">敏感・赤み</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 質問3: 成分への関心度 -->
+                        <div id="question3" class="question hidden">
+                            <h2 class="text-xl font-semibold mb-4" data-ja="化粧品の成分についてどの程度気にしますか？" data-en="How much do you care about cosmetic ingredients?">化粧品の成分についてどの程度気にしますか？</h2>
+                            <div class="space-y-4">
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="radio" name="ingredientConcern" value="high" class="mr-3">
+                                    <div>
+                                        <div class="font-medium" data-ja="とても気にする" data-en="Very concerned">とても気にする</div>
+                                        <div class="text-sm text-gray-600" data-ja="成分表を必ずチェックし、危険な成分は避けたい" data-en="Always check ingredient lists and avoid harmful ingredients">成分表を必ずチェックし、危険な成分は避けたい</div>
+                                    </div>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="radio" name="ingredientConcern" value="medium" class="mr-3">
+                                    <div>
+                                        <div class="font-medium" data-ja="少し気にする" data-en="Somewhat concerned">少し気にする</div>
+                                        <div class="text-sm text-gray-600" data-ja="基本的な成分は知っているが、詳しくは調べない" data-en="Know basic ingredients but don't research in detail">基本的な成分は知っているが、詳しくは調べない</div>
+                                    </div>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="radio" name="ingredientConcern" value="low" class="mr-3">
+                                    <div>
+                                        <div class="font-medium" data-ja="あまり気にしない" data-en="Not very concerned">あまり気にしない</div>
+                                        <div class="text-sm text-gray-600" data-ja="効果や価格を重視し、成分はほとんど見ない" data-en="Focus on effects and price, rarely check ingredients">効果や価格を重視し、成分はほとんど見ない</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 質問4: 予算 -->
+                        <div id="question4" class="question hidden">
+                            <h2 class="text-xl font-semibold mb-4" data-ja="1ヶ月の化粧品予算はどのくらいですか？" data-en="What is your monthly cosmetics budget?">1ヶ月の化粧品予算はどのくらいですか？</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="radio" name="budget" value="low" class="mr-3">
+                                    <span data-ja="〜3,000円" data-en="〜¥3,000">〜3,000円</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="radio" name="budget" value="medium" class="mr-3">
+                                    <span data-ja="3,000円〜10,000円" data-en="¥3,000〜¥10,000">3,000円〜10,000円</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="radio" name="budget" value="high" class="mr-3">
+                                    <span data-ja="10,000円〜30,000円" data-en="¥10,000〜¥30,000">10,000円〜30,000円</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="radio" name="budget" value="premium" class="mr-3">
+                                    <span data-ja="30,000円以上" data-en="¥30,000+">30,000円以上</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 質問5: 避けたい成分 -->
+                        <div id="question5" class="question hidden">
+                            <h2 class="text-xl font-semibold mb-4" data-ja="避けたい成分はありますか？（複数選択可）" data-en="Are there any ingredients you want to avoid? (Multiple selections allowed)">避けたい成分はありますか？（複数選択可）</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="checkbox" name="avoidIngredients" value="parabens" class="mr-3">
+                                    <span data-ja="パラベン" data-en="Parabens">パラベン</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="checkbox" name="avoidIngredients" value="sulfates" class="mr-3">
+                                    <span data-ja="硫酸系界面活性剤" data-en="Sulfates">硫酸系界面活性剤</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="checkbox" name="avoidIngredients" value="alcohol" class="mr-3">
+                                    <span data-ja="エタノール" data-en="Ethanol">エタノール</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="checkbox" name="avoidIngredients" value="fragrance" class="mr-3">
+                                    <span data-ja="人工香料" data-en="Artificial Fragrance">人工香料</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="checkbox" name="avoidIngredients" value="silicones" class="mr-3">
+                                    <span data-ja="シリコン" data-en="Silicones">シリコン</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-pink-50 transition-colors">
+                                    <input type="checkbox" name="avoidIngredients" value="none" class="mr-3">
+                                    <span data-ja="特になし" data-en="None">特になし</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 結果表示 -->
+                        <div id="result" class="hidden">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center" data-ja="あなたにおすすめの化粧品" data-en="Recommended Cosmetics for You">あなたにおすすめの化粧品</h2>
+                            <div id="resultContent" class="space-y-6">
+                                <!-- 結果がここに表示される -->
+                            </div>
+                            <div class="mt-8 text-center">
+                                <button onclick="shareResult()" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg mr-4" data-ja="結果をシェア" data-en="Share Result">結果をシェア</button>
+                                <button onclick="resetDiagnosis()" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-lg" data-ja="もう一度診断" data-en="Retry Diagnosis">もう一度診断</button>
+                            </div>
+                        </div>
+
+                        <!-- ナビゲーションボタン -->
+                        <div class="flex justify-between mt-8">
+                            <button id="prevBtn" onclick="previousQuestion()" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg hidden" data-ja="前へ" data-en="Previous">前へ</button>
+                            <button id="nextBtn" onclick="nextQuestion()" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-lg ml-auto" data-ja="次へ" data-en="Next">次へ</button>
+                            <button id="submitBtn" onclick="submitDiagnosis()" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg hidden" data-ja="診断結果を見る" data-en="View Results">診断結果を見る</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 使い方ページ -->
+            <div id="usagePage" class="page hidden">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-8" data-ja="使い方" data-en="How to Use">使い方</h1>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-md">
+                        <div class="space-y-8">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold">1</div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2" data-ja="診断を開始" data-en="Start Diagnosis">診断を開始</h3>
+                                    <p class="text-gray-600" data-ja="「診断開始」ボタンをクリックして、化粧品診断を始めましょう。" data-en="Click the 'Start Diagnosis' button to begin your cosmetics assessment.">「診断開始」ボタンをクリックして、化粧品診断を始めましょう。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold">2</div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2" data-ja="質問に答える" data-en="Answer Questions">質問に答える</h3>
+                                    <p class="text-gray-600" data-ja="5つの質問に答えてください。肌タイプ、悩み、成分への関心度、予算、避けたい成分について伺います。" data-en="Answer 5 questions about your skin type, concerns, ingredient preferences, budget, and ingredients to avoid.">5つの質問に答えてください。肌タイプ、悩み、成分への関心度、予算、避けたい成分について伺います。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold">3</div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2" data-ja="結果を確認" data-en="Check Results">結果を確認</h3>
+                                    <p class="text-gray-600" data-ja="あなたに最適な化粧品が提案されます。成分解析と共に詳細な情報をご確認いただけます。" data-en="You will receive personalized cosmetic recommendations with detailed ingredient analysis and information.">あなたに最適な化粧品が提案されます。成分解析と共に詳細な情報をご確認いただけます。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold">4</div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2" data-ja="履歴を確認" data-en="Check History">履歴を確認</h3>
+                                    <p class="text-gray-600" data-ja="過去の診断結果は履歴ページで確認できます。結果の比較や再確認にご活用ください。" data-en="Past diagnosis results can be viewed on the history page. Use this for comparing results and reviewing recommendations.">過去の診断結果は履歴ページで確認できます。結果の比較や再確認にご活用ください。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 p-4 bg-yellow-50 rounded-lg">
+                            <h4 class="font-semibold text-yellow-800 mb-2" data-ja="💡 ヒント" data-en="💡 Tips">💡 ヒント</h4>
+                            <ul class="text-yellow-700 space-y-1">
+                                <li data-ja="• 正確な診断のため、素直にお答えください" data-en="• Please answer honestly for accurate diagnosis">• 正確な診断のため、素直にお答えください</li>
+                                <li data-ja="• 肌の状態は季節や体調で変わるため、定期的な診断をおすすめします" data-en="• Skin condition changes with seasons and health, so regular diagnosis is recommended">• 肌の状態は季節や体調で変わるため、定期的な診断をおすすめします</li>
+                                <li data-ja="• 新しい化粧品を試す前にパッチテストを行うことをおすすめします" data-en="• We recommend patch testing before trying new cosmetics">• 新しい化粧品を試す前にパッチテストを行うことをおすすめします</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 履歴ページ -->
+            <div id="historyPage" class="page hidden">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-8" data-ja="診断履歴" data-en="Diagnosis History">診断履歴</h1>
+                    
+                    <div id="historyContent" class="space-y-6">
+                        <!-- 履歴がここに表示される -->
+                    </div>
+                    
+                    <div id="noHistory" class="text-center py-12">
+                        <div class="text-6xl mb-4">📋</div>
+                        <h2 class="text-xl font-semibold text-gray-600 mb-2" data-ja="まだ診断履歴がありません" data-en="No diagnosis history yet">まだ診断履歴がありません</h2>
+                        <p class="text-gray-500 mb-6" data-ja="診断を行うと、ここに結果が保存されます" data-en="Diagnosis results will be saved here after you complete an assessment">診断を行うと、ここに結果が保存されます</p>
+                        <button onclick="showPage('diagnosis')" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg" data-ja="診断を始める" data-en="Start Diagnosis">診断を始める</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 利用規約ページ -->
+            <div id="termsPage" class="page hidden">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-8" data-ja="利用規約・免責事項" data-en="Terms of Service & Disclaimer">利用規約・免責事項</h1>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-md prose max-w-none">
+                        <h2 data-ja="第1条（適用）" data-en="Article 1 (Application)">第1条（適用）</h2>
+                        <p data-ja="本規約は、本サービスの利用に関して、当サービス提供者と利用者との間の権利義務関係を定めることを目的とし、利用者と当サービス提供者との間の本サービスの利用に関わる一切の関係に適用されます。" data-en="These terms are intended to define the rights and obligations between the service provider and users regarding the use of this service, and apply to all relationships between users and the service provider regarding the use of this service.">本規約は、本サービスの利用に関して、当サービス提供者と利用者との間の権利義務関係を定めることを目的とし、利用者と当サービス提供者との間の本サービスの利用に関わる一切の関係に適用されます。</p>
+                        
+                        <h2 data-ja="第2条（利用登録）" data-en="Article 2 (User Registration)">第2条（利用登録）</h2>
+                        <p data-ja="本サービスは登録不要でご利用いただけます。サービスを利用することで、本規約に同意したものとみなします。" data-en="This service can be used without registration. By using the service, you are deemed to have agreed to these terms.">本サービスは登録不要でご利用いただけます。サービスを利用することで、本規約に同意したものとみなします。</p>
+                        
+                        <h2 data-ja="第3条（禁止事項）" data-en="Article 3 (Prohibited Acts)">第3条（禁止事項）</h2>
+                        <p data-ja="利用者は、本サービスの利用にあたり、以下の行為をしてはなりません：" data-en="Users must not engage in the following acts when using this service:">利用者は、本サービスの利用にあたり、以下の行為をしてはなりません：</p>
+                        <ul>
+                            <li data-ja="法令または公序良俗に違反する行為" data-en="Acts that violate laws or public order and morals">法令または公序良俗に違反する行為</li>
+                            <li data-ja="犯罪行為に関連する行為" data-en="Acts related to criminal activity">犯罪行為に関連する行為</li>
+                            <li data-ja="本サービスの内容等、本サービスに含まれる著作権、商標権ほか知的財産権を侵害する行為" data-en="Acts that infringe intellectual property rights including copyrights and trademarks contained in this service">本サービスの内容等、本サービスに含まれる著作権、商標権ほか知的財産権を侵害する行為</li>
+                            <li data-ja="本サービスの運営を妨害するおそれのある行為" data-en="Acts that may interfere with the operation of this service">本サービスの運営を妨害するおそれのある行為</li>
+                        </ul>
+                        
+                        <h2 data-ja="第4条（免責事項）" data-en="Article 4 (Disclaimer)">第4条（免責事項）</h2>
+                        <p data-ja="当サービス提供者は、本サービスの内容について、その完全性、正確性、有用性、最新性について一切保証いたしません。本サービスの利用により生じた損害について、当サービス提供者は一切の責任を負いません。" data-en="The service provider makes no warranties regarding the completeness, accuracy, usefulness, or currency of the content of this service. The service provider assumes no responsibility for any damages arising from the use of this service.">当サービス提供者は、本サービスの内容について、その完全性、正確性、有用性、最新性について一切保証いたしません。本サービスの利用により生じた損害について、当サービス提供者は一切の責任を負いません。</p>
+                        
+                        <h2 data-ja="第5条（本規約の変更）" data-en="Article 5 (Changes to Terms)">第5条（本規約の変更）</h2>
+                        <p data-ja="当サービス提供者は、必要と判断した場合には、利用者に通知することなくいつでも本規約を変更することができるものとします。" data-en="The service provider may change these terms at any time without notice to users when deemed necessary.">当サービス提供者は、必要と判断した場合には、利用者に通知することなくいつでも本規約を変更することができるものとします。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- プライバシーポリシーページ -->
+            <div id="privacyPage" class="page hidden">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-8" data-ja="プライバシーポリシー" data-en="Privacy Policy">プライバシーポリシー</h1>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-md prose max-w-none">
+                        <h2 data-ja="個人情報の取り扱いについて" data-en="Handling of Personal Information">個人情報の取り扱いについて</h2>
+                        <p data-ja="本サービスでは、利用者の個人情報を以下のように取り扱います。" data-en="This service handles users' personal information as follows:">本サービスでは、利用者の個人情報を以下のように取り扱います。</p>
+                        
+                        <h3 data-ja="収集する情報" data-en="Information We Collect">収集する情報</h3>
+                        <p data-ja="本サービスでは、以下の情報を収集する場合があります：" data-en="This service may collect the following information:">本サービスでは、以下の情報を収集する場合があります：</p>
+                        <ul>
+                            <li data-ja="診断時に入力された肌質や悩みに関する情報（ローカルストレージに保存）" data-en="Information about skin type and concerns entered during diagnosis (stored in local storage)">診断時に入力された肌質や悩みに関する情報（ローカルストレージに保存）</li>
+                            <li data-ja="サービス利用時のアクセスログ情報" data-en="Access log information during service use">サービス利用時のアクセスログ情報</li>
+                            <li data-ja="Cookieによる利用状況の情報" data-en="Usage information through cookies">Cookieによる利用状況の情報</li>
+                        </ul>
+                        
+                        <h3 data-ja="情報の利用目的" data-en="Purpose of Information Use">情報の利用目的</h3>
+                        <p data-ja="収集した情報は以下の目的で利用します：" data-en="Collected information is used for the following purposes:">収集した情報は以下の目的で利用します：</p>
+                        <ul>
+                            <li data-ja="サービスの提供・運営" data-en="Service provision and operation">サービスの提供・運営</li>
+                            <li data-ja="サービスの改善・開発" data-en="Service improvement and development">サービスの改善・開発</li>
+                            <li data-ja="利用状況の分析" data-en="Usage analysis">利用状況の分析</li>
+                        </ul>
+                        
+                        <h3 data-ja="情報の第三者提供" data-en="Third-party Information Sharing">情報の第三者提供</h3>
+                        <p data-ja="当サービスは、利用者の同意がある場合や法令に基づく場合を除き、個人情報を第三者に提供することはありません。" data-en="This service will not provide personal information to third parties except with user consent or as required by law.">当サービスは、利用者の同意がある場合や法令に基づく場合を除き、個人情報を第三者に提供することはありません。</p>
+                        
+                        <h3 data-ja="Cookieについて" data-en="About Cookies">Cookieについて</h3>
+                        <p data-ja="本サービスでは、サービスの利便性向上のためCookieを使用しています。Cookieの使用を望まない場合は、ブラウザの設定で無効にすることができます。" data-en="This service uses cookies to improve service convenience. If you do not wish to use cookies, you can disable them in your browser settings.">本サービスでは、サービスの利便性向上のためCookieを使用しています。Cookieの使用を望まない場合は、ブラウザの設定で無効にすることができます。</p>
+                        
+                        <h3 data-ja="Google Analyticsについて" data-en="About Google Analytics">Google Analyticsについて</h3>
+                        <p data-ja="本サービスでは、アクセス解析のためGoogle Analyticsを使用している場合があります。Google Analyticsでは、Cookieを使用してデータを収集しています。" data-en="This service may use Google Analytics for access analysis. Google Analytics collects data using cookies.">本サービスでは、アクセス解析のためGoogle Analyticsを使用している場合があります。Google Analyticsでは、Cookieを使用してデータを収集しています。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- お問い合わせページ -->
+            <div id="contactPage" class="page hidden">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-8" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</h1>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-md">
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="contactName" class="block text-sm font-medium text-gray-700 mb-2" data-ja="お名前" data-en="Name">お名前</label>
+                                <input type="text" id="contactName" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500">
+                            </div>
+                            
+                            <div>
+                                <label for="contactEmail" class="block text-sm font-medium text-gray-700 mb-2" data-ja="メールアドレス" data-en="Email">メールアドレス</label>
+                                <input type="email" id="contactEmail" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500">
+                            </div>
+                            
+                            <div>
+                                <label for="contactSubject" class="block text-sm font-medium text-gray-700 mb-2" data-ja="件名" data-en="Subject">件名</label>
+                                <select id="contactSubject" name="subject" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500">
+                                    <option value="" data-ja="選択してください" data-en="Please select">選択してください</option>
+                                    <option value="service" data-ja="サービスについて" data-en="About Service">サービスについて</option>
+                                    <option value="bug" data-ja="不具合報告" data-en="Bug Report">不具合報告</option>
+                                    <option value="suggestion" data-ja="改善提案" data-en="Suggestion">改善提案</option>
+                                    <option value="other" data-ja="その他" data-en="Other">その他</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="contactMessage" class="block text-sm font-medium text-gray-700 mb-2" data-ja="お問い合わせ内容" data-en="Message">お問い合わせ内容</label>
+                                <textarea id="contactMessage" name="message" rows="6" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500" data-ja="お問い合わせ内容をご記入ください" data-en="Please enter your message" placeholder="お問い合わせ内容をご記入ください"></textarea>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-lg font-semibold" data-ja="送信する" data-en="Send">送信する</button>
+                            </div>
+                        </form>
+                        
+                        <div class="mt-8 p-4 bg-blue-50 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2" data-ja="📧 お問い合わせについて" data-en="📧 About Contact">📧 お問い合わせについて</h4>
+                            <p class="text-blue-700" data-ja="お問い合わせいただいた内容は、サービス改善のために活用させていただきます。返信には数日お時間をいただく場合がございます。" data-en="Your inquiries will be used to improve our service. Please allow a few days for response.">お問い合わせいただいた内容は、サービス改善のために活用させていただきます。返信には数日お時間をいただく場合がございます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- フッター -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4" data-ja="CosmeFinder" data-en="CosmeFinder">CosmeFinder</h3>
+                    <p class="text-gray-300" data-ja="あなたにぴったりの化粧品を見つけるお手伝いをします。" data-en="We help you find the perfect cosmetics for you.">あなたにぴったりの化粧品を見つけるお手伝いをします。</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-ja="メニュー" data-en="Menu">メニュー</h4>
+                    <ul class="space-y-2">
+                        <li><button onclick="showPage('home')" class="text-gray-300 hover:text-white" data-ja="ホーム" data-en="Home">ホーム</button></li>
+                        <li><button onclick="showPage('diagnosis')" class="text-gray-300 hover:text-white" data-ja="診断開始" data-en="Start Diagnosis">診断開始</button></li>
+                        <li><button onclick="showPage('usage')" class="text-gray-300 hover:text-white" data-ja="使い方" data-en="How to Use">使い方</button></li>
+                        <li><button onclick="showPage('history')" class="text-gray-300 hover:text-white" data-ja="履歴" data-en="History">履歴</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-ja="サポート" data-en="Support">サポート</h4>
+                    <ul class="space-y-2">
+                        <li><button onclick="showPage('terms')" class="text-gray-300 hover:text-white" data-ja="利用規約" data-en="Terms">利用規約</button></li>
+                        <li><button onclick="showPage('privacy')" class="text-gray-300 hover:text-white" data-ja="プライバシーポリシー" data-en="Privacy Policy">プライバシーポリシー</button></li>
+                        <li><button onclick="showPage('contact')" class="text-gray-300 hover:text-white" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p class="text-gray-300" data-ja="© 2024 CosmeFinder. All rights reserved." data-en="© 2024 CosmeFinder. All rights reserved.">© 2024 CosmeFinder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // グローバル変数
+        let currentQuestion = 1;
+        let totalQuestions = 5;
+        let diagnosisData = {};
+        let currentLanguage = 'ja';
+
+        // コンソールログ設定
+        const log = {
+            info: (message, data = null) => {
+                console.log(`[INFO] ${new Date().toISOString()} - ${message}`, data || '');
+            },
+            warn: (message, data = null) => {
+                console.warn(`[WARN] ${new Date().toISOString()} - ${message}`, data || '');
+            },
+            error: (message, error = null) => {
+                console.error(`[ERROR] ${new Date().toISOString()} - ${message}`, error || '');
+            }
+        };
+
+        // 初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            log.info('CosmeFinder initialized');
+            initializeApp();
+        });
+
+        function initializeApp() {
+            log.info('Initializing application');
+            
+            // 保存された設定を読み込み
+            loadSettings();
+            
+            // PWAサービスワーカー登録
+            registerServiceWorker();
+            
+            // 履歴を読み込み
+            loadHistory();
+            
+            // 言語設定を適用
+            applyLanguage();
+            
+            log.info('Application initialized successfully');
+        }
+
+        // PWAサービスワーカー登録
+        function registerServiceWorker() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('data:text/javascript;base64,c2VsZi5hZGRFdmVudExpc3RlbmVyKCdpbnN0YWxsJywgZXZlbnQgPT4geyBzZWxmLnNraXBXYWl0aW5nKCk7IH0pOyBzZWxmLmFkZEV2ZW50TGlzdGVuZXIoJ2FjdGl2YXRlJywgZXZlbnQgPT4geyBldmVudC53YWl0VW50aWwoc2VsZi5jbGllbnRzLmNsYWltKCkpOyB9KTs=')
+                .then(registration => log.info('ServiceWorker registered'))
+                .catch(error => log.error('ServiceWorker registration failed', error));
+            }
+        }
+
+        // 設定の読み込み
+        function loadSettings() {
+            const savedLanguage = localStorage.getItem('cosmefinder_language');
+            const savedFontSize = localStorage.getItem('cosmefinder_fontsize');
+            
+            if (savedLanguage) {
+                currentLanguage = savedLanguage;
+                document.getElementById('languageSelect').value = savedLanguage;
+            }
+            
+            if (savedFontSize) {
+                document.getElementById('fontSizeSelect').value = savedFontSize;
+                changeFontSize();
+            }
+            
+            log.info('Settings loaded', { language: currentLanguage, fontSize: savedFontSize });
+        }
+
+        // ページ表示制御
+        function showPage(pageId) {
+            log.info('Showing page', pageId);
+            
+            // 全ページを非表示
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.add('hidden'));
+            
+            // 指定ページを表示
+            const targetPage = document.getElementById(pageId + 'Page');
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                targetPage.classList.add('fade-in');
+                
+                // 特定ページの初期化処理
+                switch(pageId) {
+                    case 'history':
+                        displayHistory();
+                        break;
+                    case 'diagnosis':
+                        resetDiagnosis();
+                        break;
+                }
+            }
+        }
+
+        // モバイルサイドバー制御
+        function toggleMobileSidebar() {
+            const sidebar = document.getElementById('mobileSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            if (sidebar.classList.contains('translate-x-full')) {
+                sidebar.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            }
+            
+            log.info('Mobile sidebar toggled');
+        }
+
+        // 言語切替
+        function changeLanguage() {
+            const select = document.getElementById('languageSelect');
+            currentLanguage = select.value;
+            localStorage.setItem('cosmefinder_language', currentLanguage);
+            applyLanguage();
+            log.info('Language changed', currentLanguage);
+        }
+
+        function applyLanguage() {
+            const elements = document.querySelectorAll('[data-ja][data-en]');
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${currentLanguage}`);
+                if (text) {
+                    if (element.tagName === 'INPUT' && element.type === 'submit') {
+                        element.value = text;
+                    } else if (element.tagName === 'INPUT' && element.placeholder) {
+                        element.placeholder = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+        }
+
+        // フォントサイズ変更
+        function changeFontSize() {
+            const select = document.getElementById('fontSizeSelect');
+            const scale = parseFloat(select.value);
+            document.documentElement.style.setProperty('--font-scale', scale);
+            localStorage.setItem('cosmefinder_fontsize', scale);
+            log.info('Font size changed', scale);
+        }
+
+        // 診断ロジック
+        function nextQuestion() {
+            if (validateCurrentQuestion()) {
+                if (currentQuestion < totalQuestions) {
+                    saveCurrentAnswer();
+                    currentQuestion++;
+                    showQuestion(currentQuestion);
+                    updateProgress();
+                }
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 1) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+                updateProgress();
+            }
+        }
+
+        function showQuestion(questionNum) {
+            // 全質問を非表示
+            document.querySelectorAll('.question').forEach(q => q.classList.add('hidden'));
+            
+            // 指定質問を表示
+            const currentQ = document.getElementById(`question${questionNum}`);
+            if (currentQ) {
+                currentQ.classList.remove('hidden');
+                currentQ.classList.add('fade-in');
+            }
+            
+            // ボタンの表示制御
+            document.getElementById('prevBtn').classList.toggle('hidden', questionNum === 1);
+            document.getElementById('nextBtn').classList.toggle('hidden', questionNum === totalQuestions);
+            document.getElementById('submitBtn').classList.toggle('hidden', questionNum !== totalQuestions);
+            
+            log.info('Question displayed', questionNum);
+        }
+
+        function validateCurrentQuestion() {
+            const currentQ = document.getElementById(`question${currentQuestion}`);
+            const inputs = currentQ.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+            
+            let isValid = false;
+            
+            // ラジオボタンの場合
+            const radioGroups = {};
+            inputs.forEach(input => {
+                if (input.type === 'radio') {
+                    if (!radioGroups[input.name]) {
+                        radioGroups[input.name] = false;
+                    }
+                    if (input.checked) {
+                        radioGroups[input.name] = true;
+                    }
+                } else if (input.type === 'checkbox' && input.checked) {
+                    isValid = true;
+                }
+            });
+            
+            // ラジオボタングループの検証
+            for (const group in radioGroups) {
+                if (radioGroups[group]) {
+                    isValid = true;
+                    break;
+                }
+            }
+            
+            if (!isValid) {
+                alert(currentLanguage === 'ja' ? '選択肢を選んでください。' : 'Please select an option.');
+            }
+            
+            return isValid;
+        }
+
+        function saveCurrentAnswer() {
+            const currentQ = document.getElementById(`question${currentQuestion}`);
+            const inputs = currentQ.querySelectorAll('input:checked');
+            
+            inputs.forEach(input => {
+                if (input.type === 'radio') {
+                    diagnosisData[input.name] = input.value;
+                } else if (input.type === 'checkbox') {
+                    if (!diagnosisData[input.name]) {
+                        diagnosisData[input.name] = [];
+                    }
+                    diagnosisData[input.name].push(input.value);
+                }
+            });
+            
+            log.info('Answer saved', { question: currentQuestion, data: diagnosisData });
+        }
+
+        function updateProgress() {
+            const progress = (currentQuestion - 1) / totalQuestions * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            document.getElementById('progressText').textContent = `${currentQuestion - 1}/${totalQuestions}`;
+        }
+
+        function submitDiagnosis() {
+            if (validateCurrentQuestion()) {
+                saveCurrentAnswer();
+                log.info('Diagnosis submitted', diagnosisData);
+                
+                // 結果を生成
+                const result = generateResult();
+                
+                // 結果を表示
+                displayResult(result);
+                
+                // 履歴に保存
+                saveToHistory(result);
+            }
+        }
+
+        function generateResult() {
+            log.info('Generating diagnosis result');
+            
+            // サンプル化粧品データ
+            const products = [
+                {
+                    name: currentLanguage === 'ja' ? '敏感肌用美容液' : 'Sensitive Skin Serum',
+                    brand: 'Sample Brand A',
+                    price: '¥3,500',
+                    score: 85,
+                    ingredients: ['ヒアルロン酸', 'セラミド', 'グリセリン'],
+                    benefits: currentLanguage === 'ja' ? ['保湿効果', '敏感肌対応', '無香料'] : ['Moisturizing', 'Sensitive skin friendly', 'Fragrance-free'],
+                    amazonUrl: 'https://amazon.co.jp/dp/example1',
+                    rakutenUrl: 'https://rakuten.co.jp/shop/example1',
+                    description: currentLanguage === 'ja' ? '敏感肌の方におすすめの低刺激美容液です。' : 'Low-irritation serum recommended for sensitive skin.'
+                },
+                {
+                    name: currentLanguage === 'ja' ? '高保湿クリーム' : 'High Moisture Cream',
+                    brand: 'Sample Brand B',
+                    price: '¥2,800',
+                    score: 82,
+                    ingredients: ['スクワラン', 'コラーゲン', 'ビタミンE'],
+                    benefits: currentLanguage === 'ja' ? ['高保湿', 'エイジングケア', '夜用'] : ['High moisture', 'Anti-aging', 'Night use'],
+                    amazonUrl: 'https://amazon.co.jp/dp/example2',
+                    rakutenUrl: 'https://rakuten.co.jp/shop/example2',
+                    description: currentLanguage === 'ja' ? '乾燥肌対策に効果的な高保湿クリームです。' : 'Highly moisturizing cream effective for dry skin care.'
+                },
+                {
+                    name: currentLanguage === 'ja' ? 'ビタミンC美容液' : 'Vitamin C Serum',
+                    brand: 'Sample Brand C',
+                    price: '¥4,200',
+                    score: 78,
+                    ingredients: ['ビタミンC誘導体', 'ナイアシンアミド', 'アルブチン'],
+                    benefits: currentLanguage === 'ja' ? ['美白効果', 'シミ対策', '朝用'] : ['Whitening effect', 'Spot care', 'Morning use'],
+                    amazonUrl: 'https://amazon.co.jp/dp/example3',
+                    rakutenUrl: 'https://rakuten.co.jp/shop/example3',
+                    description: currentLanguage === 'ja' ? 'シミやくすみ対策に効果的なビタミンC美容液です。' : 'Vitamin C serum effective for spot and dullness care.'
+                }
+            ];
+            
+            // スコアリングロジック（簡易版）
+            const scoredProducts = products.map(product => {
+                let score = product.score;
+                
+                // 肌タイプによる調整
+                if (diagnosisData.skinType === 'sensitive' && product.name.includes('敏感肌')) {
+                    score += 10;
+                }
+                if (diagnosisData.skinType === 'dry' && product.name.includes('保湿')) {
+                    score += 8;
+                }
+                
+                // 悩みによる調整
+                if (diagnosisData.skinConcerns) {
+                    if (diagnosisData.skinConcerns.includes('spots') && product.ingredients.includes('ビタミンC誘導体')) {
+                        score += 15;
+                    }
+                    if (diagnosisData.skinConcerns.includes('dryness') && product.ingredients.includes('ヒアルロン酸')) {
+                        score += 12;
+                    }
+                }
+                
+                return { ...product, finalScore: Math.min(score, 100) };
+            });
+            
+            // スコア順にソート
+            scoredProducts.sort((a, b) => b.finalScore - a.finalScore);
+            
+            const result = {
+                timestamp: new Date().toISOString(),
+                diagnosisData: { ...diagnosisData },
+                recommendations: scoredProducts.slice(0, 3),
+                summary: generateSummary(diagnosisData)
+            };
+            
+            log.info('Result generated', result);
+            return result;
+        }
+
+        function generateSummary(data) {
+            const summaries = {
+                ja: {
+                    dry: 'あなたの肌は乾燥しやすい傾向にあります。保湿重視のスキンケアがおすすめです。',
+                    oily: 'あなたの肌は皮脂分泌が多い傾向にあります。さっぱりとした使用感の商品がおすすめです。',
+                    combination: 'あなたの肌は部位によって状態が異なります。使い分けできる商品がおすすめです。',
+                    sensitive: 'あなたの肌は敏感な傾向にあります。低刺激で優しい成分の商品がおすすめです。'
+                },
+                en: {
+                    dry: 'Your skin tends to be dry. We recommend moisture-focused skincare.',
+                    oily: 'Your skin tends to produce excess oil. We recommend products with a refreshing feel.',
+                    combination: 'Your skin condition varies by area. We recommend products that can be used selectively.',
+                    sensitive: 'Your skin tends to be sensitive. We recommend low-irritation products with gentle ingredients.'
+                }
+            };
+            
+            return summaries[currentLanguage][data.skinType] || summaries[currentLanguage].dry;
+        }
+
+        function displayResult(result) {
+            const resultContainer = document.getElementById('resultContent');
+            
+            let html = `
+                <div class="bg-pink-50 p-6 rounded-lg mb-6">
+                    <h3 class="text-lg font-semibold mb-2">${currentLanguage === 'ja' ? '診断結果サマリー' : 'Diagnosis Summary'}</h3>
+                    <p class="text-gray-700">${result.summary}</p>
+                </div>
+            `;
+            
+            result.recommendations.forEach((product, index) => {
+                html += `
+                    <div class="bg-white p-6 rounded-lg shadow-md mb-4">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">${index + 1}. ${product.name}</h3>
+                                <p class="text-gray-600">${product.brand} - ${product.price}</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-pink-500">${product.finalScore}/100</div>
+                                <div class="text-sm text-gray-500">${currentLanguage === 'ja' ? 'マッチ度' : 'Match Score'}</div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-700 mb-4">${product.description}</p>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">${currentLanguage === 'ja' ? '主要成分' : 'Key Ingredients'}</h4>
+                            <div class="flex flex-wrap gap-2">
+                                ${product.ingredients.map(ingredient => `<span class="bg-gray-100 px-2 py-1 rounded text-sm">${ingredient}</span>`).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">${currentLanguage === 'ja' ? '期待できる効果' : 'Expected Benefits'}</h4>
+                            <div class="flex flex-wrap gap-2">
+                                ${product.benefits.map(benefit => `<span class="bg-pink-100 text-pink-800 px-2 py-1 rounded text-sm">${benefit}</span>`).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <a href="${product.amazonUrl}" target="_blank" rel="noopener" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded transition-colors">
+                                <i class="fab fa-amazon mr-1"></i> Amazon
+                            </a>
+                            <a href="${product.rakutenUrl}" target="_blank" rel="noopener" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition-colors">
+                                <i class="fas fa-shopping-cart mr-1"></i> ${currentLanguage === 'ja' ? '楽天' : 'Rakuten'}
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            resultContainer.innerHTML = html;
+            
+            // 質問を非表示にして結果を表示
+            document.querySelectorAll('.question').forEach(q => q.classList.add('hidden'));
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('result').classList.add('fade-in');
+            
+            // ナビゲーションボタンを非表示
+            document.getElementById('prevBtn').classList.add('hidden');
+            document.getElementById('nextBtn').classList.add('hidden');
+            document.getElementById('submitBtn').classList.add('hidden');
+            
+            log.info('Result displayed');
+        }
+
+        function resetDiagnosis() {
+            currentQuestion = 1;
+            diagnosisData = {};
+            
+            // 全質問を非表示
+            document.querySelectorAll('.question').forEach(q => q.classList.add('hidden'));
+            
+            // 結果を非表示
+            document.getElementById('result').classList.add('hidden');
+            
+            // 最初の質問を表示
+            showQuestion(1);
+            updateProgress();
+            
+            // フォームをリセット
+            document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
+                input.checked = false;
+            });
+            
+            log.info('Diagnosis reset');
+        }
+
+        function shareResult() {
+            const text = currentLanguage === 'ja' 
+                ? 'CosmeFinder で化粧品診断をしました！あなたも試してみませんか？' 
+                : 'I took a cosmetics diagnosis on CosmeFinder! Why don\'t you try it too?';
+            const url = window.location.href;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'CosmeFinder',
+                    text: text,
+                    url: url
+                }).then(() => {
+                    log.info('Result shared via Web Share API');
+                }).catch(err => {
+                    log.error('Share failed', err);
+                    fallbackShare(text, url);
+                });
+            } else {
+                fallbackShare(text, url);
+            }
+        }
+
+        function fallbackShare(text, url) {
+            const shareText = `${text} ${url}`;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert(currentLanguage === 'ja' ? 'クリップボードにコピーしました！' : 'Copied to clipboard!');
+                    log.info('Result copied to clipboard');
+                });
+            } else {
+                // フォールバック: テキストエリアを使用
+                const textArea = document.createElement('textarea');
+                textArea.value = shareText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert(currentLanguage === 'ja' ? 'クリップボードにコピーしました！' : 'Copied to clipboard!');
+                log.info('Result copied to clipboard (fallback)');
+            }
+        }
+
+        // 履歴管理
+        function saveToHistory(result) {
+            let history = JSON.parse(localStorage.getItem('cosmefinder_history') || '[]');
+            history.unshift(result);
+            
+            // 最大20件まで保存
+            if (history.length > 20) {
+                history = history.slice(0, 20);
+            }
+            
+            localStorage.setItem('cosmefinder_history', JSON.stringify(history));
+            log.info('Result saved to history');
+        }
+
+        function loadHistory() {
+            const history = JSON.parse(localStorage.getItem('cosmefinder_history') || '[]');
+            log.info('History loaded', { count: history.length });
+            return history;
+        }
+
+        function displayHistory() {
+            const history = loadHistory();
+            const container = document.getElementById('historyContent');
+            const noHistory = document.getElementById('noHistory');
+            
+            if (history.length === 0) {
+                container.classList.add('hidden');
+                noHistory.classList.remove('hidden');
+                return;
+            }
+            
+            container.classList.remove('hidden');
+            noHistory.classList.add('hidden');
+            
+            let html = '';
+            history.forEach((result, index) => {
+                const date = new Date(result.timestamp).toLocaleDateString(currentLanguage === 'ja' ? 'ja-JP' : 'en-US');
+                html += `
+                    <div class="bg-white rounded-xl p-6 shadow-md">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-lg font-semibold">${currentLanguage === 'ja' ? '診断結果' : 'Diagnosis Result'} #${history.length - index}</h3>
+                            <span class="text-sm text-gray-500">${date}</span>
+                        </div>
+                        
+                        <p class="text-gray-700 mb-4">${result.summary}</p>
+                        
+                        <div class="space-y-2">
+                            <h4 class="font-semibold">${currentLanguage === 'ja' ? 'おすすめ商品トップ3' : 'Top 3 Recommendations'}</h4>
+                            ${result.recommendations.slice(0, 3).map((product, i) => `
+                                <div class="flex justify-between items-center p-2 bg-gray-50 rounded">
+                                    <span>${i + 1}. ${product.name}</span>
+                                    <span class="text-pink-500 font-semibold">${product.finalScore}/100</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <button onclick="deleteHistoryItem(${index})" class="mt-4 text-red-500 hover:text-red-700 text-sm">
+                            <i class="fas fa-trash mr-1"></i> ${currentLanguage === 'ja' ? '削除' : 'Delete'}
+                        </button>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+            log.info('History displayed');
+        }
+
+        function deleteHistoryItem(index) {
+            if (confirm(currentLanguage === 'ja' ? 'この履歴を削除しますか？' : 'Delete this history item?')) {
+                let history = loadHistory();
+                history.splice(index, 1);
+                localStorage.setItem('cosmefinder_history', JSON.stringify(history));
+                displayHistory();
+                log.info('History item deleted', index);
+            }
+        }
+
+        // お問い合わせフォーム
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            log.info('Contact form submitted', data);
+            
+            // 実際の実装では、ここでフォームデータをサーバーに送信
+            alert(currentLanguage === 'ja' 
+                ? 'お問い合わせありがとうございます。内容を確認の上、回答いたします。' 
+                : 'Thank you for your inquiry. We will review and respond to your message.');
+            
+            e.target.reset();
+        });
+
+        // キーボードショートカット
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case 'h':
+                        e.preventDefault();
+                        showPage('home');
+                        break;
+                    case 'd':
+                        e.preventDefault();
+                        showPage('diagnosis');
+                        break;
+                    case 'r':
+                        e.preventDefault();
+                        showPage('history');
+                        break;
+                }
+            }
+        });
+
+        // タッチジェスチャー（スワイプ）サポート
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 100;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // 左スワイプ - 次の質問へ
+                    if (document.getElementById('diagnosisPage').classList.contains('hidden') === false) {
+                        nextQuestion();
+                    }
+                } else {
+                    // 右スワイプ - 前の質問へ
+                    if (document.getElementById('diagnosisPage').classList.contains('hidden') === false) {
+                        previousQuestion();
+                    }
+                }
+            }
+        }
+
+        // パフォーマンス監視
+        window.addEventListener('load', function() {
+            if ('performance' in window) {
+                const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                log.info('Page load time', `${loadTime}ms`);
+            }
+        });
+
+        // エラーハンドリング
+        window.addEventListener('error', function(e) {
+            log.error('JavaScript error', e.error);
+        });
+
+        window.addEventListener('unhandledrejection', function(e) {
+            log.error('Unhandled promise rejection', e.reason);
+        });
+
+        // 初期表示
+        showPage('home');
+    </script>
+</body>
+</html>
