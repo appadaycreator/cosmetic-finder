@@ -187,15 +187,45 @@ nav a.active {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
+    outline: none;
+    position: relative;
 }
 
-.option:hover {
+.option:hover,
+.option:focus {
     border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2);
 }
 
 .option.selected {
     background-color: var(--primary-color);
     color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.option-number {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.option.selected .option-number {
+    color: var(--white);
+}
+
+/* キーボードナビゲーション用のヒント */
+.diagnosis-keyboard-hint {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.diagnosis-keyboard-hint code {
+    background-color: var(--gray-light);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: monospace;
 }
 
 /* Ingredient Checker */

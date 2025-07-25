@@ -144,25 +144,67 @@ function showQuestion() {
             <h4>質問 ${currentQuestionIndex + 1} / ${diagnosisQuestions.length}</h4>
             <p>${question.question}</p>
             <div class="options">
-                ${question.options.map(option => `
-                    <div class="option" data-value="${option.value}">
-                        ${option.label}
+                ${question.options.map((option, index) => `
+                    <div class="option" data-value="${option.value}" tabindex="0" role="button" aria-label="${option.label}">
+                        <span class="option-number">${index + 1}.</span> ${option.label}
                     </div>
                 `).join('')}
             </div>
             <div style="margin-top: 20px;">
                 ${currentQuestionIndex > 0 ? '<button onclick="previousQuestion()">戻る</button>' : ''}
             </div>
+            <div class="diagnosis-keyboard-hint">
+                <p>💡 キーボード操作: 
+                <code>1-${question.options.length}</code> 数字キーで選択 | 
+                <code>↑↓</code> 矢印キーで移動 | 
+                <code>Enter</code> 次へ進む</p>
+            </div>
         </div>
     `;
     
     // オプションクリックイベント
     const options = diagnosisContent.querySelectorAll('.option');
-    options.forEach(option => {
+    options.forEach((option, index) => {
         option.addEventListener('click', () => {
             selectOption(option);
         });
+        
+        // 最初のオプションにフォーカスを設定
+        if (index === 0) {
+            option.focus();
+        }
     });
+    
+    // キーボードイベントリスナーを追加
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            const selectedOption = diagnosisContent.querySelector('.option.selected');
+            if (selectedOption) {
+                // 既に選択されている場合は次へ進む
+                proceedToNext();
+            } else {
+                // 何も選択されていない場合は最初のオプションを選択
+                const firstOption = diagnosisContent.querySelector('.option');
+                if (firstOption) {
+                    selectOption(firstOption);
+                }
+            }
+        } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            navigateOptions(e.key === 'ArrowDown' ? 1 : -1);
+        } else if (e.key >= '1' && e.key <= '9') {
+            // 数字キーで選択
+            const optionIndex = parseInt(e.key) - 1;
+            const targetOption = options[optionIndex];
+            if (targetOption) {
+                selectOption(targetOption);
+            }
+        }
+    };
+    
+    // イベントリスナーを追加（既存のものがあれば削除）
+    document.removeEventListener('keydown', handleKeyPress);
+    document.addEventListener('keydown', handleKeyPress);
 }
 
 function selectOption(optionElement) {
@@ -179,9 +221,34 @@ function selectOption(optionElement) {
     
     // 次の質問へ
     setTimeout(() => {
-        currentQuestionIndex++;
-        showQuestion();
+        proceedToNext();
     }, 300);
+}
+
+function proceedToNext() {
+    currentQuestionIndex++;
+    showQuestion();
+}
+
+function navigateOptions(direction) {
+    const options = document.querySelectorAll('.option');
+    const currentSelected = document.querySelector('.option.selected');
+    let currentIndex = currentSelected ? Array.from(options).indexOf(currentSelected) : -1;
+    
+    // 新しいインデックスを計算
+    let newIndex = currentIndex + direction;
+    if (newIndex < 0) newIndex = options.length - 1;
+    if (newIndex >= options.length) newIndex = 0;
+    
+    // 選択状態を更新
+    options.forEach(opt => opt.classList.remove('selected'));
+    options[newIndex].classList.add('selected');
+    options[newIndex].focus();
+    
+    // 回答を保存
+    const value = options[newIndex].dataset.value;
+    const questionId = diagnosisQuestions[currentQuestionIndex].id;
+    answers[questionId] = value;
 }
 
 function previousQuestion() {

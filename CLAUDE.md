@@ -162,11 +162,75 @@ GitHub Pagesでは、リポジトリ名がサブディレクトリ（例：`/cos
 
 この修正により、GitHub Pagesのサブディレクトリ環境でもService Workerが正常に動作するようになります。
 
+## キーボードナビゲーション機能（2025-01-25追加）
+
+### 概要
+診断画面でのキーボード操作による快適なユーザビリティを実現しました。
+
+### 実装内容
+
+1. **Enterキーでの次の質問への進行**
+   ```javascript
+   if (e.key === 'Enter') {
+     const selectedOption = diagnosisContent.querySelector('.option.selected');
+     if (selectedOption) {
+       proceedToNext();
+     } else {
+       // 未選択の場合は最初のオプションを選択
+       const firstOption = diagnosisContent.querySelector('.option');
+       if (firstOption) {
+         selectOption(firstOption);
+       }
+     }
+   }
+   ```
+
+2. **矢印キーナビゲーション**
+   ```javascript
+   else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+     e.preventDefault();
+     navigateOptions(e.key === 'ArrowDown' ? 1 : -1);
+   }
+   ```
+
+3. **数字キーによる直接選択**
+   ```javascript
+   else if (e.key >= '1' && e.key <= '9') {
+     const optionIndex = parseInt(e.key) - 1;
+     const targetOption = options[optionIndex];
+     if (targetOption) {
+       selectOption(targetOption);
+     }
+   }
+   ```
+
+4. **アクセシビリティ対応**
+   ```html
+   <div class="option" data-value="${option.value}" tabindex="0" 
+        role="button" aria-label="${option.label}">
+     <span class="option-number">${index + 1}.</span> ${option.label}
+   </div>
+   ```
+
+5. **視覚的なフィードバック**
+   ```css
+   .option:hover,
+   .option:focus {
+     border-color: var(--primary-color);
+     box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2);
+   }
+   ```
+
+6. **操作ヒントの表示**
+   - 画面下部にキーボード操作のガイドを表示
+   - 数字キー、矢印キー、Enterキーの説明
+
 ### 今後の拡張予定
 
 1. **バックエンドAPI統合**: 製品データの動的取得
 2. **ユーザーアカウント機能**: お気に入り・履歴の同期
 3. **レビュー機能**: ユーザーレビューの投稿・閲覧
+4. **音声読み上げ対応**: スクリーンリーダーとの完全互換
 4. **AI画像診断**: 写真による肌質診断
 5. **EC連携**: 製品購入リンクの追加
 
