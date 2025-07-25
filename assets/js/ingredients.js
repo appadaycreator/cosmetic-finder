@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function loadIngredientsDatabase() {
     try {
-        const response = await fetch('/assets/data/ingredients.json');
+        const response = await fetch('./assets/data/ingredients.json');
         if (response.ok) {
             ingredientsDatabase = await response.json();
         }

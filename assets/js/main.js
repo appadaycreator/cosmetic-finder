@@ -12,10 +12,21 @@ document.addEventListener('DOMContentLoaded', () => {
         get: (key) => {
             try {
                 const item = localStorage.getItem(key);
-                return item ? JSON.parse(item) : null;
+                if (!item) return null;
+                
+                // 単純な文字列の場合はそのまま返す（JSONパースしない）
+                if (item.startsWith('"') && item.endsWith('"')) {
+                    return JSON.parse(item);
+                } else if (item.startsWith('{') || item.startsWith('[')) {
+                    return JSON.parse(item);
+                } else {
+                    // プリミティブ型の値はそのまま返す
+                    return item;
+                }
             } catch (e) {
                 console.error('Storage get error:', e);
-                return null;
+                // エラーが発生した場合は元の値をそのまま返す
+                return localStorage.getItem(key);
             }
         },
         set: (key, value) => {

@@ -430,8 +430,27 @@
                     <p class="status implemented">実装済み（新規）</p>
                 </div>
 
+                <div class="section">
+                    <h3>21. コンソールエラー修正とパス最適化</h3>
+                    <h4>概要</h4>
+                    <p>化粧品リストページでのコンソールエラー解消とファイルパス最適化</p>
+                    
+                    <h4>機能詳細</h4>
+                    <ul>
+                        <li>LocalStorageのJSONパースエラー修正（プリミティブ型対応）</li>
+                        <li>GitHub Pages対応の相対パス修正（./assets/data/）</li>
+                        <li>products.json、ingredients.jsonのパス統一</li>
+                        <li>Storage APIの安全なパース処理実装</li>
+                        <li>フェイルセーフ機能で原始値のフォールバック対応</li>
+                        <li>エラーハンドリング強化とログ出力改善</li>
+                    </ul>
+
+                    <h4>実装状況</h4>
+                    <p class="status implemented">実装済み（新規）</p>
+                </div>
+
                 <div class="update-info">
-                    <p>最終更新日: 2025年1月26日（診断画面Enterキー進行機能改善版）</p>
+                    <p>最終更新日: 2025年1月26日（コンソールエラー修正とパス最適化版）</p>
                 </div>
             </div>
         </section>

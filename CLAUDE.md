@@ -567,4 +567,59 @@ function restartDiagnosis() {
 - ✅ クリーンな結果画面UI実現
 - ✅ 診断フロー状態管理の改善
 
+### 診断画面Enterキー進行機能改善（v4.1.2追加内容）
+
+#### 改善した問題
+診断画面で選択肢を選んだ後、自動で次に進んでしまい、ユーザーの意図しない進行が発生していた問題を改善しました。
+
+#### 実装した改善内容
+
+1. **assets/js/diagnosis.js の selectOption 関数修正**
+```javascript
+function selectOption(optionElement) {
+    const value = optionElement.dataset.value;
+    const questionId = diagnosisQuestions[currentQuestionIndex].id;
+    
+    // 選択状態の更新
+    const options = optionElement.parentElement.querySelectorAll('.option');
+    options.forEach(opt => opt.classList.remove('selected'));
+    optionElement.classList.add('selected');
+    
+    // 回答を保存
+    answers[questionId] = value;
+    
+    // 選択後は自動で次に進まず、Enterキーでの進行を待つ
+    // 自動進行を削除してユーザーの意図的な操作を重視
+}
+```
+
+2. **index.html にEnterキー進行機能追加**
+```javascript
+// 診断画面でのEnterキー進行機能
+if (e.key === 'Enter' && !document.getElementById('diagnosisPage').classList.contains('hidden')) {
+    // 現在の質問に回答が選択されているかチェック
+    const currentQ = document.getElementById(`question${currentQuestion}`);
+    if (currentQ && !currentQ.classList.contains('hidden')) {
+        const inputs = currentQ.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked');
+        if (inputs.length > 0) {
+            e.preventDefault();
+            // 次の質問に進む、または診断を完了
+            if (currentQuestion < totalQuestions) {
+                nextQuestion();
+            } else {
+                submitDiagnosis();
+            }
+        }
+    }
+}
+```
+
+#### 改善結果
+- ✅ 選択肢選択後の自動進行を停止
+- ✅ Enterキーでユーザー主導の進行制御
+- ✅ 回答選択済みの場合のみEnterキーで進行可能
+- ✅ 最終質問では診断完了処理を実行
+- ✅ より直感的で制御しやすいUX実現
+- ✅ index.htmlとassets/js/diagnosis.js両方で対応
+
 最終更新: 2025年1月26日
