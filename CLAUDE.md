@@ -381,6 +381,16 @@ GitHub Pagesでは、リポジトリ名がサブディレクトリ（例：`/cos
 
 ## 最近の更新履歴
 
+### v4.1.2 (2025-01-08) - 成分解析ボタン404エラー修正版
+- **成分解析ボタンのリンク修正**
+  - 製品一覧ページの「成分を解析」ボタンクリック時の404エラーを修正
+  - `window.location.href = '/#ingredient-checker'`を`'./index.html#ingredient-checker'`に変更
+  - GitHub Pages環境での相対パス解決により正常動作を実現
+  - 診断結果から製品一覧への遷移も同様に修正（`'/products.html'`→`'./products.html'`）
+- **クロスページ連携の改善**
+  - 成分データの正常な受け渡しを確認
+  - ページ遷移時のLocalStorage連携動作確認
+
 ### v4.1.1 (2025-01-26) - ページネーション表示改善版
 - **ページネーション表示の改善**
   - 製品一覧ページに現在ページ/総ページ数表示を追加（例: 4/5ページ）
@@ -621,5 +631,60 @@ if (e.key === 'Enter' && !document.getElementById('diagnosisPage').classList.con
 - ✅ 最終質問では診断完了処理を実行
 - ✅ より直感的で制御しやすいUX実現
 - ✅ index.htmlとassets/js/diagnosis.js両方で対応
+
+### コンソールエラー修正とパス最適化（v4.1.3追加内容）
+
+#### 修正した問題
+化粧品リストページで発生していた複数のコンソールエラーを解消しました。
+
+#### 発生していたエラー
+1. **Storage JSONパースエラー**: `"ja" is not valid JSON`
+2. **products.json 404エラー**: `GET /assets/data/products.json 404 (Not Found)`
+3. **ingredients.json パスエラー**: GitHub Pages環境での絶対パス問題
+
+#### 実装した修正内容
+
+1. **main.js のストレージAPI修正**
+```javascript
+const storage = {
+    get: (key) => {
+        try {
+            const item = localStorage.getItem(key);
+            if (!item) return null;
+            
+            // 単純な文字列の場合はそのまま返す（JSONパースしない）
+            if (item.startsWith('"') && item.endsWith('"')) {
+                return JSON.parse(item);
+            } else if (item.startsWith('{') || item.startsWith('[')) {
+                return JSON.parse(item);
+            } else {
+                // プリミティブ型の値はそのまま返す
+                return item;
+            }
+        } catch (e) {
+            console.error('Storage get error:', e);
+            // エラーが発生した場合は元の値をそのまま返す
+            return localStorage.getItem(key);
+        }
+    }
+}
+```
+
+2. **ファイルパスの相対パス化**
+```javascript
+// products.js
+const response = await fetch('./assets/data/products.json');
+
+// ingredients.js  
+const response = await fetch('./assets/data/ingredients.json');
+```
+
+#### 修正結果
+- ✅ LocalStorageのJSONパースエラー完全解消
+- ✅ GitHub Pages対応の相対パス修正
+- ✅ products.json、ingredients.jsonの正常読み込み
+- ✅ Storage APIの安全なパース処理実装
+- ✅ フェイルセーフ機能でフォールバック対応
+- ✅ コンソールエラー完全解消
 
 最終更新: 2025年1月26日

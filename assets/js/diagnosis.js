@@ -506,7 +506,7 @@ async function viewRecommendedProducts() {
     localStorage.setItem('currentDiagnosis', JSON.stringify(diagnosisData));
     
     // 製品一覧ページへ遷移（診断結果でフィルタリング）
-    window.location.href = '/products.html?diagnosis=true';
+    window.location.href = './products.html?diagnosis=true';
 }
 
 function restartDiagnosis() {

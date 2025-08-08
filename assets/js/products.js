@@ -376,7 +376,7 @@ window.analyzeProductIngredients = function(productId) {
     
     // 成分解析ページへリダイレクト（成分を自動入力）
     localStorage.setItem('analyzeIngredients', JSON.stringify(product.ingredients));
-    window.location.href = '/#ingredient-checker';
+    window.location.href = './index.html#ingredient-checker';
 };
 
 // 診断結果を使用してフィルタリング
