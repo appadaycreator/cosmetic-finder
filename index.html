@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://appadaycreator.github.io/cosmetic-finder/">
+    <!-- C3: CDN preconnect for faster loading -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.clarity.ms">
     <title>CosmeFinder - あなたにぴったりの化粧品を見つけよう</title>
     <meta name="description" content="肌悩みと成分への関心度から最適な化粧品をAIが提案。成分解析機能付きで安心して選べるパーソナライズドビューティーサービス">
     <meta name="keywords" content="化粧品,スキンケア,美容,成分解析,パーソナライズ,レコメンド">
@@ -694,6 +699,68 @@
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- A3: 広告スロット（コンテンツ末尾・フッター上） -->
+    <div style="max-width:800px;margin:16px auto;padding:0 16px;text-align:center;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8427583028015858"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- A1: 関連サービス（回遊深度向上） -->
+    <section style="max-width:900px;margin:0 auto 24px;padding:20px 16px;background:#fdf2f8;border-radius:12px;">
+        <h2 style="font-size:1rem;font-weight:bold;color:#9d174d;margin-bottom:14px;text-align:center;">✨ あわせて使いたい美容・健康サービス</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+            <a href="https://appadaycreator.github.io/skincare-tracker/" style="background:#fff;border:2px solid #fbcfe8;border-radius:10px;padding:12px 16px;text-decoration:none;text-align:center;min-width:130px;transition:all .2s;" onmouseover="this.style.borderColor='#ec4899'" onmouseout="this.style.borderColor='#fbcfe8'">
+                <div style="font-size:1.5rem;">💆</div>
+                <div style="font-size:0.8rem;font-weight:bold;color:#374151;margin-top:4px;">スキンケア管理</div>
+                <div style="font-size:0.7rem;color:#9ca3af;">日々のケアを記録</div>
+            </a>
+            <a href="https://appadaycreator.github.io/personal-color-finder/" style="background:#fff;border:2px solid #fbcfe8;border-radius:10px;padding:12px 16px;text-decoration:none;text-align:center;min-width:130px;transition:all .2s;" onmouseover="this.style.borderColor='#ec4899'" onmouseout="this.style.borderColor='#fbcfe8'">
+                <div style="font-size:1.5rem;">🎨</div>
+                <div style="font-size:0.8rem;font-weight:bold;color:#374151;margin-top:4px;">パーソナルカラー</div>
+                <div style="font-size:0.7rem;color:#9ca3af;">似合う色を診断</div>
+            </a>
+            <a href="https://appadaycreator.github.io/bmi-body-tracker/" style="background:#fff;border:2px solid #fbcfe8;border-radius:10px;padding:12px 16px;text-decoration:none;text-align:center;min-width:130px;transition:all .2s;" onmouseover="this.style.borderColor='#ec4899'" onmouseout="this.style.borderColor='#fbcfe8'">
+                <div style="font-size:1.5rem;">⚖️</div>
+                <div style="font-size:0.8rem;font-weight:bold;color:#374151;margin-top:4px;">BMI管理</div>
+                <div style="font-size:0.7rem;color:#9ca3af;">体型・健康管理</div>
+            </a>
+            <a href="https://appadaycreator.github.io/calorie-calculator/" style="background:#fff;border:2px solid #fbcfe8;border-radius:10px;padding:12px 16px;text-decoration:none;text-align:center;min-width:130px;transition:all .2s;" onmouseover="this.style.borderColor='#ec4899'" onmouseout="this.style.borderColor='#fbcfe8'">
+                <div style="font-size:1.5rem;">🥗</div>
+                <div style="font-size:0.8rem;font-weight:bold;color:#374151;margin-top:4px;">カロリー計算</div>
+                <div style="font-size:0.7rem;color:#9ca3af;">食事・栄養管理</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- B2: 30日スキンケアチャレンジ（リピート促進） -->
+    <section id="skincare-challenge" style="max-width:900px;margin:0 auto 24px;padding:20px 16px;background:linear-gradient(135deg,#fce7f3,#fdf4ff);border-radius:12px;border:1px solid #f0abfc;">
+        <div style="text-align:center;">
+            <div style="font-size:2rem;">🌸</div>
+            <h2 style="font-size:1.1rem;font-weight:bold;color:#86198f;margin:8px 0 4px;">30日スキンケアチャレンジ</h2>
+            <p style="font-size:0.85rem;color:#6b7280;margin-bottom:12px;">診断結果を活かして30日間ケアを続けると、肌状態の変化を記録できます。</p>
+            <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+                <button onclick="startSkincareChallenge()" style="background:#a21caf;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:0.9rem;font-weight:bold;cursor:pointer;">チャレンジ開始</button>
+                <button onclick="showPage('diagnosis')" style="background:#fff;color:#a21caf;border:2px solid #a21caf;padding:10px 20px;border-radius:8px;font-size:0.9rem;font-weight:bold;cursor:pointer;">再診断してみる</button>
+            </div>
+            <div id="challengeStatus" style="margin-top:12px;font-size:0.85rem;color:#86198f;display:none;"></div>
+        </div>
+    </section>
+
+    <!-- A3: モバイルスティッキー広告（320×50） -->
+    <div id="mobile-sticky-ad" style="position:fixed;bottom:0;left:0;right:0;z-index:50;background:#fff;border-top:1px solid #e5e7eb;padding:4px 0;text-align:center;display:none;">
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:320px;height:50px"
+             data-ad-client="ca-pub-8427583028015858"
+             data-ad-slot="auto"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <button onclick="document.getElementById('mobile-sticky-ad').style.display='none'" style="position:absolute;top:4px;right:8px;background:none;border:none;font-size:1rem;color:#9ca3af;cursor:pointer;">✕</button>
     </div>
 
     <!-- フッター -->
@@ -1529,6 +1596,65 @@ window.cfSafeRm=function(k){try{localStorage.removeItem(k);return true;}catch(e)
 window.cfSafeCp=function(t){try{if(navigator.clipboard){navigator.clipboard.writeText(t);}else{var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");document.body.removeChild(a);};}catch(e){}};
 window.cfSave=function(d){try{var h=JSON.parse(localStorage.getItem("cf_hist")||"[]");h.unshift({d:d,t:Date.now()});if(h.length>100)h.pop();localStorage.setItem("cf_hist",JSON.stringify(h));}catch(e){}};
 document.addEventListener("DOMContentLoaded",function(){try{var l=document.getElementById("page-loader-cf");if(l){l.style.opacity="0";l.style.transition="opacity 0.3s";setTimeout(function(){try{l.remove();}catch(e){}},350);}}catch(e){}});
+
+// B2: 30日スキンケアチャレンジ機能
+function startSkincareChallenge() {
+    try {
+        var existing = localStorage.getItem("cosme_challenge_start");
+        if (existing) {
+            var start = new Date(parseInt(existing));
+            var now = new Date();
+            var days = Math.floor((now - start) / (1000*60*60*24));
+            var status = document.getElementById("challengeStatus");
+            if (status) {
+                status.style.display = "block";
+                status.textContent = "チャレンジ開始から " + days + " 日目です！継続中 🌸";
+            }
+            return;
+        }
+        localStorage.setItem("cosme_challenge_start", Date.now().toString());
+        localStorage.setItem("cosme_challenge_active", "true");
+        var status = document.getElementById("challengeStatus");
+        if (status) {
+            status.style.display = "block";
+            status.textContent = "チャレンジ開始！30日後に再診断して変化を確認しましょう 🎉";
+        }
+        // 30日後のリマインダーをlocalStorageに設定
+        var reminderDate = new Date(Date.now() + 30*24*60*60*1000);
+        localStorage.setItem("cosme_reminder_date", reminderDate.toISOString());
+    } catch(e) { console.warn("Challenge start error", e); }
+}
+
+// B2: ページ読み込み時にチャレンジ状況を確認
+(function checkChallengeStatus() {
+    try {
+        var start = localStorage.getItem("cosme_challenge_start");
+        if (!start) return;
+        var days = Math.floor((Date.now() - parseInt(start)) / (1000*60*60*24));
+        var status = document.getElementById("challengeStatus");
+        if (status) {
+            status.style.display = "block";
+            if (days >= 30) {
+                status.textContent = "🎊 30日チャレンジ達成！再診断して肌の変化を確認しましょう";
+                status.style.color = "#059669";
+            } else {
+                status.textContent = "チャレンジ " + days + " 日目継続中！あと " + (30-days) + " 日 🌸";
+            }
+        }
+    } catch(e) {}
+})();
+
+// A3: スクロール後にモバイルスティッキー広告を表示
+(function initMobileAd() {
+    try {
+        if (window.innerWidth <= 768) {
+            setTimeout(function() {
+                var ad = document.getElementById("mobile-sticky-ad");
+                if (ad) ad.style.display = "block";
+            }, 3000);
+        }
+    } catch(e) {}
+})();
 </script>
 
 </body>
