@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cosmetic-finder-v4';
+const CACHE_NAME = 'cosmetic-finder-v5';
 const urlsToCache = [
   './',
   './lp.html',
