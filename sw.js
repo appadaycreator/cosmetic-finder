@@ -24,7 +24,6 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Opened cache');
         return cache.addAll(urlsToCache);
       })
   );
@@ -150,5 +149,4 @@ self.addEventListener('sync', event => {
 
 async function syncData() {
   // Implement data synchronization logic here
-  console.log('Background sync triggered');
 }
