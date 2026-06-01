@@ -233,8 +233,6 @@ export class ContentGenerator {
 
         // メインコンテンツ（ホームページを表示）
         this.renderPage('home');
-
-        console.log('📄 Content generated');
     }
 
     /**

@@ -11,7 +11,6 @@ class CosmeticFinderApp {
         this.setupGlobalEventListeners();
         this.initializeModules();
         this.loadUserSettings();
-        console.log('CosmeticFinder App initialized');
     }
 
     setupGlobalEventListeners() {
@@ -80,7 +79,6 @@ class CosmeticFinderApp {
         };
 
         // 実際の実装ではサーバーに送信
-        console.log('Contact form submitted:', data);
         
         const message = this.currentLanguage === 'ja' 
             ? 'お問い合わせをありがとうございます。内容を確認の上、回答いたします。'
@@ -186,7 +184,6 @@ class CosmeticFinderApp {
 
     showNotification(message, type = 'info') {
         // 将来的にはtoast通知システムを実装
-        console.log(`[${type.toUpperCase()}]: ${message}`);
         
         if (type === 'error') {
             alert(message);

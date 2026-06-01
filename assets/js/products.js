@@ -88,7 +88,6 @@ async function loadProducts() {
         if (!response.ok) throw new Error('Failed to load products');
         
         allProducts = await response.json();
-        console.log(`Loaded ${allProducts.length} products`);
     } catch (error) {
         console.error('Error loading products:', error);
         elements.productsContainer.innerHTML = '<p class="error">製品データの読み込みに失敗しました。</p>';

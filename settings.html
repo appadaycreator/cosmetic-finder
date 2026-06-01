@@ -13,8 +13,10 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
     <title>設定 - CosmeFinder</title>
     <meta name="description" content="CosmeFinderの設定ページ。データのエクスポート/インポート、通知設定、表示設定などをカスタマイズできます">
     
+    <meta name="theme-color" content="#7c3aed">
+    <meta name="robots" content="noindex">
+    <link rel="manifest" href="./manifest.json">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -29,8 +31,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!-- データ管理セクション -->
             <div class="bg-white rounded-lg shadow-md p-6 mb-6">
                 <h2 class="text-xl font-semibold mb-4">
-                    <i class="fas fa-database mr-2 text-pink-500"></i>
-                    データ管理
+                    🗄️ データ管理
                 </h2>
                 
                 <div class="space-y-4">
@@ -39,7 +40,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <h3 class="font-semibold mb-2">データのエクスポート</h3>
                         <p class="text-sm text-gray-600 mb-3">診断結果、履歴、お気に入りなどのデータをファイルとして保存します</p>
                         <button id="exportDataBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors">
-                            <i class="fas fa-download mr-2"></i>データをエクスポート
+                            ⬇️ データをエクスポート
                         </button>
                     </div>
                     
@@ -49,7 +50,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="text-sm text-gray-600 mb-3">以前にエクスポートしたデータファイルを読み込んで復元します</p>
                         <input type="file" id="importFileInput" accept=".json" class="hidden">
                         <button id="importDataBtn" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors">
-                            <i class="fas fa-upload mr-2"></i>データをインポート
+                            ⬆️ データをインポート
                         </button>
                     </div>
                 </div>
@@ -58,8 +59,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!-- 通知設定セクション -->
             <div class="bg-white rounded-lg shadow-md p-6 mb-6">
                 <h2 class="text-xl font-semibold mb-4">
-                    <i class="fas fa-bell mr-2 text-pink-500"></i>
-                    通知設定
+                    🔔 通知設定
                 </h2>
                 
                 <div class="space-y-4">

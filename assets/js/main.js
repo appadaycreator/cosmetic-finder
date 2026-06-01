@@ -2,9 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Service Worker登録
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js')
-            .then(registration => console.log('Service Worker registered:', registration))
-            .catch(err => console.log('Service Worker registration failed:', err));
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
 
     // ローカルストレージのユーティリティ
@@ -178,15 +176,8 @@ window.addEventListener('error', (e) => {
 });
 
 // オンライン/オフライン状態の監視
-window.addEventListener('online', () => {
-    console.log('オンラインに復帰しました');
-    // 必要に応じてデータの同期処理
-});
-
-window.addEventListener('offline', () => {
-    console.log('オフラインになりました');
-    // オフラインモードの通知
-});
+window.addEventListener('online', () => {});
+window.addEventListener('offline', () => {});
 
 // ビューポートサイズ変更の監視
 let resizeTimer;

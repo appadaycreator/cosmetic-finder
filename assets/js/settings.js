@@ -108,7 +108,7 @@ class SettingsManager {
                             const decrypted = await this.decryptData(data[key]);
                             data[key] = decrypted;
                         } catch (e) {
-                            console.log(`Skipping decryption for ${key}`);
+                            // 復号化スキップ
                         }
                     }
                 }
@@ -241,12 +241,7 @@ class SettingsManager {
     // Service Workerの登録
     async registerServiceWorker() {
         if ('serviceWorker' in navigator) {
-            try {
-                const registration = await navigator.serviceWorker.register('/sw.js');
-                console.log('Service Worker registered:', registration);
-            } catch (error) {
-                console.error('Service Worker registration failed:', error);
-            }
+            await navigator.serviceWorker.register('/sw.js').catch(() => {});
         }
     }
 
@@ -456,7 +451,7 @@ class SettingsManager {
                             localStorage.setItem(key, JSON.stringify(decrypted));
                         }
                     } catch (e) {
-                        console.log(`Skipping migration for ${key}:`, e.message);
+                        // マイグレーションスキップ
                     }
                 }
             }

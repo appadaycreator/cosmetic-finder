@@ -99,7 +99,6 @@ class UIManager {
         // モバイルサイドバーを閉じる
         this.closeMobileSidebar();
 
-        console.log(`Page switched to: ${pageId}`);
     }
 
     updateSidebarActive(pageId) {
@@ -151,7 +150,6 @@ class UIManager {
             mobileSelect.value = this.currentLanguage;
         }
         
-        console.log('Language changed:', this.currentLanguage);
     }
 
     changeLanguageMobile() {
@@ -166,7 +164,6 @@ class UIManager {
             pcSelect.value = this.currentLanguage;
         }
         
-        console.log('Language changed (mobile):', this.currentLanguage);
     }
 
     applyLanguage() {
@@ -197,7 +194,6 @@ class UIManager {
             mobileSelect.value = scale;
         }
         
-        console.log('Font size changed:', scale);
     }
 
     changeFontSizeMobile() {
@@ -212,7 +208,6 @@ class UIManager {
             pcSelect.value = scale;
         }
         
-        console.log('Font size changed (mobile):', scale);
     }
 
     toggleHighContrast() {
@@ -232,7 +227,6 @@ class UIManager {
             }
         }
         
-        console.log('High contrast mode:', isEnabled ? 'enabled' : 'disabled');
     }
 
     initializeSettings() {
@@ -270,10 +264,6 @@ class UIManager {
     }
 
     showMessage(message, type = 'info') {
-        // メッセージ表示の共通関数
-        console.log(`[${type.toUpperCase()}]: ${message}`);
-        
-        // 実際の表示はtoast通知やモーダルで実装可能
         if (type === 'error') {
             alert(`エラー: ${message}`);
         }

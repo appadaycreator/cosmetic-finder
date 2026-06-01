@@ -30,7 +30,6 @@ export class CosmeFinderApp {
         
         // 開発モードでのデバッグ情報
         if (isDevelopment()) {
-            console.log('🚀 CosmeFinderApp initialized in development mode');
             window._cosmeFinderApp = this;
         }
     }
@@ -42,7 +41,6 @@ export class CosmeFinderApp {
     async initialize() {
         try {
             this.state.loading = true;
-            console.log('📱 Initializing CosmeFinderApp...');
 
             // 1. 基本設定の読み込み
             const settingsResult = await this._loadSettings();
@@ -70,8 +68,6 @@ export class CosmeFinderApp {
 
             this.state.initialized = true;
             this.state.loading = false;
-
-            console.log('✅ CosmeFinderApp initialized successfully');
             return Result.success(true);
 
         } catch (error) {
@@ -154,8 +150,6 @@ export class CosmeFinderApp {
         if (contactForm) {
             contactForm.addEventListener('submit', this._handleContactForm.bind(this));
         }
-
-        console.log('📡 Event listeners registered');
     }
 
     /**
@@ -167,9 +161,7 @@ export class CosmeFinderApp {
         if ('serviceWorker' in navigator) {
             try {
                 const registration = await navigator.serviceWorker.register('./sw.js');
-                console.log('🔧 Service Worker registered:', registration);
             } catch (error) {
-                console.warn('⚠️ Service Worker registration failed:', error);
             }
         }
     }
@@ -187,8 +179,6 @@ export class CosmeFinderApp {
 
         // 設定UIの同期
         this._syncSettingsUI();
-
-        console.log('🎨 UI initialized');
     }
 
     /**
@@ -200,17 +190,14 @@ export class CosmeFinderApp {
         try {
             // 診断質問データの読み込み（既存のグローバル変数を使用）
             if (typeof window.diagnosisQuestions !== 'undefined') {
-                console.log('📋 Diagnosis questions loaded');
             }
 
             // 成分データベースの読み込み
             if (typeof window.ingredientsDatabase !== 'undefined') {
-                console.log('🧪 Ingredients database loaded');
             }
 
             // 製品データの読み込み
             if (typeof window.allProducts !== 'undefined') {
-                console.log('🛍️ Products database loaded');
             }
 
         } catch (error) {
@@ -248,8 +235,6 @@ export class CosmeFinderApp {
 
             // ページ固有の初期化
             this._initializePage(pageId);
-
-            console.log(`📄 Page switched to: ${pageId}`);
             return Result.success(true);
 
         } catch (error) {
@@ -411,8 +396,6 @@ window.initializeCosmeFinderApp = async function() {
     // 後方互換性のためのグローバル関数
     window.showPage = (pageId) => app.showPage(pageId);
     window.cosmeFinderApp = app;
-    
-    console.log('🎉 CosmeFinderApp ready!');
 };
 
 // ブラウザ環境でのグローバル公開
