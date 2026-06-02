@@ -4,8 +4,8 @@
   "description": "肌質診断と成分解析であなたに最適な化粧品を見つける",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#ff6b6b",
-  "theme_color": "#ff6b6b",
+  "background_color": "#d946ef",
+  "theme_color": "#d946ef",
   "orientation": "portrait",
   "icons": [
     {
